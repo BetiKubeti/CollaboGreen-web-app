@@ -22,13 +22,15 @@ export default function HomePage() {
                     </div>
                     <div className="banner-search-bar">
                         <div className="input-container">
-                            <input
-                                type="text"
-                                placeholder="Search for a company, category, or location..."
-                                value={searchTerm}
-                                onChange={(e) => setSearchTerm(e.target.value)}
-                            />
-                            <button onClick={handleSearch}><FontAwesomeIcon icon="fa-solid fa-magnifying-glass" /></button>
+                            <form className="search-bar" action="">
+                                <input
+                                    type="text"
+                                    placeholder="Search for a company, category, or location..."
+                                    value={searchTerm}
+                                    onChange={(e) => setSearchTerm(e.target.value)}
+                                />
+                                <button onClick={handleSearch}><FontAwesomeIcon icon="fa-solid fa-magnifying-glass" /></button>
+                            </form>
                         </div>
                     </div>
                 </div>

@@ -50,14 +50,14 @@
     width: 100%;
 }
 
-.banner .banner-container .input-container{
+.banner .banner-container .input-container .search-bar{
     display: flex;
     align-items: center;
 }
 
 .banner .banner-container .banner-search-bar input{
     width: 550px;
-    height: 42px;
+    height: 43px;
     background-color: #B8D0FE;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
