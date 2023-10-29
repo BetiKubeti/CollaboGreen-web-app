@@ -1,0 +1,93 @@
+.banner{
+    margin-top: 91px;
+    height: 75vh;
+    border-bottom: 2px solid #000;
+}
+
+.banner .banner-container{
+    display: flex;
+    align-items: center;
+    background-color: #ECF6FF;
+    height: 100%;
+    padding: 0 64px;
+}
+
+.banner .banner-container .banner-content-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 100px;
+}
+
+.banner .banner-container .banner-content-container .banner-text p{
+    font-size: 38px;
+    font-weight: 700;
+    width: 90%;
+}
+
+.banner .banner-container .banner-content-container .banner-text p:nth-child(1) span{
+    color: #FA6244;
+}
+
+.banner .banner-container .banner-content-container .banner-text p:nth-child(2) span {
+    color: #73CDC2;
+}
+
+.banner .banner-container .banner-gif{
+    width: 55%;
+}
+
+.banner .banner-container .banner-gif img{
+    width: 100%;
+    border-radius: 15px;
+}
+
+/* banner search bar */
+
+.banner .banner-container .banner-search-bar{
+    width: 100%;
+}
+
+.banner .banner-container .input-container{
+    display: flex;
+    align-items: center;
+}
+
+.banner .banner-container .banner-search-bar input{
+    width: 550px;
+    height: 42px;
+    background-color: #B8D0FE;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    padding-left: 20px;
+    border: 2px solid #000;
+    border-right: 1px solid #000;
+    outline: none;
+}
+
+.banner .banner-container .banner-search-bar input::placeholder {
+    color: #7397DB;
+    font-weight: 600;
+}
+
+.banner .banner-container .banner-search-bar button {
+    background-color: #73CDC2;
+    border: 2px solid #000;
+    border-left: 1px solid #000;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    height: 46px;
+    width: 48px;
+    outline: none;
+}
+
+.banner .banner-container .banner-search-bar button:hover {
+    cursor: pointer;
+    background-color: #3AAC9F;
+}
+
+.banner .banner-container .banner-search-bar button svg {
+    font-size: 18px;
+}
