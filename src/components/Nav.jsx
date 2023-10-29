@@ -11,7 +11,7 @@ export default function Nav() {
                 <div className='contents'>
                     <NavLink to="/">Home</NavLink>
                     <NavLink to="/about">Discover Business</NavLink>
-                    <NavLink to="/contact">Create Account/Log In</NavLink>
+                    <NavLink to="/register">Create Account/Log In</NavLink>
                 </div>
             </div>
         </nav>
