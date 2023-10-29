@@ -1,17 +1,36 @@
-import React, { useState } from 'react';
-import { NavLink } from "react-router-dom";
+import React, { useState } from 'react'; // Import React module
+import { NavLink } from "react-router-dom"; // Import NavLink component for routing
 
 export default function Nav() {
+    // This is the functional component for the navigation bar
+
     return (
         <nav>
+            {/* Navigation section, typically used for site navigation */}
             <div className='nav-container'>
+                {/* Container for the navigation bar */}
                 <div className='logo'>
-                    <NavLink to="/"><span>Collabo</span>Green</NavLink>
+                    {/* Logo section */}
+                    <NavLink to="/">
+                        {/* NavLink component for internal links */}
+                        <span>Collabo</span>Green
+                    </NavLink>
+                    {/* Link to the home page with "CollaboGreen" */}
                 </div>
                 <div className='contents'>
-                    <NavLink to="/">Home</NavLink>
-                    <NavLink to="/about">Discover Businesses</NavLink>
-                    <NavLink to="/signup">Sign Up/Log In</NavLink>
+                    {/* Navigation contents section */}
+                    <NavLink to="/">
+                        {/* Link to the home page */}
+                        Home
+                    </NavLink>
+                    <NavLink to="/about">
+                        {/* Link to the "Discover Businesses" page */}
+                        Discover Businesses
+                    </NavLink>
+                    <NavLink to="/signup">
+                        {/* Link to the "Sign Up/Log In" page */}
+                        Sign Up/Log In
+                    </NavLink>
                 </div>
             </div>
         </nav>

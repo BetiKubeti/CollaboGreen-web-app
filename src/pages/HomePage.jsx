@@ -1,41 +1,33 @@
-import React, { useState } from 'react';
-import banner_gif from '../assets/Banner-gif.gif';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React from 'react'; // Import React module
+import banner_gif from '../assets/Banner-gif.gif'; // Import an image
+import SearchBar from '../components/SearchBar'; // Import the SearchBar component
 
 export default function HomePage() {
-    const [searchTerm, setSearchTerm] = useState('');
-
-    const handleSearch = () => {
-        // Implement your search logic here, e.g., send a request to the server.
-        // You can use 'searchTerm' to get the user's input.
-        console.log('Searching for:', searchTerm);
-    };
+    // This is the functional component for the HomePage
 
     return (
         <section className="banner" id="banner">
+            {/* The main section with a 'banner' class and 'banner' id */}
             <div className="banner-container">
+                {/* The container for banner content */}
                 <div className="banner-content-container">
+                    {/* Container for the content within the banner */}
                     <div className="banner-text">
-                        <p>Discover businesses and <span>collaborate</span>. </p>
+                        {/* Container for the banner text */}
+                        <p>Discover businesses and <span>collaborate</span>.</p>
                         <p>Read and write reviews. Keep in mind <span>sustainability</span>.</p>
-                        
+                        {/* Text content within the banner */}
                     </div>
                     <div className="banner-search-bar">
-                        <div className="input-container">
-                            <form className="search-bar" action="">
-                                <input
-                                    type="text"
-                                    placeholder="Search for a company, category, or location..."
-                                    value={searchTerm}
-                                    onChange={(e) => setSearchTerm(e.target.value)}
-                                />
-                                <button onClick={handleSearch}><FontAwesomeIcon icon="fa-solid fa-magnifying-glass" /></button>
-                            </form>
-                        </div>
+                        {/* Container for the search bar */}
+                        <SearchBar />
+                        {/* Include the SearchBar component here */}
                     </div>
                 </div>
                 <div className="banner-gif">
+                    {/* Container for the banner GIF */}
                     <img src={banner_gif} alt="banner gif" />
+                    {/* Display the banner GIF with specified alt text */}
                 </div>
             </div>
         </section>
