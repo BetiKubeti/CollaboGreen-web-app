@@ -194,11 +194,13 @@ nav .contents a:nth-child(2):hover {
     gap: 20px;
 }
 
-.homepage-categories .homepage-categories-container .title {
+/* Homepage titles styling */
+
+.title {
     margin: 20px 0;
 }
 
-.homepage-categories .homepage-categories-container .title h2 {
+.title h2 {
     font-size: 38px;
     font-weight: 700;
 }

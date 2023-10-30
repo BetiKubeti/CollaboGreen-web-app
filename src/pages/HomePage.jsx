@@ -185,6 +185,83 @@ export default function HomePage() {
             </section>
 
             <CompanyRegisterQuestion />
+
+            <section className='fresh-reviews'>
+                <div className='title'>
+                    <h2>Fresh Reviews</h2>
+                </div>
+                <div className='review-card-container'>
+
+                    <div className='review-card'>
+                        <div className='review-card-header'>
+                            <div className='review-card-image'></div>
+                            <div className='review-card-rating'></div>
+                        </div>
+                        <div className='review-card-title'><h3>McDonalds <span>reviewed</span> Wolt</h3></div>
+                        <div className='review-comment'>
+                            <p>
+                                Our partnership with Wolt has greatly improved our food delivery experience. 
+                                Their platform streamlines the process, ensuring our employees have access to a wide variety of options.
+                                Wolt's reliability and extensive restaurant network have been a significant asset to our corporate dining services.
+                                We look forward to continuing this partnership.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div className='review-card'>
+                        <div className='review-card-header'>
+                            <div className='review-card-image'></div>
+                            <div className='review-card-rating'></div>
+                        </div>
+                        <div className='review-card-title'><h3>BAA <span>reviewed</span> Kampa</h3></div>
+                        <div className='review-comment'>
+                            <p>
+                                Our partnership with Wolt has greatly improved our food delivery experience.
+                                Their platform streamlines the process, ensuring our employees have access to a wide variety of options.
+                                Wolt's reliability and extensive restaurant network have been a significant asset to our corporate dining services.
+                                We look forward to continuing this partnership.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div className='review-card'>
+                        <div className='review-card-header'>
+                            <div className='review-card-image'></div>
+                            <div className='review-card-rating'></div>
+                        </div>
+                        <div className='review-card-title'><h3>Grundfos <span>reviewed</span> CleanDan</h3></div>
+                        <div className='review-comment'>
+                            <p>
+                                Our partnership with Wolt has greatly improved our food delivery experience.
+                                Their platform streamlines the process, ensuring our employees have access to a wide variety of options.
+                                Wolt's reliability and extensive restaurant network have been a significant asset to our corporate dining services.
+                                We look forward to continuing this partnership.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div className='review-card'>
+                        <div className='review-card-header'>
+                            <div className='review-card-image'>
+                                
+                            </div>
+                            <div className='review-card-rating'>
+
+                            </div>
+                        </div>
+                        <div className='review-card-title'><h3>JavaRoast <span>reviewed</span> Starbucks</h3></div>
+                        <div className='review-comment'>
+                            <p>
+                                Our partnership with Wolt has greatly improved our food delivery experience.
+                                Their platform streamlines the process, ensuring our employees have access to a wide variety of options.
+                                Wolt's reliability and extensive restaurant network have been a significant asset to our corporate dining services.
+                                We look forward to continuing this partnership.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
         </>
     );
 }
