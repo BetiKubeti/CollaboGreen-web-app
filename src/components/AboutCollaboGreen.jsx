@@ -1,5 +1,4 @@
 import React, { useState } from 'react'; // Import React module
-import SignInSignUpButton from './SignUpLogInButton'
 import AboutCollaboGreenGif from '../assets/About-CollaboGreen-gif.gif'
 
 export default function Nav() {

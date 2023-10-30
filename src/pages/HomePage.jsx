@@ -12,6 +12,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import CompanyRegisterQuestion from '../components/CompanyRegisterQuestion'
 import SearchBar from '../components/SearchBar'
 import AboutCollaboGreen from '../components/AboutCollaboGreen'
+import FAQ from '../components/FAQ'
 
 export default function HomePage() {
     // This is the functional component for the HomePage
@@ -302,6 +303,8 @@ export default function HomePage() {
             </section>
 
             <AboutCollaboGreen />
+
+            <FAQ />
         </>
     );
 }
