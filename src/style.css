@@ -389,9 +389,82 @@ nav .contents a:nth-child(2):hover {
     color: #FA6244;
 }
 
-@media(max-width: 1291px) {
-    .contents {
-        width: 45%;
+/* FAQ Component */
+
+.faq .faq-container {
+    padding: 0 43px;
+    margin-bottom: 20px;
+}
+
+.faq .faq-questions {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.faq .faq-collapsible {
+    background-color: #FEF7B8;
+    display: flex;
+    color: #000;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: 1px solid #000;
+    border-radius: 15px;
+    text-align: left;
+    outline: none;
+    font-size: 40px;
+    font-weight: 400;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    /* Add relative positioning to the button */
+}
+
+.faq .faq-collapsible .arrow-icon {
+    width: 37px;
+    transition: transform 0.3s;
+    /* Add a smooth transition effect for the rotation */
+}
+
+/* Rotate the arrow 180 degrees when the button is in the "open" state */
+.faq .active .arrow-icon {
+    transform: rotate(180deg);
+}
+
+.faq .active {
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom: transparent;
+}
+
+.faq .faq-collapsible:hover {
+    cursor: pointer !important;
+}
+
+.faq .faq-content {
+    padding: 5px 18px;
+    display: none;
+    overflow: hidden;
+    font-size: 20px;
+    font-weight: 400;
+    background-color: #FEF7B8;
+    border-bottom: 1px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.faq .faq-content.open {
+    display: block;
+}
+
+@media(max-width: 1425px) {
+    nav .contents {
+        width: 38%;
     }
 }
 

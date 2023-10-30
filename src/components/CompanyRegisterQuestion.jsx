@@ -1,7 +1,7 @@
 import React, { useState } from 'react'; // Import React module
 import SignInSignUpButton from './SignUpLogInButton'
 
-export default function Nav() {
+export default function CompanyRegisterQuestion() {
     // This is the functional component for the navigation bar
 
     return (

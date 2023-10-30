@@ -33,7 +33,7 @@ export default function FAQ() {
         <section className='faq'>
             <div className="faq-container">
                 <div className='title'>
-                    <h2>FAQ</h2>
+                    <h2>FAQs</h2>
                 </div>
                 <div className='faq-questions'>
                     {faqData.map((item, index) => (
