@@ -1,5 +1,6 @@
 import React, { useState } from 'react'; // Import React module
 import { NavLink } from "react-router-dom"; // Import NavLink component for routing
+import SignInSignUpButton from './SignUpLogInButton'
 
 export default function Nav() {
     // This is the functional component for the navigation bar
@@ -28,8 +29,7 @@ export default function Nav() {
                         Discover Businesses
                     </NavLink>
                     <NavLink to="/signup">
-                        {/* Link to the "Sign Up/Log In" page */}
-                        Sign Up/Log In
+                        <SignInSignUpButton />
                     </NavLink>
                 </div>
             </div>

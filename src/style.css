@@ -70,7 +70,7 @@ nav .contents a:nth-child(2):hover {
     border-bottom: 2px solid #000;
 }
 
-nav .contents a:nth-child(3) {
+.sign-up-log-in-button {
     border: 1px solid #000;
     background-color: #73CDC2;
     padding: 8px 16px;
@@ -78,7 +78,7 @@ nav .contents a:nth-child(3) {
     transition: .5s ease-out;
 }
 
-nav .contents a:nth-child(3):hover {
+.sign-up-log-in-button:hover {
     background-color: #3AAC9F;
 }
 
@@ -86,4 +86,10 @@ nav .contents a:nth-child(3):hover {
     .contents {
         width: 45%;
     }
+}
+
+
+/* registration page */
+.registration-page {
+    margin-top: 100px;
 }

@@ -58,6 +58,7 @@
 .banner .banner-container .banner-search-bar input{
     width: 550px;
     height: 43px;
+    font-weight: 600;
     background-color: #B8D0FE;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
@@ -90,4 +91,77 @@
 
 .banner .banner-container .banner-search-bar button svg {
     font-size: 18px;
+}
+
+/* Categories Section */
+
+.homepage-categories .homepage-categories-container{
+    padding: 0 43px;
+}
+
+.homepage-categories .categories-card-container{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-items: center;
+    gap: 20px;
+}
+
+.homepage-categories .homepage-categories-container .title{
+    margin: 20px 0;
+}
+
+.homepage-categories .homepage-categories-container .title h2{
+    font-size: 38px;
+    font-weight: 700;
+}
+
+.homepage-categories .homepage-categories-container .categories-button {
+    margin: 20px 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.homepage-categories .homepage-categories-container .categories-button a{
+    background: #73CDC2;
+    border-radius: 15px;
+    border: 1px solid;
+    text-decoration: none;
+    padding: 10px;
+    color: #000;
+    display: flex;
+    align-items: center;
+    font-size: 21px;
+}
+
+.homepage-categories .homepage-categories-container .categories-button a svg{
+    width: 20px;
+}
+
+.homepage-categories .categories-card-image svg{
+    width: 100%;
+}
+
+.homepage-categories .categories-card-image {
+    width: 43px;
+}
+
+.homepage-categories .categories-card p {
+    font-weight: 600;
+}
+
+.homepage-categories .categories-card-container a{
+    text-decoration: none;
+    color: #000;
+}
+
+.homepage-categories .categories-card {
+    background-color: #FEF7B8;
+    border: 1px solid;
+    border-radius: 15px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    width: 260px;
+    height: 68px;
+    padding-left: 10px;
 }
