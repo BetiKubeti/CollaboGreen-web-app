@@ -5,6 +5,6 @@ export default function Nav() {
     // This is the functional component for the navigation bar
 
     return (
-        <div className='sign-up-log-in-button'>Sign Up/ Log in</div>
+        <div className='sign-up-log-in-button'>Sign Up/Log in</div>
     );
 }

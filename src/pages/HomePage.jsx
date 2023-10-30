@@ -11,6 +11,7 @@ import JavaRoast_Logo from '../assets/JavaRoast-Logo.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import CompanyRegisterQuestion from '../components/CompanyRegisterQuestion'
 import SearchBar from '../components/SearchBar'
+import AboutCollaboGreen from '../components/AboutCollaboGreen'
 
 export default function HomePage() {
     // This is the functional component for the HomePage
@@ -217,7 +218,7 @@ export default function HomePage() {
                             <div className='review-card-title'><h3>McDonalds <span>reviewed</span> Wolt</h3></div>
                             <div className='review-comment'>
                                 <p>
-                                    Our partnership with Wolt has greatly improved our food delivery experience. 
+                                    Our partnership with Wolt has greatly improved our food delivery experience.
                                     Their platform streamlines the process, ensuring our employees have access to a wide variety of options.
                                     Wolt's reliability and extensive restaurant network have been a significant asset to our corporate dining services.
                                     We look forward to continuing this partnership.
@@ -234,17 +235,16 @@ export default function HomePage() {
                                     <svg xmlns="http://www.w3.org/2000/svg" className='green-star' width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m5.825 22l1.625-7.025L2 10.25l7.2-.625L12 3l2.8 6.625l7.2.625l-5.45 4.725L18.175 22L12 18.275L5.825 22Z" /></svg>
                                     <svg xmlns="http://www.w3.org/2000/svg" className='green-star' width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m5.825 22l1.625-7.025L2 10.25l7.2-.625L12 3l2.8 6.625l7.2.625l-5.45 4.725L18.175 22L12 18.275L5.825 22Z" /></svg>
                                     <svg xmlns="http://www.w3.org/2000/svg" className='green-star' width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m5.825 22l1.625-7.025L2 10.25l7.2-.625L12 3l2.8 6.625l7.2.625l-5.45 4.725L18.175 22L12 18.275L5.825 22Z" /></svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg"  width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m5.825 22l1.625-7.025L2 10.25l7.2-.625L12 3l2.8 6.625l7.2.625l-5.45 4.725L18.175 22L12 18.275L5.825 22Z" /></svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg"  width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m5.825 22l1.625-7.025L2 10.25l7.2-.625L12 3l2.8 6.625l7.2.625l-5.45 4.725L18.175 22L12 18.275L5.825 22Z" /></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m5.825 22l1.625-7.025L2 10.25l7.2-.625L12 3l2.8 6.625l7.2.625l-5.45 4.725L18.175 22L12 18.275L5.825 22Z" /></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m5.825 22l1.625-7.025L2 10.25l7.2-.625L12 3l2.8 6.625l7.2.625l-5.45 4.725L18.175 22L12 18.275L5.825 22Z" /></svg>
                                 </div>
                             </div>
                             <div className='review-card-title'><h3>BAA <span>reviewed</span> Kampa</h3></div>
                             <div className='review-comment'>
                                 <p>
-                                    Our partnership with Wolt has greatly improved our food delivery experience.
-                                    Their platform streamlines the process, ensuring our employees have access to a wide variety of options.
-                                    Wolt's reliability and extensive restaurant network have been a significant asset to our corporate dining services.
-                                    We look forward to continuing this partnership.
+                                    The collaboration with Kampa had its challenges. 
+                                    We experienced miscommunication, delays, and differing expectations. 
+                                    There's definite room for improvement to make future collaborations more successful.
                                 </p>
                             </div>
                         </div>
@@ -265,10 +265,11 @@ export default function HomePage() {
                             <div className='review-card-title'><h3>Grundfos <span>reviewed</span> CleanDan</h3></div>
                             <div className='review-comment'>
                                 <p>
-                                    Our partnership with Wolt has greatly improved our food delivery experience.
-                                    Their platform streamlines the process, ensuring our employees have access to a wide variety of options.
-                                    Wolt's reliability and extensive restaurant network have been a significant asset to our corporate dining services.
-                                    We look forward to continuing this partnership.
+                                    I must say, I am thoroughly disappointed. The service I received fell far below my expectations.
+                                    The cleaning job was incomplete, and there were noticeable areas left untouched. 
+                                    The team's attention to detail was lacking, and it felt as though corners were cut in their work. 
+                                    Overall, my experience with CleanDan was far from satisfactory. 
+                                    I would not recommend their services and am left with a sense of dissatisfaction.
                                 </p>
                             </div>
                         </div>
@@ -289,16 +290,18 @@ export default function HomePage() {
                             <div className='review-card-title'><h3>JavaRoast <span>reviewed</span> Starbucks</h3></div>
                             <div className='review-comment'>
                                 <p>
-                                    Our partnership with Wolt has greatly improved our food delivery experience.
-                                    Their platform streamlines the process, ensuring our employees have access to a wide variety of options.
-                                    Wolt's reliability and extensive restaurant network have been a significant asset to our corporate dining services.
-                                    We look forward to continuing this partnership.
+                                    Our collaboration with Starbucks has been outstanding. 
+                                    Their commitment to excellence, professionalism, and quality are truly commendable. 
+                                    The knowledge-sharing and mutual respect have led to innovative solutions. 
+                                    We look forward to a long and prosperous partnership with Starbucks.
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+
+            <AboutCollaboGreen />
         </>
     );
 }

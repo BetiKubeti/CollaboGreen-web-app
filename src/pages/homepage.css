@@ -188,7 +188,7 @@
     font-size: 20px;
 } */
 
-/* Fresh reviews section */
+/* Fresh reviews section
 
 .fresh-reviews .fresh-reviews-container{
     padding: 0 43px;
@@ -245,4 +245,48 @@
 .fresh-reviews .review-card .review-card-image {
     width: 45px;
     height: 45px;
+} */
+
+/* About Collabo Green Component */
+
+.about-collabo-green{
+    width: 100%;
+    
+}
+
+.about-collabo-green .about-collabo-green-container{
+    background-color: #ECF6FF;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 288px;
+}
+
+.about-collabo-green  .about-collabo-green-image img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.about-collabo-green  .about-collabo-green-image {
+    width: 20%;
+}
+
+.about-collabo-green .about-collabo-green-text{
+    width: 65%;
+}
+
+.about-collabo-green .about-collabo-green-text p{
+    width: 100%;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.about-collabo-green .about-collabo-green-text p span:nth-child(1){
+    color: #73CDC2;
+}
+
+.about-collabo-green .about-collabo-green-text p span:nth-child(2) {
+    color: #FA6244;
 }
