@@ -2,6 +2,7 @@ import React from 'react'; // Import React module
 import banner_gif from '../assets/Banner-gif.gif'; // Import an image
 import SearchBar from '../components/SearchBar'; // Import the SearchBar component
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import CompanyRegisterQuestion from '../components/CompanyRegisterQuestion'
 
 export default function HomePage() {
     // This is the functional component for the HomePage
@@ -182,6 +183,8 @@ export default function HomePage() {
                     </div>
                 </div>
             </section>
+
+            <CompanyRegisterQuestion />
         </>
     );
 }
