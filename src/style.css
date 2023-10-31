@@ -14,6 +14,7 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
+    z-index: 10000;
 }
 
 nav .nav-container {
@@ -460,6 +461,73 @@ nav .contents a:nth-child(2):hover {
 
 .faq .faq-content.open {
     display: block;
+}
+
+/* SignUpLogInPage formating */
+
+.signup-login-choice {
+    margin-top: 91px;
+}
+
+.signup-login-choice-container {
+    background-color: #ECF6FF;
+    border-bottom: 2px solid #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 367px;
+    padding: 0 64px;
+}
+
+.signup-login-choice-image img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.signup-login-choice-image {
+    width: 38%;
+}
+
+.signup-login-choice-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.signup-login-choice-content .signup-login-choice-title h2 {
+    font-size: 40px;
+    font-weight: 400;
+    margin: 5px 0;
+}
+
+.signup-login-choice-content .signup-login-choice-question p {
+    font-size: 24px;
+    font-weight: 400;
+    margin: 5px 0;
+}
+
+.signup-login-choice-content .signup-login-choice-buttons {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.signup-login-choice-content .signup-login-choice-buttons a {
+    display: flex;
+    width: 142px;
+    height: 41px;
+    border: 1px solid #000;
+    border-radius: 15px;
+    background-color: #73CDC2;
+    text-decoration: none;
+    color: #000;
+    font-size: 21px;
+    font-weight: 400;
+    align-items: center;
+    justify-content: center;
 }
 
 @media(max-width: 1425px) {
