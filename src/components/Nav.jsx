@@ -28,7 +28,7 @@ export default function Nav() {
                         {/* Link to the "Discover Businesses" page */}
                         Discover Businesses
                     </NavLink>
-                    <NavLink to="/signup">
+                    <NavLink to="/enterprofile">
                         <SignInSignUpButton />
                     </NavLink>
                 </div>

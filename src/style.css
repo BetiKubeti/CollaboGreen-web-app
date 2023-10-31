@@ -463,8 +463,46 @@ nav .contents a:nth-child(2):hover {
 }
 
 @media(max-width: 1425px) {
+
+    /* Nav Component */
     nav .contents {
         width: 38%;
+    }
+
+    /* Homepage */
+    .homepage-categories .categories-card-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-items: center;
+        gap: 20px;
+    }
+
+    .about-collabo-green .about-collabo-green-image {
+        width: 23%;
+    }
+
+    .about-collabo-green .about-collabo-green-text p {
+        width: 100%;
+        font-size: 36px;
+        font-weight: 700;
+    }
+    
+    .faq .faq-collapsible {
+        background-color: #FEF7B8;
+        display: flex;
+        color: #000;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: 1px solid #000;
+        border-radius: 15px;
+        text-align: left;
+        outline: none;
+        font-size: 33px;
+        font-weight: 400;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
     }
 }
 

@@ -11,6 +11,8 @@ import { far } from '@fortawesome/free-regular-svg-icons'
 import Nav from "./components/Nav";
 import HomePage from "./pages/HomePage.jsx";
 import RegistrationPage from './pages/RegistrationPage';
+import SignInPage from './pages/SignInPage.jsx';
+import SignUpLogInPage from './pages/SignUpLogInPage.jsx';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -22,6 +24,8 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/signup" element={<RegistrationPage />} />
+          <Route path="/login" element={<SignInPage />} />
+          <Route path="/enterprofile" element={<SignUpLogInPage />} />
         </Routes>
       </main>
     </>
