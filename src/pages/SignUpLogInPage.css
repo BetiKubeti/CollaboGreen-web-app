@@ -1,4 +1,4 @@
-/* SignUpLogInPage formating */
+/* SignUpLogInPage formating
 
 .signup-login-choice{
     margin-top: 91px;
@@ -63,4 +63,60 @@
     font-weight: 400;
     align-items: center;
     justify-content: center;
+} */
+
+/* Registration page */
+
+.registration-page {
+    width: 100%;
+    height: 100vh;
+    background-color: aqua;
 }
+
+.registration-page-wrap{
+    display: flex;
+    background-color: #fff !important;
+    border: 2px solid #000;
+    border-radius: 15px;
+    position: relative;
+    top: 30%;
+    left: 30%;
+    width: 40%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.registration-page-wrap h2{
+    font-size: 40px;
+    font-weight: 400;
+}
+
+.registration-page-wrap form p {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.registration-page-wrap form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.registration-page-wrap form div{
+    width: 100%;
+}
+
+.registration-page-wrap form div button,
+.registration-page-wrap form div select,
+.registration-page-wrap form div input{
+    width: 100%;
+}
+
+/* 
+1.4
+LDD r16, Y + 1
+ANDI r16, 0b00001111
+STD Y + 1, r16
+*/

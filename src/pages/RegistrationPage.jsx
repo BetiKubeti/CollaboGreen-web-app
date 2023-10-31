@@ -42,50 +42,50 @@ const RegistrationForm = () => {
     };
 
     return (
-        <div className='registration-page'>
-            <h2>Company Registration</h2>
-            <form onSubmit={handleRegistration}>
-                <div>
-                    <label>Company Name:</label>
-                    <input type="text" value={companyName} onChange={(e) => setCompanyName(e.target.value)} />
+        <section className='registration-page'>
+            <div className='registration-page-wrap'>
+                <div className='registration-page-container'>
+                    <h2>Company Registration</h2>
+                    <form onSubmit={handleRegistration}>
+                        <p>Company Information:</p>
+                        <div>
+                            <input type="text" value={companyName} onChange={(e) => setCompanyName(e.target.value)} />
+                        </div>
+                        <div>
+                            <input type="url" value={websiteURL} onChange={(e) => setWebsiteURL(e.target.value)} />
+                        </div>
+                        <div>
+                            <select value={category} onChange={(e) => setCategory(e.target.value)}>
+                                <option value="">Select a category</option>
+                                {categories.map((cat) => (
+                                    <option key={cat} value={cat}>
+                                        {cat}
+                                    </option>
+                                ))}
+                            </select>
+                        </div>
+                        <div>
+                            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                        </div>
+                        <p>Password:</p>
+                        <div>
+                            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                        </div>
+                        <div>
+                            <input type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
+                        </div>
+                        <div>
+                            {errorMessage && (
+                                <div style={{ color: 'red' }}>{errorMessage}</div>
+                            )}
+                        </div>
+                        <div>
+                            <button type="submit">Register</button>
+                        </div>
+                    </form>
                 </div>
-                <div>
-                    <label>Website URL:</label>
-                    <input type="url" value={websiteURL} onChange={(e) => setWebsiteURL(e.target.value)} />
-                </div>
-                <div>
-                    <label>Category:</label>
-                    <select value={category} onChange={(e) => setCategory(e.target.value)}>
-                        <option value="">Select a category</option>
-                        {categories.map((cat) => (
-                            <option key={cat} value={cat}>
-                                {cat}
-                            </option>
-                        ))}
-                    </select>
-                </div>
-                <div>
-                    <label>Email:</label>
-                    <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                </div>
-                <div>
-                    <label>Create Password:</label>
-                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                </div>
-                <div>
-                    <label>Confirm Password:</label>
-                    <input type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
-                </div>
-                <div>
-                    {errorMessage && (
-                        <div style={{ color: 'red' }}>{errorMessage}</div>
-                    )}
-                </div>
-                <div>
-                    <button type="submit">Register</button>
-                </div>
-            </form>
-        </div>
+            </div>
+        </section>
     );
 };
 
