@@ -48,13 +48,13 @@ const RegistrationForm = () => {
                     <h2>Company Registration</h2>
                     <form onSubmit={handleRegistration}>
                         <p>Company Information:</p>
-                        <div>
-                            <input type="text" value={companyName} onChange={(e) => setCompanyName(e.target.value)} />
+                        <div className='input-container'>
+                            <input type="text" placeholder='Company Name' value={companyName} onChange={(e) => setCompanyName(e.target.value)} />
                         </div>
-                        <div>
-                            <input type="url" value={websiteURL} onChange={(e) => setWebsiteURL(e.target.value)} />
+                        <div className='input-container'>
+                            <input type="url" placeholder='Website URL: https://example.com' value={websiteURL} onChange={(e) => setWebsiteURL(e.target.value)} />
                         </div>
-                        <div>
+                        <div className='input-container'>
                             <select value={category} onChange={(e) => setCategory(e.target.value)}>
                                 <option value="">Select a category</option>
                                 {categories.map((cat) => (
@@ -64,22 +64,22 @@ const RegistrationForm = () => {
                                 ))}
                             </select>
                         </div>
-                        <div>
-                            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                        <div className='input-container'>
+                            <input type="email" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
                         </div>
                         <p>Password:</p>
-                        <div>
-                            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                        <div className='input-container'>
+                            <input type="password" placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} />
                         </div>
-                        <div>
-                            <input type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
+                        <div className='input-container'>
+                            <input type="password" placeholder='Confirm Password' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
                         </div>
                         <div>
                             {errorMessage && (
                                 <div style={{ color: 'red' }}>{errorMessage}</div>
                             )}
                         </div>
-                        <div>
+                        <div className='input-container'>
                             <button type="submit">Register</button>
                         </div>
                     </form>
