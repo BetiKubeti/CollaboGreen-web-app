@@ -433,7 +433,7 @@ nav .contents a:nth-child(2):hover {
     transform: rotate(180deg);
 }
 
-.faq .active {
+.faq .faq-collapsible.active {
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 0px;
