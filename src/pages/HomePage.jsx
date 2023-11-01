@@ -13,6 +13,7 @@ import CompanyRegisterQuestion from '../components/CompanyRegisterQuestion'
 import SearchBar from '../components/SearchBar'
 import AboutCollaboGreen from '../components/AboutCollaboGreen'
 import FAQ from '../components/FAQ'
+import Footer from '../components/Footer'
 
 export default function HomePage() {
     // This is the functional component for the HomePage
@@ -305,6 +306,8 @@ export default function HomePage() {
             <AboutCollaboGreen />
 
             <FAQ />
+
+            <Footer />
         </>
     );
 }
