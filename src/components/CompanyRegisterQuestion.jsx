@@ -8,7 +8,7 @@ export default function CompanyRegisterQuestion() {
         <section className='are-you-a-company'>
             <div className='title'><h2>Are you a company?</h2></div>
             <div className='button'>
-                <a href="/signup">
+                <a href="/enterprofile">
                     <SignInSignUpButton />
                 </a>
             </div>

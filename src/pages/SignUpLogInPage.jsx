@@ -1,7 +1,7 @@
 import React from 'react'; // Import React module
 
 // Import an image
-import gif3 from '../assets/gif3.gif'
+import Are_You_A_Company_Gif from '../assets/Are-You-A-Company-Gif.gif'
 
 // Import Font Awesome Icons and Components
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -28,7 +28,7 @@ export default function SignUpLogInPage() {
                         </div>
                     </div>
                     <div className='signup-login-choice-image'>
-                        <img src={gif3} alt="" />
+                        <img src={Are_You_A_Company_Gif} alt="Are You A Company Gif" />
                     </div>
                 </div>
             </section>

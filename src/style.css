@@ -476,7 +476,7 @@ nav .contents a:nth-child(2):hover {
     justify-content: space-between;
     align-items: center;
     height: 367px;
-    padding: 0 64px;
+    padding: 0 248px;
 }
 
 .signup-login-choice-image img {
@@ -824,5 +824,17 @@ nav .contents a:nth-child(2):hover {
         align-items: center;
         justify-content: space-between;
         position: relative;
+    }
+
+
+    /* SignUpLogInPage */
+    .signup-login-choice-container {
+        background-color: #ECF6FF;
+        border-bottom: 2px solid #000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 367px;
+        padding: 0 137px;
     }
 }
