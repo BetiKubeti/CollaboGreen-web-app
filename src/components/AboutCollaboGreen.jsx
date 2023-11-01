@@ -2,7 +2,6 @@ import React, { useState } from 'react'; // Import React module
 import AboutCollaboGreenGif from '../assets/About-CollaboGreen-gif.gif'
 
 export default function AboutCollaboGreen() {
-    // This is the functional component for the navigation bar
 
     return (
         <section className='about-collabo-green'>
