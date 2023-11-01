@@ -299,6 +299,23 @@
     text-decoration: underline;
 } */
 
+/* Footer */
+
+.footer-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #B8D0FE;
+    border-top: 2px solid #000;
+    padding: 16px 0;
+}
+
+.footer-container p{
+    font-size: 20px;
+    font-weight: 400;
+}
+
 /* 
 1.4
 LDD r16, Y + 1
