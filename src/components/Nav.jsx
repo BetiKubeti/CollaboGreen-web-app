@@ -1,38 +1,56 @@
-import React, { useState } from 'react'; // Import React module
-import { NavLink } from "react-router-dom"; // Import NavLink component for routing
-import SignInSignUpButton from './SignUpLogInButton'
+import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from '../../firebase';
+import { NavLink } from 'react-router-dom';
 
-export default function Nav() {
-    // This is the functional component for the navigation bar
+import SignUpLogInButton from './SignUpLogInButton';
+
+const Nav = () => {
+    const [user] = useAuthState(auth);
+
+    const handleLogOut = async () => {
+        try {
+            await auth.signOut(); // Sign the user out
+        } catch (error) {
+            console.error('Log out error:', error);
+        }
+    };
+
+    const renderProfileButton = () => {
+        if (user) {
+            // If the user is authenticated, show a "Log Out" button
+            return (
+                <>
+                    <button onClick={handleLogOut}>Log Out</button>
+                    <NavLink to="/profile">Profile</NavLink>
+                </>
+            );
+        } else {
+            // If the user is not authenticated, show a "Sign In" button
+            return (
+                <NavLink to="/enterprofile">
+                    <SignUpLogInButton />
+                </NavLink>
+            );
+        }
+    };
 
     return (
         <nav>
-            {/* Navigation section, typically used for site navigation */}
             <div className='nav-container'>
-                {/* Container for the navigation bar */}
                 <div className='logo'>
-                    {/* Logo section */}
                     <NavLink to="/">
-                        {/* NavLink component for internal links */}
                         <span>Collabo</span>Green
                     </NavLink>
-                    {/* Link to the home page with "CollaboGreen" */}
                 </div>
                 <div className='contents'>
-                    {/* Navigation contents section */}
-                    <NavLink to="/">
-                        {/* Link to the home page */}
-                        Home
-                    </NavLink>
-                    <NavLink to="/about">
-                        {/* Link to the "Discover Businesses" page */}
-                        Discover Businesses
-                    </NavLink>
-                    <NavLink to="/enterprofile">
-                        <SignInSignUpButton />
-                    </NavLink>
+                    <NavLink to="/">Home</NavLink>
+                    <NavLink to="/about">Discover Businesses</NavLink>
+                    {renderProfileButton()}
                 </div>
             </div>
         </nav>
     );
-}
+};
+
+export default Nav;
