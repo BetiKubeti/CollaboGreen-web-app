@@ -350,7 +350,7 @@ nav .contents a:nth-child(2):hover {
 
 .about-collabo-green{
     width: 100%;
-    
+    margin: 30px 0;
 }
 
 .about-collabo-green .about-collabo-green-container{
@@ -675,7 +675,7 @@ nav .contents a:nth-child(2):hover {
     border: 2px solid #000;
     border-radius: 15px;
     position: relative;
-    margin: 10% 31%;
+    margin: 11.17% 31%;
     width: 40%;
     height: fit-content;
     flex-direction: column;

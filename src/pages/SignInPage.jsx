@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { auth, firestore } from '../../firebase';
 import { doc, setDoc, getFirestore, collection, addDoc } from 'firebase/firestore';
+import Footer from '../components/Footer'
 
 const SignInForm = () => {
     const [email, setEmail] = useState('');
@@ -49,7 +50,7 @@ const SignInForm = () => {
     };
 
     return (
-        <section className='signin-page'>
+        <><section className='signin-page'>
             <div className='signin-page-wrap'>
                 <div className='registration-page-container'>
                     <h2>Sign In</h2>
@@ -59,7 +60,7 @@ const SignInForm = () => {
                         </div>
                         <div className='error-message'>
                             {emailError && <p>{emailError}</p>}
-                            </div>
+                        </div>
                         <div className='input-container'>
                             <input type="password" placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} />
                         </div>
@@ -71,12 +72,16 @@ const SignInForm = () => {
                         </div>
                     </form>
                     <div className='change-option'>
-                        <p>You already have a CollaboGreen Account?</p>
+                        <p>You don't have a CollaboGreen Account?</p>
                         <a href="/signup">Sign Up here!</a>
                     </div>
                 </div>
             </div>
         </section>
+
+        <Footer />
+        
+        </>
     );
 };
 

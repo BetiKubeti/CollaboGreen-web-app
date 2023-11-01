@@ -12,8 +12,8 @@ export default function AboutCollaboGreen() {
                 </div>
                 <div className='about-collabo-green-text'>
                     <p>
-                        CollaboGreen is an inclusive review platform where each company with profile can participate. 
-                        <span>Share your experiences</span> to empower others in making informed decisions and <span>inspire companies</span> to elevate their performance."
+                        CollaboGreen is an inclusive review platform where each company with profile can participate.
+                        <span> Share your experiences</span> to empower others in making informed decisions and <span>inspire companies</span> to elevate their performance."
                     </p>
                 </div>
             </div>

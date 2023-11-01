@@ -3,6 +3,7 @@ import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from '
 import { auth, firestore } from '../../firebase';
 import { doc, setDoc, getFirestore, collection, addDoc } from 'firebase/firestore';
 import Modal from 'react-modal';
+import Footer from '../components/Footer'
 
 const categories = ["Category 1", "Category 2", "Category 3"];
 
@@ -91,7 +92,7 @@ const RegistrationForm = () => {
     };
 
     return (
-        <section className='registration-page'>
+        <><section className='registration-page'>
             <div className='registration-page-wrap'>
                 <div className='registration-page-container'>
                     <h2>Create a free account</h2>
@@ -160,6 +161,9 @@ const RegistrationForm = () => {
                 <button onClick={() => setEmailConfirmationModalOpen(false)}>Close</button>
             </Modal>
         </section>
+        
+        <Footer />
+        </>
     );
 };
 

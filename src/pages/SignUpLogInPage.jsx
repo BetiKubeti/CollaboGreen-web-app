@@ -7,6 +7,7 @@ import gif3 from '../assets/gif3.gif'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import AboutCollaboGreen from '../components/AboutCollaboGreen'
 import FAQ from '../components/FAQ'
+import Footer from '../components/Footer';
 
 export default function SignUpLogInPage() {
 
@@ -35,6 +36,8 @@ export default function SignUpLogInPage() {
             <FAQ />
 
             <AboutCollaboGreen />
+
+            <Footer />
         </>
     );
 }
