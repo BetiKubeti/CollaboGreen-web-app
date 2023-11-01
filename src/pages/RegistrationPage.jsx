@@ -5,7 +5,7 @@ import { doc, setDoc, getFirestore, collection, addDoc } from 'firebase/firestor
 import Modal from 'react-modal';
 import Footer from '../components/Footer';
 
-const categories = ["Category 1", "Category 2", "Category 3"];
+const categories = ["Software & Technology", "Environmental & Sustainability", "Education and Training ", "Home and Garden", "Legal Services", "Professional Services", "Marketing & Advertising", "Financial Services", "Healthcare & Medical Services", "Retail & E-commerceg", "Automotive & Transportation", "Entertainment and Media", "Hospitality and Travel", "Fitness and Wellness", "Manufacturing & Industrial"];
 
 const RegistrationForm = () => {
     const [companyName, setCompanyName] = useState('');
@@ -126,7 +126,7 @@ const RegistrationForm = () => {
                             </div>
                             <div className='input-container'>
                                 <select value={category} onChange={(e) => setCategory(e.target.value)}>
-                                    <option value="" disabled defaultValue>Select a category</option>
+                                    <option value="" disabled hidden defaultValue>Select a category</option>
                                     {categories.map((cat) => (
                                         <option key={cat} value={cat}>
                                             {cat}
