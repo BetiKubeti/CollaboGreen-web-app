@@ -299,7 +299,7 @@
     text-decoration: underline;
 } */
 
-/* Footer */
+/* Footer
 
 .footer-container{
     display: flex;
@@ -314,6 +314,68 @@
 .footer-container p{
     font-size: 20px;
     font-weight: 400;
+} */
+
+
+/* Registration pop-up */
+
+#pop-up{
+    position: relative;
+    width: 575px;
+    height: 400px;
+    top: 30%;
+    left: 34%;
+    border: 2px solid #000;
+    border-radius: 15px;
+    background-color: #ECF6FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#pop-up .pop-up-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 70%;
+    height: 100%;
+}
+
+#pop-up .pop-up-container h2{
+    font-size: 40px;
+    font-weight: 400;
+}
+
+#pop-up .pop-up-container p {
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+}
+
+#pop-up .pop-up-container .buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#pop-up .pop-up-container .buttons button{
+    width: 100%;
+    background-color: #73CDC2;
+    border: 1px solid #000;
+    border-radius: 15px;
+    font-weight: 400;
+    font-size: 22px;
+    height: 46px;
+    margin: 5px 0;
+    cursor: pointer;
+    transition: .5s ease-out;
+}
+
+#pop-up .pop-up-container .buttons button:hover {
+    background-color: #3AAC9F;
 }
 
 /* 

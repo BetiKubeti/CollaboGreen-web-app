@@ -1,11 +1,23 @@
 import React, { useState } from 'react';
-import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from 'firebase/auth';
+import {
+    getAuth,
+    createUserWithEmailAndPassword,
+    sendEmailVerification,
+    updateProfile, // Import updateProfile
+} from 'firebase/auth';
 import { auth, firestore } from '../../firebase';
-import { doc, setDoc, getFirestore, collection, addDoc } from 'firebase/firestore';
+import {
+    collection,
+    addDoc,
+    serverTimestamp, // Import serverTimestamp
+    query,
+    where,
+    getDocs,
+} from 'firebase/firestore';
 import Modal from 'react-modal';
 import Footer from '../components/Footer';
 
-const categories = ["Software & Technology", "Environmental & Sustainability", "Education and Training ", "Home and Garden", "Legal Services", "Professional Services", "Marketing & Advertising", "Financial Services", "Healthcare & Medical Services", "Retail & E-commerceg", "Automotive & Transportation", "Entertainment and Media", "Hospitality and Travel", "Fitness and Wellness", "Manufacturing & Industrial"];
+const categories = ["Software & Technology", "Environmental & Sustainability", "Education and Training", "Home and Garden", "Legal Services", "Professional Services", "Marketing & Advertising", "Financial Services", "Healthcare & Medical Services", "Retail & E-commerce", "Automotive & Transportation", "Entertainment and Media", "Hospitality and Travel", "Fitness and Wellness", "Manufacturing & Industrial"];
 
 const RegistrationForm = () => {
     const [companyName, setCompanyName] = useState('');
@@ -72,19 +84,37 @@ const RegistrationForm = () => {
             return;
         }
 
-        // Proceed with registration.
+        // Check if the email is already used for registration.
+        const emailExists = await checkIfEmailExists(email);
+
+        if (emailExists) {
+            setEmailError('This email is already registered');
+            hasErrors = true;
+        }
+
+        // Proceed with registration if email and company name are not already used.
         const companyData = {
             companyName,
             websiteURL,
             category,
             email,
+            registrationDate: serverTimestamp(),
         };
 
         try {
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-            // Email verification is no longer sent here
 
-            // Your other registration code here
+            // Update the user's display name
+            await updateProfile(userCredential.user, {
+                displayName: companyName,
+            });
+
+            // Send email verification
+            await sendEmailVerification(auth.currentUser);
+
+            // Add company data to Firestore
+            const docRef = await addDoc(collection(firestore, 'companies'), companyData);
+            console.log('Registration and document creation successful. Document ID:', docRef.id);
 
             // Show the email confirmation modal
             setEmailConfirmationModalOpen(true);
@@ -92,6 +122,18 @@ const RegistrationForm = () => {
             console.error('Registration error:', error);
             // Handle registration error, e.g., display an error message.
         }
+    };
+
+    // Function to check if an email already exists in the database
+    const checkIfEmailExists = async (email) => {
+        const querySnapshot = await getDocs(query(collection(firestore, 'companies'), where('email', '==', email)));
+        return !querySnapshot.empty;
+    };
+
+    // Function to check if a company name already exists in the database
+    const checkIfCompanyNameExists = async (companyName) => {
+        const querySnapshot = await getDocs(query(collection(firestore, 'companies'), where('companyName', '==', companyName)));
+        return !querySnapshot.empty;
     };
 
     const requestEmailVerification = async () => {
@@ -166,21 +208,27 @@ const RegistrationForm = () => {
                         </div>
                     </div>
                 </div>
-        </section >
+            </section>
 
-        <Modal
-            isOpen={isEmailConfirmationModalOpen}
-            contentLabel="Email Confirmation Modal"
-        >
-            <h2>Check Your Email</h2>
-            <p>An email has been sent to you for confirmation. Please verify your email to complete the registration.</p>
-            <button onClick={() => setEmailConfirmationModalOpen(false)}>Close</button>
-            <button type="button" onClick={requestEmailVerification}>Resend Confirmation Email</button>
-        </Modal>
+            <Modal
+                isOpen={isEmailConfirmationModalOpen}
+                contentLabel="Email Confirmation Modal"
+                className="custom-modal"
+                id='pop-up'
+            >
+                <div className='pop-up-container'>
+                    <h2>Check Your Email</h2>
+                    <p>An email has been sent to you for confirmation. Please verify your email to complete the registration.</p>
+                    <div className='buttons'>
+                        <button onClick={() => setEmailConfirmationModalOpen(false)}>Close</button>
+                        <button type="button" onClick={requestEmailVerification}>Resend Confirmation Email</button>
+                    </div>
+                </div>
+            </Modal>
 
-        <Footer />
-    </>
- );
+            <Footer />
+        </>
+    );
 };
 
 export default RegistrationForm;
