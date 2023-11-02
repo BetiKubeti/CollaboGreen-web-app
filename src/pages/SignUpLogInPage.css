@@ -317,7 +317,7 @@
 } */
 
 
-/* Registration pop-up */
+/* Registration pop-up
 
 #pop-up{
     position: relative;
@@ -376,6 +376,18 @@
 
 #pop-up .pop-up-container .buttons button:hover {
     background-color: #3AAC9F;
+} */
+
+.profile-dropdown{
+    display: flex;
+    padding: 20px;
+    position: absolute;
+    top: 70px;
+    right: 50px;
+    background-color: #B8D0FE;
+    border: 2px solid #000;
+    border-radius: 15px;
+    flex-direction: column;
 }
 
 /* 

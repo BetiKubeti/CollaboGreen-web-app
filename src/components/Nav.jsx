@@ -4,6 +4,7 @@ import { auth } from '../../firebase';
 import { NavLink } from 'react-router-dom';
 
 import SignUpLogInButton from './SignUpLogInButton';
+import ProfileButton from './ProfileButton';
 
 const Nav = () => {
     const [user] = useAuthState(auth);
@@ -21,8 +22,7 @@ const Nav = () => {
             // If the user is authenticated, show a "Log Out" button
             return (
                 <>
-                    <button onClick={handleLogOut}>Log Out</button>
-                    <NavLink to="/profile">Profile</NavLink>
+                    <ProfileButton />
                 </>
             );
         } else {
