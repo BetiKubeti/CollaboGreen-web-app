@@ -1037,7 +1037,7 @@ nav .contents a:nth-child(2):hover {
 
 
     /* Discover Companies */
-    .category-lists-container{
+    .category-lists .category-lists-container{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         justify-items: center;
