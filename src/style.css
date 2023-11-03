@@ -266,6 +266,7 @@ nav .contents a:nth-child(2):hover {
     border-top: 2px solid #000;
     border-bottom: 2px solid #000;
     padding: 16px 0;
+    margin: 30px 0;
 }
 
 .are-you-a-company .title h2 {
