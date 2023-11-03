@@ -13,6 +13,7 @@ import HomePage from "./pages/HomePage.jsx";
 import RegistrationPage from './pages/RegistrationPage';
 import SignInPage from './pages/SignInPage.jsx';
 import SignUpLogInPage from './pages/SignUpLogInPage.jsx';
+import DiscoverCompanies from './pages/DiscoverCompanies.jsx'
 
 function App() {
   const [count, setCount] = useState(0);
@@ -26,6 +27,7 @@ function App() {
           <Route path="/signup" element={<RegistrationPage />} />
           <Route path="/login" element={<SignInPage />} />
           <Route path="/enterprofile" element={<SignUpLogInPage />} />
+          <Route path="/discover-companies" element={<DiscoverCompanies />} />
         </Routes>
       </main>
     </>

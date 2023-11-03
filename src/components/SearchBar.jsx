@@ -14,7 +14,7 @@ export default function SearchBar() {
     };
 
     return (
-        <div className="input-container">
+        <div className="search-bar-container">
             {/* Container for the entire search bar */}
             <form className="search-bar" action="">
                 {/* Form element with 'search-bar' class */}

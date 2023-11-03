@@ -4,36 +4,10 @@ import { auth } from '../../firebase';
 import { NavLink } from 'react-router-dom';
 
 import SignUpLogInButton from './SignUpLogInButton';
-import ProfileButton from './ProfileButton';
+import ProfileButton from './ProfileButton'; // Import the ProfileButton component
 
 const Nav = () => {
     const [user] = useAuthState(auth);
-
-    const handleLogOut = async () => {
-        try {
-            await auth.signOut(); // Sign the user out
-        } catch (error) {
-            console.error('Log out error:', error);
-        }
-    };
-
-    const renderProfileButton = () => {
-        if (user) {
-            // If the user is authenticated, show a "Log Out" button
-            return (
-                <>
-                    <ProfileButton />
-                </>
-            );
-        } else {
-            // If the user is not authenticated, show a "Sign In" button
-            return (
-                <NavLink to="/enterprofile">
-                    <SignUpLogInButton />
-                </NavLink>
-            );
-        }
-    };
 
     return (
         <nav>
@@ -45,8 +19,13 @@ const Nav = () => {
                 </div>
                 <div className='contents'>
                     <NavLink to="/">Home</NavLink>
-                    <NavLink to="/about">Discover Businesses</NavLink>
-                    {renderProfileButton()}
+                    <NavLink to="/discover-companies">Discover Businesses</NavLink>
+                    {user && <ProfileButton />} {/* Only render ProfileButton when the user is signed in */}
+                    {!user && (
+                        <NavLink to="/enterprofile">
+                            <SignUpLogInButton />
+                        </NavLink>
+                    )}
                 </div>
             </div>
         </nav>

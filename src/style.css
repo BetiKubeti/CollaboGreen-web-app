@@ -135,12 +135,12 @@ nav .contents a:nth-child(2):hover {
     width: 100%;
 }
 
-.banner .banner-container .input-container .search-bar {
+.search-bar {
     display: flex;
     align-items: center;
 }
 
-.banner .banner-container .banner-search-bar input {
+.search-bar input {
     width: 550px;
     height: 43px;
     font-weight: 600;
@@ -153,12 +153,12 @@ nav .contents a:nth-child(2):hover {
     outline: none;
 }
 
-.banner .banner-container .banner-search-bar input::placeholder {
+.search-bar input::placeholder {
     color: #7397DB;
     font-weight: 600;
 }
 
-.banner .banner-container .banner-search-bar button {
+.search-bar button {
     background-color: #73CDC2;
     border: 2px solid #000;
     border-left: 1px solid #000;
@@ -169,12 +169,12 @@ nav .contents a:nth-child(2):hover {
     outline: none;
 }
 
-.banner .banner-container .banner-search-bar button:hover {
+.search-bar button:hover {
     cursor: pointer;
     background-color: #3AAC9F;
 }
 
-.banner .banner-container .banner-search-bar button svg {
+.search-bar button svg {
     font-size: 18px;
 }
 
@@ -858,6 +858,46 @@ nav .contents a:nth-child(2):hover {
 }
 
 #pop-up .pop-up-container .buttons button:hover {
+    background-color: #3AAC9F;
+}
+
+/* Profile button */
+
+.profile-button {
+    cursor: pointer;
+    width: 50px;
+}
+
+
+.profile-button svg {
+    width: 100%;
+}
+
+.profile-dropdown {
+    display: flex;
+    padding: 20px;
+    position: absolute;
+    top: 80px;
+    right: 50px;
+    gap: 20px;
+    background-color: #B8D0FE;
+    border: 2px solid #000;
+    border-radius: 15px;
+    flex-direction: column;
+}
+
+.profile-dropdown #dropdown-button {
+    background-color: #73CDC2;
+    border: 1px solid #000;
+    border-radius: 15px;
+    font-size: 20px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: .5s ease-out;
+}
+
+.profile-dropdown #dropdown-button:hover {
     background-color: #3AAC9F;
 }
 
