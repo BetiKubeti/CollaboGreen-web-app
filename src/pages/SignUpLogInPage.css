@@ -428,11 +428,11 @@
     margin-top: 91px;
     margin-bottom: 30px;
     height: 300px;
+    width: 100%;
 }
 
 .discover-companies-header-container{
     background-color: #ECF6FF;
-    width: 100%;
     height: 100%;
     border-bottom: 2px solid #000;
     display: flex;
@@ -440,6 +440,17 @@
     align-items: flex-start;
     justify-content: center;
     padding: 0 64px;
+}
+
+.category-lists-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    gap: 20px;
+}
+
+.category-lists{
+    padding: 0 43px;
 }
 
 .category-list-card{
