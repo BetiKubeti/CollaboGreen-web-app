@@ -378,16 +378,34 @@
     background-color: #3AAC9F;
 } */
 
+.profile-button{
+    cursor: pointer;
+}
+
 .profile-dropdown{
     display: flex;
     padding: 20px;
     position: absolute;
     top: 70px;
     right: 50px;
+    gap: 20px;
     background-color: #B8D0FE;
     border: 2px solid #000;
     border-radius: 15px;
     flex-direction: column;
+}
+
+.profile-dropdown #dropdown-button{
+    background-color: #73CDC2;
+    border: 1px solid #000;
+    border-radius: 15px;
+    font-size: 20px;
+    padding: 10px;
+    text-align: center;
+}
+
+.profile-dropdown .dropdown-button:hover {
+    background-color: #3AAC9F;
 }
 
 /* 

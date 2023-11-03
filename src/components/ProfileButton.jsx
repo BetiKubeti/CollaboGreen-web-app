@@ -28,12 +28,12 @@ export default function ProfileButton() {
     return (
         <div className="profile-button" id="profileButton">
             <div id="profileButtonToggle" onClick={toggleDropdown}>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="currentColor"><path d="M16 9a4 4 0 1 1-8 0a4 4 0 0 1 8 0Zm-2 0a2 2 0 1 1-4 0a2 2 0 0 1 4 0Z" /><path d="M12 1C5.925 1 1 5.925 1 12s4.925 11 11 11s11-4.925 11-11S18.075 1 12 1ZM3 12c0 2.09.713 4.014 1.908 5.542A8.986 8.986 0 0 1 12.065 14a8.984 8.984 0 0 1 7.092 3.458A9 9 0 1 0 3 12Zm9 9a8.963 8.963 0 0 1-5.672-2.012A6.992 6.992 0 0 1 12.065 16a6.991 6.991 0 0 1 5.689 2.92A8.964 8.964 0 0 1 12 21Z" /></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10s10-4.477 10-10S17.523 2 12 2Z" /><path d="M4.271 18.346S6.5 15.5 12 15.5s7.73 2.846 7.73 2.846M12 12a3 3 0 1 0 0-6a3 3 0 0 0 0 6Z" /></g></svg>
             </div>
             {isDropdownOpen && (
                 <div className="profile-dropdown" id="profileDropdown">
-                    <NavLink to="/profile">Profile</NavLink>
-                    <button onClick={handleLogOut}>Log Out</button>
+                    <NavLink className='dropdown-button' id='dropdown-button' to="/profile">Profile</NavLink>
+                    <button className='dropdown-button' id='dropdown-button' onClick={handleLogOut}>Sign Out</button>
                 </div>
             )}
         </div>
