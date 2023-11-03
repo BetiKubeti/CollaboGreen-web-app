@@ -380,13 +380,19 @@
 
 .profile-button{
     cursor: pointer;
+    width: 50px;
+}
+
+
+.profile-button svg{
+    width: 100%;
 }
 
 .profile-dropdown{
     display: flex;
     padding: 20px;
     position: absolute;
-    top: 70px;
+    top: 80px;
     right: 50px;
     gap: 20px;
     background-color: #B8D0FE;
@@ -402,9 +408,11 @@
     font-size: 20px;
     padding: 10px;
     text-align: center;
+    cursor: pointer;
+    transition: .5s ease-out;
 }
 
-.profile-dropdown .dropdown-button:hover {
+.profile-dropdown #dropdown-button:hover {
     background-color: #3AAC9F;
 }
 
