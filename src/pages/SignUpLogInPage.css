@@ -416,6 +416,77 @@
     background-color: #3AAC9F;
 }
 
+#profileButtonToggle svg{
+    background: #73CDC2;
+    border-radius: 100px;
+}
+
+/* Discover Companies */
+
+
+.discover-companies-header{
+    margin-top: 91px;
+    margin-bottom: 30px;
+    height: 300px;
+}
+
+.discover-companies-header-container{
+    background-color: #ECF6FF;
+    width: 100%;
+    height: 100%;
+    border-bottom: 2px solid #000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0 64px;
+}
+
+.category-list-card{
+    width: 390px;
+}
+
+.category-list-card .title-container{
+    background-color: #FEF7B8;
+    border: 1px solid #000;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.category-list-card .title-container{
+    font-size: 23px;
+}
+
+.category-list-card .sub-categories{
+    background-color: #FFFBD7;
+    border: 1px solid #000;
+    border-top: 1px solid transparent;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.category-list-card .sub-categories a{
+    text-decoration: none;
+    color: #000;
+    font-size: 19px;
+    padding: 5px 0;
+    margin: 0 10px;
+}
+
+.category-list-card .sub-categories a:not(:last-child){
+    border-bottom: 1px solid #b9b9b9 ;
+}
+
+.category-list-card .title-container svg{
+    width: 42px;
+}
 
 
 /* 
