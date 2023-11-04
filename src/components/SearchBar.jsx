@@ -48,7 +48,7 @@ export default function SearchBar() {
 
     return (
         <div className="search-bar-container">
-            <form className="search-bar `search-bar-container ${showSearchResults ? 'active' : ''}`" action="">
+            <form className={`search-bar search-bar-container ${showSuggestions ? 'active' : ''}`} action="">
                 <input
                     type="text"
                     placeholder="Search for a company, category, or location..."
@@ -69,6 +69,9 @@ export default function SearchBar() {
                     </svg>
                 </button>
             </form>
+            {searchTerm && searchResults.length === 0 && (
+                <div className="no-matches">No matches</div>
+            )}
             {showSuggestions && searchResults.length > 0 && (
                 <ul className="search-results">
                     {searchResults.map((result, index) => (

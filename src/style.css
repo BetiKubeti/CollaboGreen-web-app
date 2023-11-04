@@ -210,6 +210,21 @@ nav .contents a:nth-child(2):hover {
     cursor: pointer;
 }
 
+.no-matches{
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    width: 550px;
+    background: #fff;
+    border: 2px solid #000;
+    border-top: transparent;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px ;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 1; 
+}
+
 .search-results li:last-child {
     border-bottom: none;
 }
