@@ -151,10 +151,10 @@ nav .contents a:nth-child(2):hover {
     border: 2px solid #000;
     border-right: 1px solid #000;
     outline: none;
+    font-size: 16px;
 }
 
 .search-bar input.active{
-    border-bottom: transparent;
     border-bottom-left-radius: 0px;
     border-top-right-radius: 0px;
 }
@@ -181,7 +181,7 @@ nav .contents a:nth-child(2):hover {
 }
 
 .search-bar button svg {
-    font-size: 18px;
+    width: 27px;
 }
 
 .search-bar-container {
@@ -210,19 +210,8 @@ nav .contents a:nth-child(2):hover {
     cursor: pointer;
 }
 
-.no-matches{
-    position: absolute;
-    top: 100%; 
-    left: 0;
-    width: 550px;
-    background: #fff;
-    border: 2px solid #000;
-    border-top: transparent;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px ;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    z-index: 1; 
+.search-results li:hover {
+    background-color: #ccc;
 }
 
 .search-results li:last-child {

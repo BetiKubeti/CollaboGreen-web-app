@@ -5,13 +5,20 @@ import { collection, getDocs } from 'firebase/firestore';
 
 export default function SearchBar() {
     const [searchTerm, setSearchTerm] = useState('');
-    const [searchResults, setSearchResults] = useState([]);
+    const [companyResults, setCompanyResults] = useState([]);
+    const [categoryResults, setCategoryResults] = useState([]);
     const [showSuggestions, setShowSuggestions] = useState(false); // State to control visibility of suggestions
+
+    const handleResultClick = (result) => {
+        setSearchTerm(result);
+        setShowSuggestions(false); // Hide suggestions when a result is clicked
+    };
 
     useEffect(() => {
         if (searchTerm) {
             const query = searchTerm.toLowerCase();
-            const results = [];
+            const companies = [];
+            const categories = new Set();
 
             // Use the 'firestore' instance from your 'firebase.js' file
             getDocs(collection(firestore, 'companies'))
@@ -20,23 +27,25 @@ export default function SearchBar() {
                         const data = doc.data();
                         if (data && data.companyName && data.category) {
                             // Check if the company name or category matches the query
-                            if (
-                                data.companyName.toLowerCase().includes(query) ||
-                                data.category.toLowerCase().includes(query)
-                            ) {
-                                results.push(data.companyName);
+                            if (data.companyName.toLowerCase().includes(query)) {
+                                companies.push(data.companyName);
+                            }
+                            if (data.category.toLowerCase().includes(query)) {
+                                categories.add(data.category);
                             }
                         }
                     });
 
-                    setSearchResults(results);
+                    setCompanyResults(companies);
+                    setCategoryResults(Array.from(categories));
                     setShowSuggestions(true); // Show suggestions when there are search results
                 })
                 .catch((error) => {
                     console.error('Error fetching companies:', error);
                 });
         } else {
-            setSearchResults([]); // Clear the recommendations when the search term is empty
+            setCompanyResults([]); // Clear the company recommendations when the search term is empty
+            setCategoryResults([]); // Clear the category recommendations when the search term is empty
             setShowSuggestions(false); // Hide suggestions when there are no search results
         }
     }, [searchTerm]);
@@ -48,7 +57,7 @@ export default function SearchBar() {
 
     return (
         <div className="search-bar-container">
-            <form className={`search-bar search-bar-container ${showSuggestions ? 'active' : ''}`} action="">
+            <form className='search-bar' action="">
                 <input
                     type="text"
                     placeholder="Search for a company, category, or location..."
@@ -69,14 +78,34 @@ export default function SearchBar() {
                     </svg>
                 </button>
             </form>
-            {searchTerm && searchResults.length === 0 && (
-                <div className="no-matches">No matches</div>
-            )}
-            {showSuggestions && searchResults.length > 0 && (
+            {searchTerm && (
                 <ul className="search-results">
-                    {searchResults.map((result, index) => (
-                        <li key={index}>{result}</li>
-                    ))}
+                    {companyResults.length > 0 || categoryResults.length > 0 ? (
+                        <>
+                            {companyResults.length > 0 && (
+                                <div>
+                                    <strong>Companies</strong>
+                                    {companyResults.map((company, index) => (
+                                        <li key={index} onClick={() => handleResultClick(company)}>
+                                            {company}
+                                        </li>
+                                    ))}
+                                </div>
+                            )}
+                            {categoryResults.length > 0 && (
+                                <div>
+                                    <strong>Categories</strong>
+                                    {categoryResults.map((category, index) => (
+                                        <li key={index} onClick={() => handleResultClick(category)}>
+                                            {category}
+                                        </li>
+                                    ))}
+                                </div>
+                            )}
+                        </>
+                    ) : (
+                        <div className="no-matches"></div>
+                    )}
                 </ul>
             )}
         </div>
