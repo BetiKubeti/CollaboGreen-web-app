@@ -23,15 +23,15 @@ export default function CompaniesCategoryPage() {
         const fetchCompanies = async () => {
             try {
                 const querySnapshot = await getDocs(
-                    collection(firestore, 'companies'),
-                    where('category', '==', category)
+                    collection(firestore, 'companies')
                 );
 
                 const companyData = [];
                 querySnapshot.forEach((doc) => {
                     const data = doc.data();
-                    console.log('Found:', data.category);
-                    companyData.push(data);
+                    if (data.category === category) {
+                        companyData.push(data);
+                    }
                 });
 
                 setCompanies(companyData);
@@ -40,12 +40,12 @@ export default function CompaniesCategoryPage() {
             }
         };
 
-        if (category !== '' && !fetched) {
+
+        if (category !== '') {
             fetchCompanies();
         }
 
-        setFetched(false);
-    }, [category, fetched]);
+    }, [category]);
 
     return (
         <>
