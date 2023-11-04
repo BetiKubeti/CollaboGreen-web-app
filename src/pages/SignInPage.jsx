@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 import { auth, firestore } from '../../firebase';
 import { doc, setDoc, getFirestore, collection, addDoc } from 'firebase/firestore';
 import Footer from '../components/Footer'
@@ -9,6 +10,8 @@ const SignInForm = () => {
     const [password, setPassword] = useState('');
     const [emailError, setEmailError] = useState('');
     const [passwordError, setPasswordError] = useState('');
+
+    const navigate = useNavigate();
 
     const handleSignIn = async (e) => {
         e.preventDefault();
@@ -38,6 +41,7 @@ const SignInForm = () => {
         try {
             await signInWithEmailAndPassword(auth, email, password);
             // Handle successful sign-in, e.g., redirect the user
+            navigate('/');
         } catch (error) {
             // Handle sign-in error, e.g., display an error message
             console.error('Sign-in error:', error);
