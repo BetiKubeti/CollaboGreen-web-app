@@ -1,4 +1,6 @@
 import React from 'react'; // Import React module
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from '../../firebase';
 
 // Import Font Awesome Icons and Components
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -8,6 +10,8 @@ import SearchBar from '../components/SearchBar'
 
 
 export default function SignUpLogInPage() {
+
+    const [user] = useAuthState(auth);
 
     return (
         <>
@@ -272,7 +276,10 @@ export default function SignUpLogInPage() {
                 </div>
             </section>
 
-            <CompanyRegisterQuestion />
+            {user && <div></div>}
+            {!user && (
+                <CompanyRegisterQuestion />
+            )}
 
             <Footer />
         </>

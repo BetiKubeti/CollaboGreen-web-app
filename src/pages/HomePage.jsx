@@ -1,4 +1,6 @@
 import React from 'react'; // Import React module
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from '../../firebase';
 
 // Import an image
 import banner_gif from '../assets/Banner-gif.gif'; 
@@ -17,6 +19,8 @@ import Footer from '../components/Footer'
 
 export default function HomePage() {
     // This is the functional component for the HomePage
+
+    const [user] = useAuthState(auth);
 
     return (
         <>
@@ -195,7 +199,10 @@ export default function HomePage() {
                 </div>
             </section>
 
-            <CompanyRegisterQuestion />
+            {user && <div></div>}
+            {!user && (
+                <CompanyRegisterQuestion />
+            )}
 
             <section className='fresh-reviews'>
                 <div className='fresh-reviews-container'>
