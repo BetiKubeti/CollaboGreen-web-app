@@ -9,7 +9,7 @@ import Footer from '../components/Footer';
 import SearchBar from '../components/SearchBar'
 
 
-export default function SignUpLogInPage() {
+export default function DiscoverCompanies() {
 
     const [user] = useAuthState(auth);
 

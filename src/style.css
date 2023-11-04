@@ -243,7 +243,7 @@ nav .contents a:nth-child(2):hover {
 }
 
 .homepage-categories .homepage-categories-container .categories-button {
-    margin: 20px 0;
+    margin: 20px 18px;
     display: flex;
     justify-content: flex-end;
 }
