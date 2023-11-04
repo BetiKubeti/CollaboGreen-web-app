@@ -72,6 +72,9 @@ const RegistrationForm = () => {
         if (!password) {
             setPasswordError('Please enter a password');
             hasErrors = true;
+        } else if (password.length < 6) {
+            setPasswordError('Password should be at least 6 characters');
+            hasErrors = true;
         }
 
         if (password !== confirmPassword) {

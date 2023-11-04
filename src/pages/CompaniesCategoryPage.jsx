@@ -45,7 +45,7 @@ export default function CompaniesCategoryPage() {
             <section className='discover-companies-header'>
                 <div className='discover-companies-header-container'>
                     <div className='title'>
-                        <h2>Best in {category} !</h2>
+                        <h2>Best in {category}!</h2>
                     </div>
                     <div className='search-bar-container'>
                         <p>

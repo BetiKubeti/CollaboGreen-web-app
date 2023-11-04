@@ -46,8 +46,9 @@ const SignInForm = () => {
             // Handle sign-in error, e.g., display an error message
             console.error('Sign-in error:', error);
             // You can set a specific error message based on the error code.
-            if (error.code === 'auth/user-not-found' || error.code === 'auth/wrong-password') {
+            if (error.code === 'auth/user-not-found') {
                 setEmailError('Invalid email or password');
+            } else if (error.code === 'auth/invalid-login-credentials') {
                 setPasswordError('Invalid email or password');
             }
         }
@@ -83,8 +84,8 @@ const SignInForm = () => {
             </div>
         </section>
 
-        <Footer />
-        
+            <Footer />
+
         </>
     );
 };
