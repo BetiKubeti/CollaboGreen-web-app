@@ -129,7 +129,7 @@ nav .contents a:nth-child(2):hover {
     border-radius: 15px;
 }
 
-/* banner search bar */
+/* Search Bar */
 
 .banner .banner-container .banner-search-bar {
     width: 100%;
@@ -151,6 +151,12 @@ nav .contents a:nth-child(2):hover {
     border: 2px solid #000;
     border-right: 1px solid #000;
     outline: none;
+}
+
+.search-bar input.active{
+    border-bottom: transparent;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 0px;
 }
 
 .search-bar input::placeholder {
@@ -176,6 +182,36 @@ nav .contents a:nth-child(2):hover {
 
 .search-bar button svg {
     font-size: 18px;
+}
+
+.search-bar-container {
+    position: relative;
+}
+
+.search-results {
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    width: 550px;
+    background: #fff;
+    border: 2px solid #000;
+    border-top: transparent;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px ;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 1; 
+}
+
+.search-results li {
+    list-style: none;
+    padding: 5px 0;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.search-results li:last-child {
+    border-bottom: none;
 }
 
 /* Categories Section */
