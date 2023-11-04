@@ -2,17 +2,21 @@ import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { firestore } from '../../firebase'; // Import firestore from your 'firebase.js' file
 import { collection, getDocs } from 'firebase/firestore';
+import { useNavigate } from 'react-router-dom';
 
 export default function SearchBar() {
     const [searchTerm, setSearchTerm] = useState('');
     const [companyResults, setCompanyResults] = useState([]);
     const [categoryResults, setCategoryResults] = useState([]);
     const [showSuggestions, setShowSuggestions] = useState(false); // State to control visibility of suggestions
+    const navigate = useNavigate(); // Add useNavigate hook
 
     const handleResultClick = (result) => {
         setSearchTerm(result);
         setShowSuggestions(false); // Hide suggestions when a result is clicked
     };
+
+    
 
     useEffect(() => {
         if (searchTerm) {
@@ -52,7 +56,8 @@ export default function SearchBar() {
 
     const handleSearch = () => {
         console.log('Searching for:', searchTerm);
-        // Implement your search logic here
+
+        navigate(`/companies-category/${searchTerm}`);
     };
 
     return (

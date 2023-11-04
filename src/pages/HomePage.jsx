@@ -1,4 +1,5 @@
 import React from 'react'; // Import React module
+import { Link } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../firebase';
 
@@ -128,14 +129,14 @@ export default function HomePage() {
                             </div>
                         </a>
 
-                        <a href="#">
+                        <Link to="/companies-category">
                             <div className='categories-card'>
                                 <div className='categories-card-image'>
-                                    <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="4"><path d="M42 8H20a2 2 0 0 0-2 2v22a2 2 0 0 0 2 2h22a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2ZM4 34h14V20h-7l-7 6.462V34Z" /><path stroke-linecap="round" d="M18 36a4 4 0 0 1-8 0m30 0a4 4 0 0 1-8 0" /></g></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="4"><path d="M42 8H20a2 2 0 0 0-2 2v22a2 2 0 0 0 2 2h22a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2ZM4 34h14V20h-7l-7 6.462V34Z" /><path stroke-linecap="round" d="M18 36a4 4 0 0 1-8 0m30 0a4 4 0 0 1-8 0" /></g></svg>
                                 </div>
                                 <p>Automotive & Transportation</p>
                             </div>
-                        </a>
+                        </Link>
 
                         <a href="#">
                             <div className='categories-card'>
