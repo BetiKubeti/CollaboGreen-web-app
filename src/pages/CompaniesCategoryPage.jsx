@@ -1,30 +1,25 @@
-import React, { useState, useEffect } from 'react'; // Import React module
+import React, { useState, useEffect } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth, firestore } from '../../firebase';
-import { collection, getDocs, where } from 'firebase/firestore'; // Import Firestore functions
+import { collection, getDocs, where } from 'firebase/firestore';
 import { useParams } from 'react-router-dom';
 
-
-// Import Font Awesome Icons and Components
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import CompanyRegisterQuestion from '../components/CompanyRegisterQuestion'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import CompanyRegisterQuestion from '../components/CompanyRegisterQuestion';
 import Footer from '../components/Footer';
 
 export default function CompaniesCategoryPage() {
     const [user] = useAuthState(auth);
     const [companies, setCompanies] = useState([]);
     const [fetched, setFetched] = useState(false);
-    const { category } = useParams(); // Get the category from the URL parameters
-    console.log(category);
+    const { category } = useParams();
 
     console.log('Searching for:', category);
 
     useEffect(() => {
         const fetchCompanies = async () => {
             try {
-                const querySnapshot = await getDocs(
-                    collection(firestore, 'companies')
-                );
+                const querySnapshot = await getDocs(collection(firestore, 'companies'));
 
                 const companyData = [];
                 querySnapshot.forEach((doc) => {
@@ -40,11 +35,9 @@ export default function CompaniesCategoryPage() {
             }
         };
 
-
         if (category !== '') {
             fetchCompanies();
         }
-
     }, [category]);
 
     return (
@@ -70,28 +63,34 @@ export default function CompaniesCategoryPage() {
                 </div>
 
                 <div className='company-by-category-container'>
-                    {companies.map((company, index) => (
-                        <div className='company-by-category-card' key={index}>
-                            <div className='company-info-container'>
-                                <div className='company-logo'>
-                                    {/* Your logo */}
-                                </div>
-                                <div className='company-name'>
-                                    <h3>{company.companyName}</h3>
-                                </div>
-                                {/* Other company information */}
-                            </div>
-                            <div className='connections'>
-                                <div className='social-media'>
-                                    <p>See more:</p>
-                                </div>
-                                <div className='website'>
-                                    <p>Website: {company.websiteURL}</p>
-                                </div>
-                                {/* Other connection information */}
-                            </div>
+                    {companies.length === 0 ? (
+                        <div className='no-matches'>
+                            <p>No matches found for {category}</p>
                         </div>
-                    ))}
+                    ) : (
+                        companies.map((company, index) => (
+                            <div className='company-by-category-card' key={index}>
+                                <div className='company-info-container'>
+                                    <div className='company-logo'>
+                                        {/* Your logo */}
+                                    </div>
+                                    <div className='company-name'>
+                                        <h3>{company.companyName}</h3>
+                                    </div>
+                                    {/* Other company information */}
+                                </div>
+                                <div className='connections'>
+                                    <div className='social-media'>
+                                        <p>See more:</p>
+                                    </div>
+                                    <div className='website'>
+                                        <p>Website: {company.websiteURL}</p>
+                                    </div>
+                                    {/* Other connection information */}
+                                </div>
+                            </div>
+                        ))
+                    )}
                 </div>
             </section>
 
