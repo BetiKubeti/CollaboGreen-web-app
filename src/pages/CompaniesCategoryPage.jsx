@@ -19,6 +19,8 @@ export default function CompaniesCategoryPage() {
     const [selectedLocation, setSelectedLocation] = useState(''); // State for selected location
     const locations = ["Denmark", "Germany", "USA", "Poland"]
 
+    const scrollThreshold = 117;
+
     console.log('Searching for:', category);
 
     useEffect(() => {
@@ -50,6 +52,46 @@ export default function CompaniesCategoryPage() {
         setActiveRating(rating);
     };
 
+    useEffect(() => {
+        const filtersContainer = document.querySelector('.filters-container');
+        const initialTopOffset = filtersContainer.offsetTop;
+
+        const handleScroll = () => {
+            const scrollY = window.scrollY;
+
+            if (scrollY >= initialTopOffset - scrollThreshold) {
+                filtersContainer.classList.add('sticky');
+            } else {
+                filtersContainer.classList.remove('sticky');
+            }
+
+            // Calculate the position of the closest element that should trigger the stop
+            const elementsToStopAt = document.querySelectorAll('.element-to-stop-at');
+            let closestElement = null;
+
+            elementsToStopAt.forEach((element) => {
+                if (element.offsetTop > filtersContainer.offsetTop && element.offsetTop <= scrollY + filtersContainer.offsetHeight + 80) {
+                    if (!closestElement || element.offsetTop < closestElement.offsetTop) {
+                        closestElement = element;
+                    }
+                }
+            });
+
+            // Calculate the new top offset for the filters-container based on the closest element
+            const newTopOffset = closestElement ? closestElement.offsetTop - filtersContainer.offsetHeight - 30 : scrollThreshold;
+
+            // Update the top offset
+            filtersContainer.style.top = `${newTopOffset}px`;
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+
     return (
         <>
             <section className='discover-companies-header'>
@@ -69,39 +111,41 @@ export default function CompaniesCategoryPage() {
 
             <section className='category-lists'>
                 
-                <div className='filters-container'>
-                    <div className='filter-by-rating filter'>
-                        <h3>Rating</h3>
-                        <div className='rating-filter'>
-                            <button
-                                className={activeRating === 'All' ? 'active-rating-button' : ''}
-                                onClick={() => handleRatingFilterClick('All')}
-                            >
-                                Any <svg xmlns="http://www.w3.org/2000/svg" className='green-star' width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m5.825 22l1.625-7.025L2 10.25l7.2-.625L12 3l2.8 6.625l7.2.625l-5.45 4.725L18.175 22L12 18.275L5.825 22Z" /></svg>
-                            </button>
-                            {[1, 2, 3, 4, 5].map((rating) => (
+                <div className='filters-outer-container'>
+                    <div className={`filters-container ${selectedLocation ? 'with-location' : ''}`}>
+                        <div className='filter-by-rating filter'>
+                            <h3>Rating</h3>
+                            <div className='rating-filter'>
                                 <button
-                                    key={rating}
-                                    className={activeRating === rating.toString() ? 'active-rating-button' : ''}
-                                    onClick={() => handleRatingFilterClick(rating.toString())}
+                                    className={activeRating === 'All' ? 'active-rating-button' : ''}
+                                    onClick={() => handleRatingFilterClick('All')}
                                 >
-                                    {<svg xmlns="http://www.w3.org/2000/svg" className='green-star' width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m5.825 22l1.625-7.025L2 10.25l7.2-.625L12 3l2.8 6.625l7.2.625l-5.45 4.725L18.175 22L12 18.275L5.825 22Z" /></svg>}
-                                    {rating}
+                                    Any <svg xmlns="http://www.w3.org/2000/svg" className='green-star' width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m5.825 22l1.625-7.025L2 10.25l7.2-.625L12 3l2.8 6.625l7.2.625l-5.45 4.725L18.175 22L12 18.275L5.825 22Z" /></svg>
                                 </button>
-                            ))}
-                        </div>
-                    </div>
-                    <div className='filter-by-location filter'>
-                        <h3>Location</h3>
-                        <div className='locations-filter'>
-                            <select value={selectedLocation} onChange={(e) => setSelectedLocation(e.target.value)}>
-                                <option value="" disabled hidden selected>Select a location</option>
-                                {locations.map((location) => (
-                                    <option key={location} value={location}>
-                                        {location}
-                                    </option>
+                                {[1, 2, 3, 4, 5].map((rating) => (
+                                    <button
+                                        key={rating}
+                                        className={activeRating === rating.toString() ? 'active-rating-button' : ''}
+                                        onClick={() => handleRatingFilterClick(rating.toString())}
+                                    >
+                                        {<svg xmlns="http://www.w3.org/2000/svg" className='green-star' width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m5.825 22l1.625-7.025L2 10.25l7.2-.625L12 3l2.8 6.625l7.2.625l-5.45 4.725L18.175 22L12 18.275L5.825 22Z" /></svg>}
+                                        {rating}
+                                    </button>
                                 ))}
-                            </select>
+                            </div>
+                        </div>
+                        <div className='filter-by-location filter'>
+                            <h3>Location</h3>
+                            <div className='locations-filter'>
+                                <select value={selectedLocation} onChange={(e) => setSelectedLocation(e.target.value)}>
+                                    <option value="" disabled hidden selected>Select a location</option>
+                                    {locations.map((location) => (
+                                        <option key={location} value={location}>
+                                            {location}
+                                        </option>
+                                    ))}
+                                </select>
+                            </div>
                         </div>
                     </div>
                 </div>

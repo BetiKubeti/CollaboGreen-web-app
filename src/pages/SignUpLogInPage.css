@@ -501,12 +501,20 @@
 
 /* CompaniesCategoryPage */
 
+.filters-outer-container {
+    overflow: hidden;
+}
+
 .filters-container{
     background-color: #FEF7B8;
     border: 1px solid #000;
     border-radius: 15px;
     padding: 30px;
     height: fit-content;
+}
+
+.filters-container.sticky {
+    position: fixed;
 }
 
 .filters-container .filter{
