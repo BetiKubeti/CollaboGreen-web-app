@@ -546,10 +546,6 @@
 
 .filters-container .locations-filter select{
     width: 100%;
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    -webkit-user-select: none;
-    -moz-user-select: none;
     -webkit-padding-end: 20px;
     -moz-padding-end: 20px;
     -webkit-padding-start: 2px;
