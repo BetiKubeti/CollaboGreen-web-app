@@ -358,7 +358,7 @@ nav .contents a:nth-child(2):hover {
     margin: 10px 0;
 }
 
-.fresh-reviews .review-card-rating .green-star {
+.green-star {
     color: #73CDC2;
 }
 
@@ -658,14 +658,42 @@ nav .contents a:nth-child(2):hover {
 
 .registration-page-wrap form div select {
     width: 100%;
-    outline: none;
-    height: 100%;
-    border: 1px solid #000;
-    border-radius: 15px;
-    background-color: #B8D0FE;
-    padding-left: 20px;
-    font-size: 18px;
-    color: #7397DB;
+        outline: none;
+        height: 100%;
+        border: 1px solid #000;
+        border-radius: 15px;
+        padding-left: 20px;
+        font-size: 18px;
+        -webkit-appearance: button;
+        -moz-appearance: button;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -webkit-padding-end: 20px;
+        -moz-padding-end: 20px;
+        -webkit-padding-start: 20px;
+        -moz-padding-start: 20px;
+        background-color: #fff;
+        /* Fallback color if gradients are not supported */
+        background-image: url(../images/select-arrow.png), -webkit-linear-gradient(top, #B8D0FE, #B8D0FE);
+        /* For Chrome and Safari */
+        background-image: url(../images/select-arrow.png), -moz-linear-gradient(top, #B8D0FE, #B8D0FE);
+        /* For old Firefox (3.6 to 15) */
+        background-image: url(../images/select-arrow.png), -ms-linear-gradient(top, #B8D0FE, #B8D0FE);
+        /* For pre-releases of Internet Explorer  10*/
+        background-image: url(../images/select-arrow.png), -o-linear-gradient(top, #B8D0FE, #B8D0FE);
+        /* For old Opera (11.1 to 12.0) */
+        background-image: url(../images/select-arrow.png), linear-gradient(to bottom, #B8D0FE, #B8D0FE);
+        /* Standard syntax; must be last */
+        background-position: center right;
+        background-repeat: no-repeat;
+        color: #000;
+        margin: 0;
+        overflow: hidden;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        cursor: pointer;
 }
 
 
@@ -775,17 +803,6 @@ nav .contents a:nth-child(2):hover {
 
 .signin-page-wrap form div button:hover {
     background-color: #3AAC9F;
-}
-
-.signin-page-wrap form div select {
-    width: 100%;
-    outline: none;
-    height: 100%;
-    border: 1px solid #000;
-    border-radius: 15px;
-    background-color: #B8D0FE;
-    padding-left: 20px;
-    font-size: 18px;
 }
 
 
