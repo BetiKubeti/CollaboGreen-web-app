@@ -8,6 +8,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CompanyRegisterQuestion from '../components/CompanyRegisterQuestion';
 import Footer from '../components/Footer';
 
+import LogoExample from '../assets/Logo-Image-Example.jpg'
+
 export default function CompaniesCategoryPage() {
     const [user] = useAuthState(auth);
     const [companies, setCompanies] = useState([]);
@@ -72,12 +74,24 @@ export default function CompaniesCategoryPage() {
                             <div className='company-by-category-card' key={index}>
                                 <div className='company-info-container'>
                                     <div className='company-logo'>
-                                        {/* Your logo */}
+                                        <img src={LogoExample} alt="Company Logo" />
                                     </div>
-                                    <div className='company-name'>
-                                        <h3>{company.companyName}</h3>
+                                    <div className='company-info'>
+                                        <div className='company-name'>
+                                            <h3>{company.companyName}</h3>
+                                        </div>
+                                        <div className='company-rating'>
+                                            <div className='star-rating'>
+
+                                            </div>
+                                            <div className='trust-score'>
+                                                <p>Trust Score: 4.12</p>
+                                            </div>
+                                            <div className='reviews-number'>
+                                                <p>Reviews: 12,102,123</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    {/* Other company information */}
                                 </div>
                                 <div className='connections'>
                                     <div className='social-media'>
@@ -86,7 +100,9 @@ export default function CompaniesCategoryPage() {
                                     <div className='website'>
                                         <p>Website: {company.websiteURL}</p>
                                     </div>
-                                    {/* Other connection information */}
+                                    <div className='more-reviews'>
+                                        <a href="#">Read Reviews</a>
+                                    </div>
                                 </div>
                             </div>
                         ))
