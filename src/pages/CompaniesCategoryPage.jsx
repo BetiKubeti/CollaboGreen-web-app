@@ -99,7 +99,7 @@ export default function CompaniesCategoryPage() {
                     <div className='title'>
                         <h2>Best in {category}!</h2>
                     </div>
-                    <div className='search-bar-container'>
+                    <div className='description'>
                         <p>
                             Compare the best companies in this category.
                             Sort them by rating and location.
@@ -109,7 +109,7 @@ export default function CompaniesCategoryPage() {
                 </div>
             </section>
 
-            <section className='category-lists'>
+            <section className='company-lists'>
                 
                 <div className='filters-outer-container'>
                     <div className={`filters-container ${selectedLocation ? 'with-location' : ''}`}>

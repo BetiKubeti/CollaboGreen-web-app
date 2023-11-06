@@ -979,7 +979,7 @@ nav .contents a:nth-child(2):hover {
 
 .category-lists-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     justify-items: center;
     gap: 20px;
 }

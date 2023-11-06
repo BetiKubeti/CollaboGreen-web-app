@@ -515,6 +515,7 @@
 
 .filters-container.sticky {
     position: fixed;
+    top: 117px;
 }
 
 .filters-container .filter{
@@ -584,9 +585,10 @@
     width: 100%;
 }
 
-.category-lists{
+.company-lists{
     display: flex;
     justify-content: space-between;
+    padding: 0 43px;
 }
 
 .company-list-container{

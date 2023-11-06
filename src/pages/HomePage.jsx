@@ -57,14 +57,14 @@ export default function HomePage() {
                         <h2>Select categories and explore companies</h2>
                     </div>
                     <div className='categories-card-container'>
-                        <a href="#">
+                        <Link to="/companies-category/Software & Technology">
                             <div className='categories-card'>
                                 <div className='categories-card-image'>
                                     <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 256 256"><path fill="currentColor" d="M232 168h-8V72a24 24 0 0 0-24-24H56a24 24 0 0 0-24 24v96h-8a8 8 0 0 0-8 8v16a24 24 0 0 0 24 24h176a24 24 0 0 0 24-24v-16a8 8 0 0 0-8-8ZM48 72a8 8 0 0 1 8-8h144a8 8 0 0 1 8 8v96H48Zm176 120a8 8 0 0 1-8 8H40a8 8 0 0 1-8-8v-8h192ZM152 88a8 8 0 0 1-8 8h-32a8 8 0 0 1 0-16h32a8 8 0 0 1 8 8Z" /></svg>
                                 </div>
                                 <p>Software & Technology</p>
                             </div>
-                        </a>
+                        </Link>
 
                         <a href="#">
                             <div className='categories-card'>
@@ -129,7 +129,7 @@ export default function HomePage() {
                             </div>
                         </a>
 
-                        <Link to="/companies-category">
+                        <Link to="/companies-category/Automotive & Transportation">
                             <div className='categories-card'>
                                 <div className='categories-card-image'>
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="4"><path d="M42 8H20a2 2 0 0 0-2 2v22a2 2 0 0 0 2 2h22a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2ZM4 34h14V20h-7l-7 6.462V34Z" /><path stroke-linecap="round" d="M18 36a4 4 0 0 1-8 0m30 0a4 4 0 0 1-8 0" /></g></svg>
