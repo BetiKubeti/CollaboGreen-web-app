@@ -594,6 +594,14 @@
     width: 100%;
 }
 
+.discover-companies-header-container .description{
+    width: 60%;
+}
+
+.discover-companies-header-container .description p{
+    font-size: 22px;
+}
+
 .company-lists{
     display: flex;
     justify-content: space-between;
@@ -602,6 +610,11 @@
 
 .company-list-container{
     width: 70%;
+}
+
+.company-by-category-container .no-matches p{
+    font-size: 30px;
+    font-weight: 500;
 }
 
 .company-by-category-card{

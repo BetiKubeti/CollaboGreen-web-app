@@ -1,13 +1,14 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../firebase';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom'; // Import useLocation from react-router-dom
 
 import SignUpLogInButton from './SignUpLogInButton';
 import ProfileButton from './ProfileButton'; // Import the ProfileButton component
 
 const Nav = () => {
     const [user] = useAuthState(auth);
+    const location = useLocation(); // Get the current location using useLocation
 
     return (
         <nav>
@@ -18,8 +19,8 @@ const Nav = () => {
                     </NavLink>
                 </div>
                 <div className='contents'>
-                    <NavLink to="/">Home</NavLink>
-                    <NavLink to="/discover-companies">Discover Businesses</NavLink>
+                    <NavLink to="/" className={location.pathname === '/' ? 'active-navbar-link' : ''}>Home</NavLink>
+                    <NavLink to="/discover-companies" className={location.pathname === '/discover-companies' ? 'active-navbar-link' : ''}>Discover Businesses</NavLink>
                     {user && <ProfileButton />} {/* Only render ProfileButton when the user is signed in */}
                     {!user && (
                         <NavLink to="/enterprofile">
