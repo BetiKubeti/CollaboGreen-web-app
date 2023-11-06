@@ -1038,6 +1038,24 @@ nav .contents a:nth-child(2):hover {
     width: 42px;
 }
 
+@media(max-width: 1710px){
+
+    .signup-login-choice .signup-login-choice-container {
+        background-color: #ECF6FF;
+        border-bottom: 2px solid #000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 367px;
+        padding: 0 273px;
+    }
+
+    .signup-login-choice .signup-login-choice-container .signup-login-choice-image {
+        width: 33%;
+    }
+
+}
+
 @media(max-width: 1425px) {
 
     /* Nav Component */
