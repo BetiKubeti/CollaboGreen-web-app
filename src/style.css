@@ -1049,11 +1049,6 @@ nav .contents a:nth-child(2):hover {
         height: 367px;
         padding: 0 273px;
     }
-
-    .signup-login-choice .signup-login-choice-container .signup-login-choice-image {
-        width: 33%;
-    }
-
 }
 
 @media(max-width: 1425px) {
