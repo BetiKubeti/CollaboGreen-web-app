@@ -13,7 +13,6 @@ import LogoExample from '../assets/Logo-Image-Example.jpg'
 export default function CompaniesCategoryPage() {
     const [user] = useAuthState(auth);
     const [companies, setCompanies] = useState([]);
-    const [fetched, setFetched] = useState(false);
     const { category } = useParams();
     const [activeRating, setActiveRating] = useState('All'); // State for active rating filter
     const [selectedLocation, setSelectedLocation] = useState(''); // State for selected location
@@ -34,6 +33,9 @@ export default function CompaniesCategoryPage() {
                     if (data.category === category && (activeRating === 'All' || data.rating === parseInt(activeRating))) {
                         companyData.push(data);
                     }
+                    if (data.companyName === category && (activeRating === 'All' || data.rating === parseInt(activeRating))) {
+                        companyData.push(data);
+                    }
                 });
 
                 setCompanies(companyData);
@@ -51,6 +53,21 @@ export default function CompaniesCategoryPage() {
     const handleRatingFilterClick = (rating) => {
         setActiveRating(rating);
     };
+
+    function getCategoryHeader(category) {
+        if (category) {
+            // Check if 'category' matches a company name and return the appropriate header
+            // Replace 'companyName' with the field that contains the company name in your data
+            const isCompany = companies.some(company => company.companyName === category);
+            if (isCompany) {
+                return `Companies matching the name "${category}"`;
+            }
+            else{
+                return `Best in the ${category} category!`;
+            }
+        }
+    }
+
 
     useEffect(() => {
         const filtersContainer = document.querySelector('.filters-container');
@@ -97,18 +114,18 @@ export default function CompaniesCategoryPage() {
             <section className='discover-companies-header'>
                 <div className='discover-companies-header-container'>
                     <div className='title'>
-                        <h2>Best in {category}!</h2>
+                        <h2>{category && getCategoryHeader(category)}</h2>
                     </div>
                     <div className='description'>
                         <p>
-                            Compare the best companies in this category.
+                            Compare the best companies.
                             Sort them by rating and location.
-                            Connect the best for your business.
+                            Connect with the best for your business.
                         </p>
                     </div>
                 </div>
             </section>
-
+ 
             <section className='company-lists'>
                 
                 <div className='filters-outer-container'>
@@ -218,3 +235,4 @@ export default function CompaniesCategoryPage() {
         </>
     );
 }
+
