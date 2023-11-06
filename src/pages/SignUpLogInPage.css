@@ -527,7 +527,7 @@
 
 .filters-container .filter h3{
     margin-bottom: 10px;
-    font-size: 27px;
+    font-size: 25px;
     font-weight: 700;
 }
 
@@ -614,7 +614,6 @@
 
 .company-by-category-card:hover{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    cursor: pointer;
 }
 
 .company-by-category-card .company-logo img{
@@ -624,6 +623,11 @@
 
 .company-by-category-card .company-logo{
     width: 120px;
+}
+
+.company-by-category-card .company-name h3 {
+    font-size: 25px;
+    font-weight: 700;
 }
 
 .company-by-category-card .company-info{
@@ -652,6 +656,30 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.company-by-category-card .website a{
+    text-decoration: none;
+    color: #000;
+}
+
+.company-by-category-card .more-reviews a{
+    text-decoration: none;
+    color: #000;
+    display: flex;
+    align-items: center;
+}
+
+.company-by-category-card .website a:hover{
+    text-decoration: underline;
+}
+
+.company-by-category-card .more-reviews a:hover {
+    text-decoration: underline;
+}
+
+.company-by-category-card .more-reviews a svg{
+    width: 15px;
 }
 
 /* 

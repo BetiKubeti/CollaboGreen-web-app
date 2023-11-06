@@ -179,29 +179,29 @@ export default function CompaniesCategoryPage() {
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m5.825 22l1.625-7.025L2 10.25l7.2-.625L12 3l2.8 6.625l7.2.625l-5.45 4.725L18.175 22L12 18.275L5.825 22Z" /></svg>
                                                 </div>
                                                 <div className='trust-score'>
-                                                    <p>Trust Score: 4.12</p>
+                                                    <p><strong>Trust Score:</strong> 4.12</p>
                                                 </div>
                                                 <div className='reviews-number'>
-                                                    <p>Reviews: 12,102,123</p>
+                                                    <p><strong>Reviews:</strong> 12,102,123</p>
                                                 </div>
                                             </div>
                                             <div className='location'>
-                                                <p>Location: Aarhus, Denmark</p>
+                                                <p><strong>Location:</strong> Aarhus, Denmark</p>
                                             </div>
                                             <div className='company-type'>
-                                                <p>Type of company: {category}</p>
+                                                <p><strong>Type of company:</strong> {category}</p>
                                             </div>
                                         </div>
                                     </div>
                                     <div className='connections'>
                                         <div className='social-media'>
-                                            <p>See more:</p>
+                                            <p><strong>See more:</strong></p>
                                         </div>
                                         <div className='website'>
-                                            <p>Website: <a href={company.websiteURL} target='_blank'>{company.websiteURL}</a></p>
+                                            <p><strong>Website:</strong> <a href={company.websiteURL} target='_blank'>{company.websiteURL}</a></p>
                                         </div>
                                         <div className='more-reviews'>
-                                            <a href="#">Read Reviews</a>
+                                            <a href="#"><strong>Read Reviews</strong> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><g transform="rotate(90 128 128)"><path fill="currentColor" d="M236.78 211.81A24.34 24.34 0 0 1 215.45 224H40.55a24.34 24.34 0 0 1-21.33-12.19a23.51 23.51 0 0 1 0-23.72l87.43-151.87a24.76 24.76 0 0 1 42.7 0l87.45 151.87a23.51 23.51 0 0 1-.02 23.72Z" /></g></svg></a>
                                         </div>
                                     </div>
                                 </div>
