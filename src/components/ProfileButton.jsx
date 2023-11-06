@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { auth } from '../../firebase'; // Import the auth object from your Firebase configuration file
 
 
 export default function ProfileButton() {
     // Use state to manage the dropdown visibility
     const [isDropdownOpen, setDropdownOpen] = useState(false);
+    const navigate = useNavigate();
 
     const handleLogOut = async () => {
         try {
             await auth.signOut(); // Sign the user out
+            navigate('/');
         } catch (error) {
             console.error('Log out error:', error);
         }

@@ -45,7 +45,7 @@ nav .nav-container .logo a span {
 }
 
 nav .contents {
-    width: 33%;
+    width: 38%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -517,7 +517,7 @@ nav .contents a:nth-child(2):hover {
     justify-content: space-between;
     align-items: center;
     height: 367px;
-    padding: 0 248px;
+    padding: 0 181px;
 }
 
 .signup-login-choice-image img {
@@ -1038,7 +1038,7 @@ nav .contents a:nth-child(2):hover {
 
     /* Nav Component */
     nav .contents {
-        width: 38%;
+        width: 44%;
     }
 
     /* Homepage */
@@ -1086,7 +1086,7 @@ nav .contents a:nth-child(2):hover {
         justify-content: space-between;
         align-items: center;
         height: 367px;
-        padding: 0 137px;
+        padding: 0 54px;
     }
 
 
@@ -1096,5 +1096,10 @@ nav .contents a:nth-child(2):hover {
         grid-template-columns: repeat(3, 1fr);
         justify-items: center;
         gap: 20px;
+    }
+
+    /* CompaniesCategoryPage */
+    .company-lists .company-list-container {
+        width: 67%;
     }
 }
