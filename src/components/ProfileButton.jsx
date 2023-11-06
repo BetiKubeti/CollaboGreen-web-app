@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import Modal from 'react-modal';
-import { auth } from '../../firebase';
+import { auth, firestore } from '../../firebase';
+import { collection, getDocs, deleteDoc, query, where } from 'firebase/firestore';
+
 
 Modal.setAppElement('#root');
 
@@ -25,13 +27,32 @@ export default function ProfileButton() {
 
     const confirmDeleteAccount = async () => {
         const user = auth.currentUser;
-        user.delete().then(() => {
-            // User deleted.
+
+        // Get the user's email
+        const userEmail = user.email;
+
+        try {
+            // Delete the user
+            await user.delete();
+
+            // Query for the document with the matching email
+            const companyRef = collection(firestore, 'companies');
+            const companyQuery = query(companyRef, where('email', '==', userEmail));
+            const querySnapshot = await getDocs(companyQuery);
+
+            // If the document exists, delete it
+            if (!querySnapshot.empty) {
+                const doc = querySnapshot.docs[0];
+                await deleteDoc(doc.ref);
+            }
+
+            // User and company data deleted.
             navigate('/');
-        }).catch((error) => {
+        } catch (error) {
             console.error('Delete account error:', error);
-        });
+        }
     };
+
 
     const cancelDeleteAccount = () => {
         setDeleteConfirmationOpen(false);

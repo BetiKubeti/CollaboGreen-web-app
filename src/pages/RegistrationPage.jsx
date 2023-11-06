@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
     getAuth,
     createUserWithEmailAndPassword,
@@ -17,7 +18,23 @@ import {
 import Modal from 'react-modal';
 import Footer from '../components/Footer';
 
-const categories = ["Software & Technology", "Environmental & Sustainability", "Education and Training", "Home and Garden", "Legal Services", "Professional Services", "Marketing & Advertising", "Financial Services", "Healthcare & Medical Services", "Retail & E-commerce", "Automotive & Transportation", "Entertainment and Media", "Hospitality and Travel", "Fitness and Wellness", "Manufacturing & Industrial"];
+const categories = [
+    "Software & Technology",
+    "Environmental & Sustainability",
+    "Education and Training",
+    "Home and Garden",
+    "Legal Services",
+    "Professional Services",
+    "Marketing & Advertising",
+    "Financial Services",
+    "Healthcare & Medical Services",
+    "Retail & E-commerce",
+    "Automotive & Transportation",
+    "Entertainment and Media",
+    "Hospitality and Travel",
+    "Fitness and Wellness",
+    "Manufacturing & Industrial"
+];
 
 const RegistrationForm = () => {
     const [companyName, setCompanyName] = useState('');
@@ -35,6 +52,8 @@ const RegistrationForm = () => {
     const [confirmPasswordError, setConfirmPasswordError] = useState('');
 
     const [isEmailConfirmationModalOpen, setEmailConfirmationModalOpen] = useState(false);
+
+    const navigate = useNavigate();
 
     const handleRegistration = async (e) => {
         e.preventDefault();
@@ -111,8 +130,7 @@ const RegistrationForm = () => {
             await updateProfile(userCredential.user, {
                 displayName: companyName,
             });
-
-            // Send email verification
+            
             await sendEmailVerification(auth.currentUser);
 
             // Add company data to Firestore
@@ -130,12 +148,6 @@ const RegistrationForm = () => {
     // Function to check if an email already exists in the database
     const checkIfEmailExists = async (email) => {
         const querySnapshot = await getDocs(query(collection(firestore, 'companies'), where('email', '==', email)));
-        return !querySnapshot.empty;
-    };
-
-    // Function to check if a company name already exists in the database
-    const checkIfCompanyNameExists = async (companyName) => {
-        const querySnapshot = await getDocs(query(collection(firestore, 'companies'), where('companyName', '==', companyName)));
         return !querySnapshot.empty;
     };
 
@@ -223,7 +235,7 @@ const RegistrationForm = () => {
                     <h2>Check Your Email</h2>
                     <p>An email has been sent to you for confirmation. Please verify your email to complete the registration.</p>
                     <div className='buttons'>
-                        <button onClick={() => setEmailConfirmationModalOpen(false)}>Close</button>
+                        <button onClick={() => setEmailConfirmationModalOpen(false) & navigate('/')}>Close</button>
                         <button type="button" onClick={requestEmailVerification}>Resend Confirmation Email</button>
                     </div>
                 </div>

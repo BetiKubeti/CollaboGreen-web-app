@@ -866,7 +866,7 @@ nav .contents a:nth-child(2):hover {
     width: 575px;
     height: 400px;
     top: 30%;
-    left: 34%;
+    left: 32%;
     border: 2px solid #000;
     border-radius: 15px;
     background-color: #ECF6FF;
@@ -1090,6 +1090,20 @@ nav .contents a:nth-child(2):hover {
         padding: 0 54px;
     }
 
+    /* Pop-up */
+    #pop-up {
+        position: relative;
+        width: 479px;
+        height: 334px;
+        top: 30%;
+        left: 32%;
+        border: 2px solid #000;
+        border-radius: 15px;
+        background-color: #ECF6FF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
     /* Discover Companies */
     .category-lists .category-lists-container{
