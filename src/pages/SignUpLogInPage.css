@@ -670,6 +670,10 @@
     align-items: center;
 }
 
+.company-by-category-card .more-reviews a strong{
+    margin-right: 5px;
+}
+
 .company-by-category-card .website a:hover{
     text-decoration: underline;
 }
