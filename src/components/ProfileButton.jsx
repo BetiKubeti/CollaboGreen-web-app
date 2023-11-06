@@ -1,35 +1,52 @@
 import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { auth } from '../../firebase'; // Import the auth object from your Firebase configuration file
+import Modal from 'react-modal';
+import { auth } from '../../firebase';
 
+Modal.setAppElement('#root');
 
 export default function ProfileButton() {
-    // Use state to manage the dropdown visibility
     const [isDropdownOpen, setDropdownOpen] = useState(false);
+    const [isDeleteConfirmationOpen, setDeleteConfirmationOpen] = useState(false);
     const navigate = useNavigate();
 
     const handleLogOut = async () => {
         try {
-            await auth.signOut(); // Sign the user out
+            await auth.signOut();
             navigate('/');
         } catch (error) {
             console.error('Log out error:', error);
         }
     };
 
-    // Toggle the dropdown when the button is clicked
+    const handleDeleteAccount = () => {
+        setDeleteConfirmationOpen(true);
+    };
+
+    const confirmDeleteAccount = async () => {
+        const user = auth.currentUser;
+        user.delete().then(() => {
+            // User deleted.
+            navigate('/');
+        }).catch((error) => {
+            console.error('Delete account error:', error);
+        });
+    };
+
+    const cancelDeleteAccount = () => {
+        setDeleteConfirmationOpen(false);
+    };
+
     const toggleDropdown = () => {
         setDropdownOpen(!isDropdownOpen);
     };
 
-    // Close the dropdown when clicking outside
     const handleDocumentClick = (event) => {
         if (isDropdownOpen && !event.target.closest("#profileButton")) {
             setDropdownOpen(false);
         }
     };
 
-    // Attach the document click event listener when the component mounts
     React.useEffect(() => {
         document.addEventListener("click", handleDocumentClick);
         return () => {
@@ -46,12 +63,25 @@ export default function ProfileButton() {
                 <div className="profile-dropdown" id="profileDropdown">
                     <NavLink className='dropdown-button' id='dropdown-button' to="/profile">Profile</NavLink>
                     <button className='dropdown-button' id='dropdown-button' onClick={handleLogOut}>Sign Out</button>
+                    <button className='dropdown-button' id='dropdown-button' onClick={handleDeleteAccount}>Delete Account</button>
                 </div>
             )}
+            <Modal
+                isOpen={isDeleteConfirmationOpen}
+                className="custom-modal"
+                contentLabel="Delete Confirmation Modal"
+                id='pop-up'
+            >
+                <div className='pop-up-container'>
+                    <h2>Do you really want to delete your account?</h2>
+                    <div className='buttons'>
+                        <button onClick={confirmDeleteAccount}>Delete</button>
+                        <button onClick={cancelDeleteAccount}>Cancel</button>
+                    </div>
+                </div>
+            </Modal>
         </div>
     );
 }
 
-function handleLogOut() {
-    // Implement your logout logic here
-}
+

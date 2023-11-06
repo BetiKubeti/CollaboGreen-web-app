@@ -1,6 +1,7 @@
 import React from 'react'; // Import React module
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../firebase';
+import { Link } from 'react-router-dom';
 
 // Import Font Awesome Icons and Components
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
