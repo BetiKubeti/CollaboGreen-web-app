@@ -75,6 +75,10 @@ export default function ProfiePage() {
     const openModalSidebar = () => {
         setIsModalOpenAboutCompanySidebar(true);
         setUpdatedContactEmail(contactEmail); // Initialize the input with the current "aboutCompany" value
+        setUpdatedContactPhone(contactPhone);
+        setUpdatedContactLinkedIn(contactLinkedIn);
+        setUpdatedContactFacebook(contactFacebook);
+        setUpdatedContactInstagram(contactInstagram)
     };
 
     // Function to close the modal
@@ -272,41 +276,42 @@ export default function ProfiePage() {
                 isOpen={isModalOpenAboutCompanySidebar}
                 className="custom-modal"
                 contentLabel="Edit About Company Modal"
-                id='pop-up-change-about-company'
+                id='pop-up-change-sidebar'
             >
                 <div className='pop-up-container'>
                     <h2>Edit Sidebar</h2>
-                    <input
-                        type="email"
-                        value={updatedContactEmail}
-                        onChange={(e) => setUpdatedContactEmail(e.target.value)}
-                        placeholder='Add your contact email'
-                        title="Enter a valid email address"
-                    />
-                    <input
-                        type="tel"
-                        value={updatedContactPhone}
-                        onChange={(e) => setUpdatedContactPhone(e.target.value)}
-                        placeholder='Add your contact phone'
-                    />
-                    <input
-                        type="url"
-                        value={updatedContactLinkedIn}
-                        onChange={(e) => setUpdatedContactLinkedIn(e.target.value)}
-                        placeholder='Add a link to your LinkedIn profile page'
-                    />
-                    <input
-                        type="url"
-                        value={updatedContactFacebook}
-                        onChange={(e) => setUpdatedContactFacebook(e.target.value)}
-                        placeholder='Add a link to your Facebook profile page'
-                    />
-                    <input
-                        type="url"
-                        value={updatedContactInstagram}
-                        onChange={(e) => setUpdatedContactInstagram(e.target.value)}
-                        placeholder='Add a link to your Instagram profile page'
-                    />
+                    <div className='input-fields-container'>
+                        <p>Add a contact Email:</p>
+                        <input
+                            value={updatedContactEmail}
+                            onChange={(e) => setUpdatedContactEmail(e.target.value)}
+                            placeholder='Add your contact email'
+                        />
+                        <p>Add a Phone:</p>
+                        <input
+                            value={updatedContactPhone}
+                            onChange={(e) => setUpdatedContactPhone(e.target.value)}
+                            placeholder='Add your contact phone'
+                        />
+                        <p>Add LinkedIn URL:</p>
+                        <input
+                            value={updatedContactLinkedIn}
+                            onChange={(e) => setUpdatedContactLinkedIn(e.target.value)}
+                            placeholder='Add a link to your LinkedIn profile page'
+                        />
+                        <p>Add Facebook URL:</p>
+                        <input
+                            value={updatedContactFacebook}
+                            onChange={(e) => setUpdatedContactFacebook(e.target.value)}
+                            placeholder='Add a link to your Facebook profile page'
+                        />
+                        <p>Add Instagram URL:</p>
+                        <input
+                            value={updatedContactInstagram}
+                            onChange={(e) => setUpdatedContactInstagram(e.target.value)}
+                            placeholder='Add a link to your Instagram profile page'
+                        />
+                    </div>
                     <div className='buttons'>
                         <button onClick={saveAboutCompanySidebar}>Save</button>
                         <button onClick={closeModal}>Cancel</button>

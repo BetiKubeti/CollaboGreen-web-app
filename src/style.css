@@ -1327,6 +1327,35 @@ nav .contents a:nth-child(2):hover {
         align-items: center;
     }
 
+    #pop-up-change-about-company {
+        position: relative;
+        width: 575px;
+        height: 400px;
+        top: 21%;
+        left: 28%;
+        border: 2px solid #000;
+        border-radius: 15px;
+        background-color: #ECF6FF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #pop-up-change-sidebar {
+        position: relative;
+        width: 575px;
+        height: 400px;
+        top: 18%;
+        left: 28%;
+        border: 2px solid #000;
+        border-radius: 15px;
+        background-color: #ECF6FF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 0;
+    }
+
     /* Discover Companies */
     .category-lists .category-lists-container{
         display: grid;
