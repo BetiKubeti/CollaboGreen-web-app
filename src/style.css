@@ -970,6 +970,10 @@ nav .contents a:nth-child(2):hover {
     border-radius: 100px;
 }
 
+#profileButtonToggle svg:hover {
+    background: #3AAC9F;
+}
+
 /* Discover Companies */
 
 

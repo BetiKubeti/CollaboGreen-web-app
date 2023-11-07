@@ -120,6 +120,7 @@ const RegistrationForm = () => {
             websiteURL,
             category,
             email,
+            aboutCompany,
             registrationDate: serverTimestamp(),
         };
 

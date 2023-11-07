@@ -318,7 +318,7 @@
 
 /* Registration pop-up
 
-#pop-up{
+#pop-up-change-about-company{
     position: relative;
     width: 575px;
     height: 400px;
@@ -332,7 +332,7 @@
     align-items: center;
 }
 
-#pop-up .pop-up-container{
+#pop-up-change-about-company .pop-up-container{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -341,18 +341,18 @@
     height: 100%;
 }
 
-#pop-up .pop-up-container h2{
+#pop-up-change-about-company .pop-up-container h2{
     font-size: 40px;
     font-weight: 400;
 }
 
-#pop-up .pop-up-container p {
+#pop-up-change-about-company .pop-up-container p {
     font-size: 20px;
     font-weight: 400;
     text-align: center;
 }
 
-#pop-up .pop-up-container .buttons{
+#pop-up-change-about-company .pop-up-container .buttons{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -360,7 +360,7 @@
     width: 100%;
 }
 
-#pop-up .pop-up-container .buttons button{
+#pop-up-change-about-company .pop-up-container .buttons button{
     width: 100%;
     background-color: #73CDC2;
     border: 1px solid #000;
@@ -373,7 +373,7 @@
     transition: .5s ease-out;
 }
 
-#pop-up .pop-up-container .buttons button:hover {
+#pop-up-change-about-company .pop-up-container .buttons button:hover {
     background-color: #3AAC9F;
 } */
 
@@ -700,8 +700,195 @@
     width: 15px;
 } */
 
+.profile-page-container{
+    margin-top: 117px;
+    padding: 0 43px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile-sidebar{
+    border: 1px solid #000;
+    border-radius: 15px;
+    background-color: #FEF7B8;
+    width: 20%;
+    height: 524px;
+}
+
+.profile-sidebar-container{
+    padding: 20px;
+}
+
+.profile-sidebar-container .profile-picture img{
+    width: 100%;
+    border-radius: 15px;
+}
+
+.profile-sidebar-container .profile-picture{
+    width: 156px;
+}
+
+.sidebar-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar-content{
+    width: 100%;
+}
+
+.add-contact-information-sidebar .contacts-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-contact-information-sidebar .contact {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
 
 
+.add-contact-information-sidebar .contacts-list .email img {
+    width: 20px;
+    height: 28px;
+}
+
+.add-contact-information-sidebar .contacts-list img {
+    width: 20px;
+}
+
+.add-contact-information-sidebar .contacts-list svg{
+    width: 20px;
+}
+
+.profile-page-main-data-of-company{
+    width: 75%;
+}
+
+.main-data-about-company{
+    border: 1px solid #000;
+    border-radius: 15px;
+}
+
+.main-data-about-company .about-company-title{
+    background-color: #FEF7B8;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom: 1px solid #000;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main-data-about-company .about-company-title h2{
+    font-size: 40px;
+}
+
+.main-data-about-company .about-company-title .update-information button svg{
+    width: 70%;
+}
+
+.main-data-about-company .about-company-title .update-information button {
+    width: 40px;
+    height: 40px;
+    background-color: #73CDC2;
+    border: 1px solid #000;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: .5s ease-out;
+}
+
+.main-data-about-company .about-company-title .update-information button:hover {
+    background-color: #3AAC9F;
+}
+
+.main-data-about-company .about-company-text{
+    background-color: #ECF6FF;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 10px 20px;
+}
+
+#pop-up-change-about-company {
+    position: relative;
+    width: 575px;
+    height: 400px;
+    top: 30%;
+    left: 32%;
+    border: 2px solid #000;
+    border-radius: 15px;
+    background-color: #ECF6FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#pop-up-change-about-company .pop-up-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 70%;
+    height: 100%;
+}
+
+#pop-up-change-about-company .pop-up-container h2 {
+    font-size: 40px;
+    font-weight: 400;
+}
+
+#pop-up-change-about-company .pop-up-container textarea {
+    border: 1px solid #000;
+    border-radius: 15px;
+    width: 100%;
+    height: 37%;
+    resize: none;
+    padding: 10px;
+    font-size: 14px;
+}
+
+#pop-up-change-about-company .pop-up-container p {
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+}
+
+#pop-up-change-about-company .pop-up-container .buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#pop-up-change-about-company .pop-up-container .buttons button {
+    width: 100%;
+    background-color: #73CDC2;
+    border: 1px solid #000;
+    border-radius: 15px;
+    font-weight: 400;
+    font-size: 22px;
+    height: 46px;
+    margin: 5px 0;
+    cursor: pointer;
+    transition: .5s ease-out;
+}
+
+#pop-up-change-about-company .pop-up-container .buttons button:hover {
+    background-color: #3AAC9F;
+}
+
+.main-data-about-company .about-company-text textarea{
+    background-color: transparent;
+    width: 100%;
+    height: fit-content;
+    outline: none;
+    border: none;
+    resize: none
+}
 
 /* 
 1.4
