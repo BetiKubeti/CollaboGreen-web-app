@@ -49,6 +49,8 @@ const RegistrationForm = () => {
     const [contactLinkedIn, setContactLinkedIn] = useState('');
     const [contactFacebook, setContactFacebook] = useState('');
     const [contactInstagram, setContactInstagram] = useState('');
+    const [locationCity, setLocationCity] = useState('');
+    const [locationCountry, setLocationCountry] = useState('');
 
     const [companyNameError, setCompanyNameError] = useState('');
     const [websiteURLError, setWebsiteURLError] = useState('');
@@ -132,6 +134,8 @@ const RegistrationForm = () => {
             contactLinkedIn,
             contactFacebook,
             contactInstagram,
+            locationCity,
+            locationCountry,
             registrationDate: serverTimestamp(),
         };
 
