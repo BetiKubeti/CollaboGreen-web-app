@@ -82,7 +82,7 @@ export default function ProfileButton() {
             </div>
             {isDropdownOpen && (
                 <div className="profile-dropdown" id="profileDropdown">
-                    <NavLink className='dropdown-button' id='dropdown-button' to="/profile">Profile</NavLink>
+                    <NavLink className='dropdown-button' id='dropdown-button' to="/profile" onClick={() => setDropdownOpen(false)}>Profile</NavLink>
                     <button className='dropdown-button' id='dropdown-button' onClick={handleLogOut}>Sign Out</button>
                     <button className='dropdown-button' id='dropdown-button' onClick={handleDeleteAccount}>Delete Account</button>
                 </div>
