@@ -316,7 +316,6 @@
     font-weight: 400;
 } */
 
-
 /* Registration pop-up
 
 #pop-up{
@@ -378,6 +377,8 @@
     background-color: #3AAC9F;
 } */
 
+/* Profile Button
+
 .profile-button{
     cursor: pointer;
     width: 50px;
@@ -419,7 +420,7 @@
 #profileButtonToggle svg{
     background: #73CDC2;
     border-radius: 100px;
-}
+} */
 
 /* Discover Companies
 
@@ -499,7 +500,7 @@
     width: 42px;
 } */
 
-/* CompaniesCategoryPage */
+/* CompaniesCategoryPage
 
 .filters-outer-container {
     overflow: hidden;
@@ -568,12 +569,12 @@
     -moz-padding-end: 20px;
     -webkit-padding-start: 2px;
     -moz-padding-start: 2px;
-    background-color: #fff; /* Fallback color if gradients are not supported */
-    background-image: url(../images/select-arrow.png), -webkit-linear-gradient(top, #B8D0FE, #B8D0FE); /* For Chrome and Safari */
-    background-image: url(../images/select-arrow.png), -moz-linear-gradient(top, #B8D0FE, #B8D0FE); /* For old Firefox (3.6 to 15) */
-    background-image: url(../images/select-arrow.png), -ms-linear-gradient(top, #B8D0FE, #B8D0FE); /* For pre-releases of Internet Explorer  10*/
-    background-image: url(../images/select-arrow.png), -o-linear-gradient(top, #B8D0FE, #B8D0FE); /* For old Opera (11.1 to 12.0) */
-    background-image: url(../images/select-arrow.png), linear-gradient(to bottom, #B8D0FE, #B8D0FE); /* Standard syntax; must be last */
+    background-color: #fff;  Fallback color if gradients are not supported 
+    background-image: url(../images/select-arrow.png), -webkit-linear-gradient(top, #B8D0FE, #B8D0FE); 
+    background-image: url(../images/select-arrow.png), -moz-linear-gradient(top, #B8D0FE, #B8D0FE); 
+    background-image: url(../images/select-arrow.png), -ms-linear-gradient(top, #B8D0FE, #B8D0FE); 
+    background-image: url(../images/select-arrow.png), -o-linear-gradient(top, #B8D0FE, #B8D0FE); 
+    background-image: url(../images/select-arrow.png), linear-gradient(to bottom, #B8D0FE, #B8D0FE); 
     background-position: center right;
     background-repeat: no-repeat;
     border: 2px solid #000;
@@ -697,7 +698,10 @@
 
 .company-by-category-card .more-reviews a svg{
     width: 15px;
-}
+} */
+
+
+
 
 /* 
 1.4
