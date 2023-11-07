@@ -121,6 +121,11 @@ const RegistrationForm = () => {
             category,
             email,
             aboutCompany,
+            contactEmail,
+            contactPhone,
+            contactLinkedIn,
+            contactFacebook,
+            contactInstagram,
             registrationDate: serverTimestamp(),
         };
 

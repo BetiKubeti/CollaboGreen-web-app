@@ -716,7 +716,13 @@
 }
 
 .profile-sidebar-container{
-    padding: 20px;
+    padding: 10px 20px;
+}
+
+.profile-sidebar-container .update-information{
+    display: flex;
+    flex-direction: row-reverse;
+    width: 104%;
 }
 
 .profile-sidebar-container .profile-picture img{
@@ -749,6 +755,14 @@
     gap: 5px;
 }
 
+.add-contact-information-sidebar .contact a{
+    text-decoration: none;
+    color: #000;
+}
+
+.add-contact-information-sidebar .contact a:hover {
+    text-decoration: underline;
+}
 
 .add-contact-information-sidebar .contacts-list .email img {
     width: 20px;
@@ -787,11 +801,11 @@
     font-size: 40px;
 }
 
-.main-data-about-company .about-company-title .update-information button svg{
+.update-information button svg{
     width: 70%;
 }
 
-.main-data-about-company .about-company-title .update-information button {
+.update-information button {
     width: 40px;
     height: 40px;
     background-color: #73CDC2;
@@ -801,7 +815,7 @@
     transition: .5s ease-out;
 }
 
-.main-data-about-company .about-company-title .update-information button:hover {
+.update-information button:hover {
     background-color: #3AAC9F;
 }
 

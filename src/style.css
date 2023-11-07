@@ -968,6 +968,7 @@ nav .contents a:nth-child(2):hover {
 #profileButtonToggle svg {
     background: #73CDC2;
     border-radius: 100px;
+    transition: .5s ease-out;
 }
 
 #profileButtonToggle svg:hover {
