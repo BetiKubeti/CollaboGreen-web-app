@@ -1229,6 +1229,16 @@ nav .contents a:nth-child(2):hover {
     justify-content: space-between;
 }
 
+.company-by-category-card .connections .social-media p{
+    display: flex;
+    align-items: center;
+}
+
+.company-by-category-card .connections .social-media p a svg{
+    width: 20px;
+    margin: 0 3px;
+}
+
 .company-by-category-card .website a {
     text-decoration: none;
     color: #000;
@@ -1257,7 +1267,7 @@ nav .contents a:nth-child(2):hover {
     width: 15px;
 }
 
-@media(max-width: 1425px) {
+@media(max-width: 1281px) {
 
     /* Nav Component */
     nav .contents {
@@ -1313,7 +1323,7 @@ nav .contents a:nth-child(2):hover {
     }
 
     /* Pop-up */
-    #pop-up {
+    body #pop-up {
         position: relative;
         width: 479px;
         height: 334px;
@@ -1327,7 +1337,7 @@ nav .contents a:nth-child(2):hover {
         align-items: center;
     }
 
-    #pop-up-change-about-company {
+    body #pop-up-change-about-company {
         position: relative;
         width: 575px;
         height: 400px;
@@ -1341,7 +1351,7 @@ nav .contents a:nth-child(2):hover {
         align-items: center;
     }
 
-    #pop-up-change-sidebar {
+    body #pop-up-change-sidebar {
         position: relative;
         width: 575px;
         height: 400px;
@@ -1367,5 +1377,14 @@ nav .contents a:nth-child(2):hover {
     /* CompaniesCategoryPage */
     .company-lists .company-list-container {
         width: 67%;
+    }
+
+    /* Profile side bar */
+    .profile-page-container .profile-sidebar {
+        border: 1px solid #000;
+        border-radius: 15px;
+        background-color: #FEF7B8;
+        width: 23%;
+        height: fit-content;
     }
 }

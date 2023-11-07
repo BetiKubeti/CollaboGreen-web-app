@@ -43,6 +43,12 @@ const RegistrationForm = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+    const [aboutCompany, setAboutCompany] = useState('');
+    const [contactEmail, setContactEmail] = useState('');
+    const [contactPhone, setContactPhone] = useState('');
+    const [contactLinkedIn, setContactLinkedIn] = useState('');
+    const [contactFacebook, setContactFacebook] = useState('');
+    const [contactInstagram, setContactInstagram] = useState('');
 
     const [companyNameError, setCompanyNameError] = useState('');
     const [websiteURLError, setWebsiteURLError] = useState('');

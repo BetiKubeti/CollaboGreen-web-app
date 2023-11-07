@@ -16,6 +16,7 @@ export default function ProfiePage() {
     const [user] = useAuthState(auth); // Get the currently logged-in user
     const [companyName, setCompanyName] = useState('');
     const [websiteURL, setWebsiteURL] = useState('');
+    const [email, setEmail] = useState('');
     const [aboutCompany, setAboutCompany] = useState('');
     const [contactEmail, setContactEmail] = useState('');
     const [contactPhone, setContactPhone] = useState('');
@@ -50,6 +51,7 @@ export default function ProfiePage() {
                         const companyData = docRef.data();
                         setCompanyName(companyData.companyName);
                         setWebsiteURL(companyData.websiteURL);
+                        setEmail(companyData.email);
                         setAboutCompany(companyData.aboutCompany);
                         setContactEmail(companyData.contactEmail);
                         setContactPhone(companyData.contactPhone);
@@ -180,13 +182,13 @@ export default function ProfiePage() {
                                 <p>(Sub-categories here)</p>
                             </div>
                             <div className='add-contact-information-sidebar'>
-                                <p><strong>Contact Us:</strong></p>
+                                <p><strong>Contact Info:</strong></p>
                                 <div className='contacts-list'>
-                                    {contactEmail && (
-                                        <div className='email contact'>
-                                            <img src={MailImageSidebar} alt="image for mail" />{contactEmail}
-                                        </div>
-                                    )}
+                                    <div className='email contact'>
+                                        <img src={MailImageSidebar} alt="image for mail" />
+                                        {updatedContactEmail || email}
+                                    </div>
+
                                     {contactPhone && (
                                         <div className='phone contact'>
                                             <img src={PhoneImageSidebar} alt="image for phone" />{contactPhone}
@@ -213,6 +215,12 @@ export default function ProfiePage() {
                                 </div>
 
                             </div>
+
+                            <div className='company-location-sidebar'>
+                                <p><strong>Location:</strong> <br /></p>
+                                <p>Aarhus, Denmark</p>
+                            </div>
+
                             <div className='company-website-sidebar'>
                                 <p><strong>Visit Website:</strong> <br /></p>
                                 <a href={websiteURL} target='_blank'>{websiteURL}</a>
@@ -281,7 +289,7 @@ export default function ProfiePage() {
                 <div className='pop-up-container'>
                     <h2>Edit Sidebar</h2>
                     <div className='input-fields-container'>
-                        <p>Add a contact Email:</p>
+                        <p>Change your contact Email:</p>
                         <input
                             value={updatedContactEmail}
                             onChange={(e) => setUpdatedContactEmail(e.target.value)}
