@@ -1272,6 +1272,325 @@ nav .contents a:nth-child(2):hover {
     width: 15px;
 }
 
+/* Profile page */
+
+.profile-page-container {
+    margin-top: 117px;
+    padding: 0 43px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile-sidebar {
+    border: 1px solid #000;
+    border-radius: 15px;
+    background-color: #FEF7B8;
+    width: 20%;
+    height: fit-content;
+}
+
+.profile-sidebar-container {
+    padding: 10px 20px;
+}
+
+.profile-sidebar-container .update-information {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 104%;
+}
+
+.profile-sidebar-container .profile-picture img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.profile-sidebar-container .profile-picture {
+    width: 156px;
+}
+
+.sidebar-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.sidebar-content {
+    width: 100%;
+}
+
+.add-contact-information-sidebar {
+    margin: 10px 0;
+}
+
+.add-contact-information-sidebar .contacts-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-contact-information-sidebar .contact {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 3px 0;
+}
+
+.add-contact-information-sidebar .contact a {
+    text-decoration: none;
+    color: #000;
+}
+
+.add-contact-information-sidebar .contact a:hover {
+    text-decoration: underline;
+}
+
+.add-contact-information-sidebar .contacts-list .email img {
+    width: 20px;
+    height: 28px;
+}
+
+.add-contact-information-sidebar .contacts-list img {
+    width: 20px;
+}
+
+.add-contact-information-sidebar .contacts-list svg {
+    width: 20px;
+}
+
+.company-website-sidebar {
+    margin: 10px 0;
+}
+
+.company-website-sidebar a {
+    text-decoration: none;
+    color: #000;
+}
+
+.company-website-sidebar a:hover {
+    text-decoration: underline;
+}
+
+.profile-page-main-data-of-company {
+    width: 75%;
+}
+
+.main-data-about-company {
+    border: 1px solid #000;
+    border-radius: 15px;
+}
+
+.main-data-about-company .about-company-title {
+    background-color: #FEF7B8;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom: 1px solid #000;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main-data-about-company .about-company-title h2 {
+    font-size: 40px;
+}
+
+.update-information button svg {
+    width: 70%;
+}
+
+.update-information button {
+    width: 40px;
+    height: 40px;
+    background-color: #73CDC2;
+    border: 1px solid #000;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: .5s ease-out;
+}
+
+.update-information button:hover {
+    background-color: #3AAC9F;
+}
+
+.main-data-about-company .about-company-text {
+    background-color: #ECF6FF;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 10px 20px;
+}
+
+#pop-up-change-about-company {
+    position: relative;
+    width: 575px;
+    height: 400px;
+    top: 30%;
+    left: 32%;
+    border: 2px solid #000;
+    border-radius: 15px;
+    background-color: #ECF6FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#pop-up-change-about-company .pop-up-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 70%;
+    height: 100%;
+}
+
+#pop-up-change-about-company .pop-up-container h2 {
+    font-size: 40px;
+    font-weight: 400;
+}
+
+#pop-up-change-about-company .pop-up-container textarea {
+    border: 1px solid #000;
+    border-radius: 15px;
+    width: 100%;
+    height: 37%;
+    resize: none;
+    padding: 10px;
+    font-size: 14px;
+}
+
+#pop-up-change-about-company .pop-up-container p {
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+}
+
+#pop-up-change-about-company .pop-up-container .buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#pop-up-change-about-company .pop-up-container .buttons button {
+    width: 100%;
+    background-color: #73CDC2;
+    border: 1px solid #000;
+    border-radius: 15px;
+    font-weight: 400;
+    font-size: 22px;
+    height: 46px;
+    margin: 5px 0;
+    cursor: pointer;
+    transition: .5s ease-out;
+}
+
+#pop-up-change-about-company .pop-up-container .buttons button:hover {
+    background-color: #3AAC9F;
+}
+
+#pop-up-change-sidebar {
+    position: relative;
+    width: 575px;
+    height: 400px;
+    top: 24%;
+    left: 32%;
+    border: 2px solid #000;
+    border-radius: 15px;
+    background-color: #ECF6FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+#pop-up-change-sidebar .pop-up-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 70%;
+    height: 100%;
+}
+
+#pop-up-change-sidebar .pop-up-container h2 {
+    font-size: 40px;
+    font-weight: 400;
+}
+
+#pop-up-change-sidebar .pop-up-container .input-fields-container {
+    max-height: 400px;
+    overflow-x: auto;
+    width: 100%;
+    margin: 20px 0;
+}
+
+#pop-up-change-sidebar .pop-up-container .input-fields-container .subcategory-check input{
+    display: none;
+}
+
+#pop-up-change-sidebar .pop-up-container .input-fields-container .subcategory-check-container{
+    height: fit-content;
+    display: inline-block;
+    overflow: hidden;
+}
+
+
+#pop-up-change-sidebar .pop-up-container .input-fields-container .subcategory-check{
+    background-color: #73CDC2;
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    width: fit-content;
+    height: fit-content;
+    margin: 5px;
+}
+
+#pop-up-change-sidebar .pop-up-container .input-fields-container .subcategory-check label{
+    cursor: pointer;
+}
+
+#pop-up-change-sidebar .pop-up-container input {
+    border: 1px solid #000;
+    border-radius: 10px;
+    width: 94%;
+    padding: 10px;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+#pop-up-change-sidebar .pop-up-container p {
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+#pop-up-change-sidebar .pop-up-container .buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#pop-up-change-sidebar .pop-up-container .buttons button {
+    width: 100%;
+    background-color: #73CDC2;
+    border: 1px solid #000;
+    border-radius: 15px;
+    font-weight: 400;
+    font-size: 22px;
+    height: 46px;
+    margin: 5px 0;
+    cursor: pointer;
+    transition: .5s ease-out;
+}
+
+#pop-up-change-sidebar .pop-up-container .buttons button:hover {
+    background-color: #3AAC9F;
+}
+
 @media(max-width: 1281px) {
 
     /* Nav Component */

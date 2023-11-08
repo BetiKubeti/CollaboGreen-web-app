@@ -14,6 +14,7 @@ import PhoneImageSidebar from '../assets/Phone-Image-Sidebar.png';
 
 export default function ProfiePage() {
     const [user] = useAuthState(auth); // Get the currently logged-in user
+    const [companyData, setCompanyData] = useState(null);
     const [companyName, setCompanyName] = useState('');
     const [websiteURL, setWebsiteURL] = useState('');
     const [email, setEmail] = useState('');
@@ -25,6 +26,7 @@ export default function ProfiePage() {
     const [contactInstagram, setContactInstagram] = useState('');
     const [locationCity, setLocationCity] = useState('');
     const [locationCountry, setLocationCountry] = useState('');
+    const [subcategories, setSubcategories] = useState([]);
 
     // State for controlling the modal
     const [isModalOpenAboutCompany, setIsModalOpenAboutCompany] = useState(false);
@@ -37,6 +39,8 @@ export default function ProfiePage() {
     const [updatedContactInstagram, setUpdatedContactInstagram] = useState('');
     const [updatedLocationCity, setUpdatedLocationCity] = useState('');
     const [updatedLocationCountry, setUpdatedLocationCountry] = useState('');
+
+    const [selectedSubcategories, setSelectedSubcategories] = useState([]);
 
 
     // Use `useEffect` to fetch the company data when the component mounts
@@ -53,6 +57,7 @@ export default function ProfiePage() {
                         const docRef = querySnapshot.docs[0];
                         // Get the company data from the document
                         const companyData = docRef.data();
+                        setCompanyData(companyData);
                         setCompanyName(companyData.companyName);
                         setWebsiteURL(companyData.websiteURL);
                         setEmail(companyData.email);
@@ -64,6 +69,7 @@ export default function ProfiePage() {
                         setContactInstagram(companyData.contactInstagram);
                         setLocationCity(companyData.locationCity);
                         setLocationCountry(companyData.locationCountry);
+                        setSubcategories(companyData.subcategories || [])
                     } else {
                         console.log('No matching documents for the user email.');
                     }
@@ -89,6 +95,7 @@ export default function ProfiePage() {
         setUpdatedContactInstagram(contactInstagram);
         setUpdatedLocationCity(locationCity);
         setUpdatedLocationCountry(locationCountry);
+        setSelectedSubcategories(subcategories)
     };
 
     // Function to close the modal
@@ -149,7 +156,8 @@ export default function ProfiePage() {
                         contactFacebook: updatedContactFacebook,
                         contactInstagram: updatedContactInstagram,
                         locationCity: updatedLocationCity,
-                        locationCountry: updatedLocationCountry
+                        locationCountry: updatedLocationCountry,
+                        subcategories: selectedSubcategories
                     });
                     setContactEmail(updatedContactEmail); // Update the displayed value
                     setContactPhone(updatedContactPhone);
@@ -157,7 +165,8 @@ export default function ProfiePage() {
                     setContactFacebook(updatedContactFacebook);
                     setContactInstagram(updatedContactInstagram);
                     setLocationCity(updatedLocationCity);
-                    setLocationCountry(updatedLocationCountry)
+                    setLocationCountry(updatedLocationCountry);
+                    setSelectedSubcategories(selectedSubcategories)
                 } else {
                     console.log('No matching documents for the user email.');
                 }
@@ -166,10 +175,18 @@ export default function ProfiePage() {
             }
         }
 
-        
-
         // Close the modal
         setIsModalOpenAboutCompanySidebar(false);
+    };
+
+    const handleSubcategorySelection = (subcategory) => {
+        setSelectedSubcategories(prevSubcategories => {
+            if (prevSubcategories.includes(subcategory)) {
+                return prevSubcategories.filter(sc => sc !== subcategory);
+            } else {
+                return [...prevSubcategories, subcategory];
+            }
+        });
     };
 
     return (
@@ -191,7 +208,7 @@ export default function ProfiePage() {
                         <div className='sidebar-content'>
                             <div className='company-sub-categories-sidebar'>
                                 <p><strong>We do:</strong></p>
-                                <p>(Sub-categories here)</p>
+                                <p>{subcategories.join(', ')}</p>
                             </div>
                             <div className='add-contact-information-sidebar'>
                                 <p><strong>Contact Info:</strong></p>
@@ -306,6 +323,42 @@ export default function ProfiePage() {
                 <div className='pop-up-container'>
                     <h2>Edit Sidebar</h2>
                     <div className='input-fields-container'>
+                        <p>Select Subcategories:</p>
+                        <div className='subcategory-check-container'>
+                            {companyData && (() => {
+                                switch (companyData.category) {
+                                    case 'Automotive & Transportation':
+                                        return ['Car Dealership', 'Transportation Services', 'Automotive Manufacturers'].map(subcategory => (
+                                            <div key={subcategory} className='subcategory-check'>
+                                                <input
+                                                    type="checkbox"
+                                                    id='subcategory_checkbox'
+                                                    checked={selectedSubcategories.includes(subcategory)}
+                                                    onChange={() => handleSubcategorySelection(subcategory)}
+                                                />
+                                                <label htmlFor="subcategory_checkbox">{subcategory}</label>
+                                            </div>
+                                        ));
+                                    case 'Professional Services':
+                                        return ['HR and Recruitment', 'Management Consulting'].map(subcategory => (
+                                            
+                                                <div key={subcategory} className='subcategory-check'>
+                                                    <input
+                                                        type="checkbox"
+                                                        id='subcategory_checkbox'
+                                                        checked={selectedSubcategories.includes(subcategory)}
+                                                        onChange={() => handleSubcategorySelection(subcategory)}
+                                                    />
+                                                    <label htmlFor="subcategory_checkbox">{subcategory}</label>
+                                                </div>
+                                            
+                                        ));
+                                    // Add more cases as needed...
+                                    default:
+                                        return null;
+                                }
+                            })()}
+                        </div>
                         <p>Change your contact Email:</p>
                         <input
                             value={updatedContactEmail}
