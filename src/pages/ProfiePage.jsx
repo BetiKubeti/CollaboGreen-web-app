@@ -23,6 +23,8 @@ export default function ProfiePage() {
     const [contactLinkedIn, setContactLinkedIn] = useState('');
     const [contactFacebook, setContactFacebook] = useState('');
     const [contactInstagram, setContactInstagram] = useState('');
+    const [locationCity, setLocationCity] = useState('');
+    const [locationCountry, setLocationCountry] = useState('');
 
     // State for controlling the modal
     const [isModalOpenAboutCompany, setIsModalOpenAboutCompany] = useState(false);
@@ -33,6 +35,8 @@ export default function ProfiePage() {
     const [updatedContactLinkedIn, setUpdatedContactLinkedIn] = useState('');
     const [updatedContactFacebook, setUpdatedContactFacebook] = useState('');
     const [updatedContactInstagram, setUpdatedContactInstagram] = useState('');
+    const [updatedLocationCity, setUpdatedLocationCity] = useState('');
+    const [updatedLocationCountry, setUpdatedLocationCountry] = useState('');
 
 
     // Use `useEffect` to fetch the company data when the component mounts
@@ -58,6 +62,8 @@ export default function ProfiePage() {
                         setContactLinkedIn(companyData.contactLinkedIn);
                         setContactFacebook(companyData.contactFacebook);
                         setContactInstagram(companyData.contactInstagram);
+                        setLocationCity(companyData.locationCity);
+                        setLocationCountry(companyData.locationCountry);
                     } else {
                         console.log('No matching documents for the user email.');
                     }
@@ -80,7 +86,9 @@ export default function ProfiePage() {
         setUpdatedContactPhone(contactPhone);
         setUpdatedContactLinkedIn(contactLinkedIn);
         setUpdatedContactFacebook(contactFacebook);
-        setUpdatedContactInstagram(contactInstagram)
+        setUpdatedContactInstagram(contactInstagram);
+        setUpdatedLocationCity(locationCity);
+        setUpdatedLocationCountry(locationCountry);
     };
 
     // Function to close the modal
@@ -140,12 +148,16 @@ export default function ProfiePage() {
                         contactLinkedIn: updatedContactLinkedIn,
                         contactFacebook: updatedContactFacebook,
                         contactInstagram: updatedContactInstagram,
+                        locationCity: updatedLocationCity,
+                        locationCountry: updatedLocationCountry
                     });
                     setContactEmail(updatedContactEmail); // Update the displayed value
                     setContactPhone(updatedContactPhone);
                     setContactLinkedIn(updatedContactLinkedIn);
                     setContactFacebook(updatedContactFacebook);
                     setContactInstagram(updatedContactInstagram);
+                    setLocationCity(updatedLocationCity);
+                    setLocationCountry(updatedLocationCountry)
                 } else {
                     console.log('No matching documents for the user email.');
                 }
@@ -218,7 +230,12 @@ export default function ProfiePage() {
 
                             <div className='company-location-sidebar'>
                                 <p><strong>Location:</strong> <br /></p>
-                                <p>Aarhus, Denmark</p>
+                                <p>
+                                    {locationCity && locationCountry
+                                        ? `${locationCity}, ${locationCountry}`
+                                        : locationCity || locationCountry
+                                    }
+                                </p>
                             </div>
 
                             <div className='company-website-sidebar'>
@@ -318,6 +335,18 @@ export default function ProfiePage() {
                             value={updatedContactInstagram}
                             onChange={(e) => setUpdatedContactInstagram(e.target.value)}
                             placeholder='Add a link to your Instagram profile page'
+                        />
+                        <p>Add a City:</p>
+                        <input
+                            value={updatedLocationCity}
+                            onChange={(e) => setUpdatedLocationCity(e.target.value)}
+                            placeholder='Add a city location'
+                        />
+                        <p>Add a Country:</p>
+                        <input
+                            value={updatedLocationCountry}
+                            onChange={(e) => setUpdatedLocationCountry(e.target.value)}
+                            placeholder='Add a country'
                         />
                     </div>
                     <div className='buttons'>

@@ -20,6 +20,8 @@ export default function CompaniesCategoryPage() {
     const [contactLinkedIn, setContactLinkedIn] = useState('');
     const [contactFacebook, setContactFacebook] = useState('');
     const [contactInstagram, setContactInstagram] = useState('');
+    const [locationCity, setLocationCity] = useState('');
+    const [locationCountry, setLocationCountry] = useState('');
 
     const locations = ["Denmark", "Germany", "USA", "Poland"]
 
@@ -208,7 +210,13 @@ export default function CompaniesCategoryPage() {
                                                 </div>
                                             </div>
                                             <div className='location'>
-                                                <p><strong>Location:</strong> Aarhus, Denmark</p>
+                                                <p><strong>Location:</strong> <br /></p>
+                                                <p>
+                                                    {company.locationCity && company.locationCountry
+                                                        ? `${company.locationCity}, ${company.locationCountry}`
+                                                        : company.locationCity || company.locationCountry
+                                                    }
+                                                </p>
                                             </div>
                                             <div className='company-type'>
                                                 <p><strong>Type of company:</strong> {category}</p>
