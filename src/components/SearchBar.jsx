@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { firestore } from '../../firebase'; // Import firestore from your 'firebase.js' file
+import { firestore } from '../../firebase';
 import { collection, getDocs } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 
@@ -8,6 +8,7 @@ export default function SearchBar() {
     const [searchTerm, setSearchTerm] = useState('');
     const [companyResults, setCompanyResults] = useState([]);
     const [categoryResults, setCategoryResults] = useState([]);
+    const [locationResults, setLocationResults] = useState([]);
     const [showSuggestions, setShowSuggestions] = useState(false); // State to control visibility of suggestions
     const navigate = useNavigate(); // Add useNavigate hook
 
@@ -23,13 +24,14 @@ export default function SearchBar() {
             const query = searchTerm.toLowerCase();
             const companies = [];
             const categories = new Set();
+            const locations = new Set();
 
             // Use the 'firestore' instance from your 'firebase.js' file
             getDocs(collection(firestore, 'companies'))
                 .then((querySnapshot) => {
                     querySnapshot.forEach((doc) => {
                         const data = doc.data();
-                        if (data && data.companyName && data.category) {
+                        if (data && data.companyName && data.category && data.locationCountry) {
                             // Check if the company name or category matches the query
                             if (data.companyName.toLowerCase().includes(query)) {
                                 companies.push(data.companyName);
@@ -37,11 +39,15 @@ export default function SearchBar() {
                             if (data.category.toLowerCase().includes(query)) {
                                 categories.add(data.category);
                             }
+                            if (data.locationCountry.toLowerCase().includes(query)) {
+                                locations.add(data.locationCountry);
+                            }
                         }
                     });
 
                     setCompanyResults(companies);
                     setCategoryResults(Array.from(categories));
+                    setLocationResults(Array.from(locations));
                     setShowSuggestions(true); // Show suggestions when there are search results
                 })
                 .catch((error) => {
@@ -50,6 +56,7 @@ export default function SearchBar() {
         } else {
             setCompanyResults([]); // Clear the company recommendations when the search term is empty
             setCategoryResults([]); // Clear the category recommendations when the search term is empty
+            setLocationResults([]);
             setShowSuggestions(false); // Hide suggestions when there are no search results
         }
     }, [searchTerm]);
@@ -85,7 +92,7 @@ export default function SearchBar() {
             </form>
             {searchTerm && (
                 <ul className="search-results">
-                    {companyResults.length > 0 || categoryResults.length > 0 ? (
+                    {companyResults.length > 0 || categoryResults.length > 0 || locationResults.length > 0 ? (
                         <>
                             {companyResults.length > 0 && (
                                 <div>
@@ -103,6 +110,16 @@ export default function SearchBar() {
                                     {categoryResults.map((category, index) => (
                                         <li key={index} onClick={() => handleResultClick(category)}>
                                             {category}
+                                        </li>
+                                    ))}
+                                </div>
+                            )}
+                            {locationResults.length > 0 && (
+                                <div>
+                                    <strong>Locations</strong>
+                                    {locationResults.map((location, index) => (
+                                        <li key={index} onClick={() => handleResultClick(location)}>
+                                            {location}
                                         </li>
                                     ))}
                                 </div>

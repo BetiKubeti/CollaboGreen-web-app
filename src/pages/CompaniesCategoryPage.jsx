@@ -22,12 +22,37 @@ export default function CompaniesCategoryPage() {
     const [contactInstagram, setContactInstagram] = useState('');
     const [locationCity, setLocationCity] = useState('');
     const [locationCountry, setLocationCountry] = useState('');
-
-    const locations = ["Denmark", "Germany", "USA", "Poland"]
+    const [locations, setLocations] = useState([]);
 
     const scrollThreshold = 117;
 
     console.log('Searching for:', category);
+
+    
+    const fetchUniqueLocations = async () => {
+        const locationsSet = new Set();
+        const querySnapshot = await getDocs(collection(firestore, 'companies'));
+
+        querySnapshot.forEach((doc) => {
+            const data = doc.data();
+            const locationCountry = data.locationCountry;
+
+            if (locationCountry) {
+                locationsSet.add(locationCountry);
+            }
+        });
+
+        // If you need it as an array
+        const locationsArray = Array.from(locationsSet);
+
+        setLocations(locationsArray); // Update the locations state
+    };
+
+    useEffect(() => {
+        // Call the function to get the unique location values
+        fetchUniqueLocations();
+    }, []);
+
 
     useEffect(() => {
         const fetchCompanies = async () => {
@@ -37,10 +62,11 @@ export default function CompaniesCategoryPage() {
                 const companyData = [];
                 querySnapshot.forEach((doc) => {
                     const data = doc.data();
-                    if (data.category === category && (activeRating === 'All' || data.rating === parseInt(activeRating))) {
-                        companyData.push(data);
-                    }
-                    if (data.companyName === category && (activeRating === 'All' || data.rating === parseInt(activeRating))) {
+                    if (
+                        (data.category === category || data.companyName === category || data.locationCountry === category) && // Category or company name matches
+                        (activeRating === 'All' || data.rating === parseInt(activeRating)) && // Rating matches
+                        (selectedLocation === '' || data.locationCountry === selectedLocation) // Location matches
+                    ) {
                         companyData.push(data);
                     }
                 });
@@ -66,8 +92,12 @@ export default function CompaniesCategoryPage() {
             // Check if 'category' matches a company name and return the appropriate header
             // Replace 'companyName' with the field that contains the company name in your data
             const isCompany = companies.some(company => company.companyName === category);
+            const isLocation = companies.some(company => company.locationCountry === category);
             if (isCompany) {
                 return `Companies matching the name "${category}"`;
+            }
+            if (isLocation) {
+                return `Companies matching the location "${category}"`;
             }
             else{
                 return `Best in the ${category} category!`;
@@ -219,7 +249,7 @@ export default function CompaniesCategoryPage() {
                                                 </p>
                                             </div>
                                             <div className='company-type'>
-                                                <p><strong>Type of company:</strong> {category}</p>
+                                                <p><strong>Type of company:</strong> {company.category}</p>
                                             </div>
                                         </div>
                                     </div>
