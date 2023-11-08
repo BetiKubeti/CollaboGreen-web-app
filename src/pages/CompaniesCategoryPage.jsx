@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth, firestore } from '../../firebase';
-import { collection, getDocs, where } from 'firebase/firestore';
+import { collection, getDocs, where, query } from 'firebase/firestore';
 import { useParams } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -15,7 +15,7 @@ export default function CompaniesCategoryPage() {
     const [companies, setCompanies] = useState([]);
     const { category } = useParams();
     const [activeRating, setActiveRating] = useState('All'); // State for active rating filter
-    const [selectedLocation, setSelectedLocation] = useState(''); // State for selected location
+    const [selectedLocation, setSelectedLocation] = useState('All'); // State for selected location
 
     const [contactLinkedIn, setContactLinkedIn] = useState('');
     const [contactFacebook, setContactFacebook] = useState('');
@@ -57,15 +57,22 @@ export default function CompaniesCategoryPage() {
     useEffect(() => {
         const fetchCompanies = async () => {
             try {
-                const querySnapshot = await getDocs(collection(firestore, 'companies'));
+                // Create a Firestore query
+                let q;
+                if (selectedLocation === 'All') {
+                    q = query(collection(firestore, 'companies'));
+                } else {
+                    q = query(collection(firestore, 'companies'), where('locationCountry', '==', selectedLocation));
+                }
+
+                const querySnapshot = await getDocs(q);
 
                 const companyData = [];
                 querySnapshot.forEach((doc) => {
                     const data = doc.data();
                     if (
                         (data.category === category || data.companyName === category || data.locationCountry === category) && // Category or company name matches
-                        (activeRating === 'All' || data.rating === parseInt(activeRating)) && // Rating matches
-                        (selectedLocation === '' || data.locationCountry === selectedLocation) // Location matches
+                        (activeRating === 'All' || data.rating === parseInt(activeRating)) // Rating matches
                     ) {
                         companyData.push(data);
                     }
@@ -77,10 +84,10 @@ export default function CompaniesCategoryPage() {
             }
         };
 
-        if (category !== '') {
+        if (category !== '' || selectedLocation !== 'All') {
             fetchCompanies();
         }
-    }, [category, activeRating]);
+    }, [category, activeRating, selectedLocation]);
 
     // Function to handle rating filter button click
     const handleRatingFilterClick = (rating) => {
@@ -189,10 +196,10 @@ export default function CompaniesCategoryPage() {
                             </div>
                         </div>
                         <div className='filter-by-location filter'>
-                            <h3>Location</h3>
+                            <h3>Location by Country</h3>
                             <div className='locations-filter'>
                                 <select value={selectedLocation} onChange={(e) => setSelectedLocation(e.target.value)}>
-                                    <option value="" disabled hidden selected>Select a location</option>
+                                    <option value="All" selected>Any location</option>
                                     {locations.map((location) => (
                                         <option key={location} value={location}>
                                             {location}
