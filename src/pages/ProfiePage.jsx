@@ -359,7 +359,7 @@ export default function ProfiePage() {
                                                 </div>
                                             
                                         ));
-                                    case 'Education and Training':
+                                    case 'Education & Training':
                                         return ['Dental Clinics', 'Pharmaceutical Manufacturing', 'Telehealth Services', 'Medical Imaging Centers', 'Biotechnology Research', 'Healthcare Equipment Suppliers', 'Rehabilitation Centers'].map(subcategory => (
 
                                             <div key={subcategory} className={`subcategory-check ${selectedSubcategories.includes(subcategory) ? 'div-checked' : ''}`}>
@@ -375,7 +375,7 @@ export default function ProfiePage() {
                                             </div>
 
                                         ));
-                                    case 'Home and Garden':
+                                    case 'Home & Garden':
                                         return ['Furniture Retailers', 'Gardening Supplies', 'Interior Design Services', 'Home Improvement Stores', 'Kitchen and Bath Fixtures', 'Outdoor Living', 'Home Security Services'].map(subcategory => (
 
                                             <div key={subcategory} className={`subcategory-check ${selectedSubcategories.includes(subcategory) ? 'div-checked' : ''}`}>
@@ -503,7 +503,7 @@ export default function ProfiePage() {
                                             </div>
 
                                         ));
-                                    case 'Entertainment and Media':
+                                    case 'Entertainment & Media':
                                         return ['Film and Television Production', 'Music and Recording Industry', 'Video Game Development', 'Streaming Services', 'Publishing and Printing', 'Public Relations and Media Relations', 'Event Management and Promotion'].map(subcategory => (
 
                                             <div key={subcategory} className={`subcategory-check ${selectedSubcategories.includes(subcategory) ? 'div-checked' : ''}`}>
@@ -535,7 +535,7 @@ export default function ProfiePage() {
                                             </div>
 
                                         ));
-                                    case 'Fitness and Wellness':
+                                    case 'Fitness & Wellness':
                                         return ['Gyms and Fitness Centers', 'Yoga Studios', 'Wellness Spas', 'Personal Trainers', 'Nutrition and Diet Services', 'Sports and Recreation', 'Mental Health and Wellness Services'].map(subcategory => (
 
                                             <div key={subcategory} className={`subcategory-check ${selectedSubcategories.includes(subcategory) ? 'div-checked' : ''}`}>
