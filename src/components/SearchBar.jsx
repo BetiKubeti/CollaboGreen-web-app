@@ -68,7 +68,11 @@ export default function SearchBar() {
     // Function to handle the search button click
     const handleSearch = () => {
         // Navigate to the search results page with the selected search term
-        navigate(`/companies-category/${searchTerm}`);
+        // Check if searchTerm is not empty before navigating
+        if (searchTerm.trim() !== '') {
+            // Navigate to the search results page with the selected search term
+            navigate(`/companies-category/${searchTerm}`);
+        }
     };
 
     // Render the SearchBar component
