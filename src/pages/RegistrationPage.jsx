@@ -4,13 +4,13 @@ import {
     getAuth,
     createUserWithEmailAndPassword,
     sendEmailVerification,
-    updateProfile, // Import updateProfile
+    updateProfile, 
 } from 'firebase/auth';
 import { auth, firestore } from '../../firebase';
 import {
     collection,
     addDoc,
-    serverTimestamp, // Import serverTimestamp
+    serverTimestamp,
     query,
     where,
     getDocs,
@@ -77,6 +77,7 @@ const RegistrationForm = () => {
 
         let hasErrors = false;
 
+        // Error checks
         if (!companyName) {
             setCompanyNameError('Please enter your company name');
             hasErrors = true;
@@ -181,27 +182,37 @@ const RegistrationForm = () => {
 
     return (
         <>
+            {/* Registration page section */}
             <section className='registration-page'>
                 <div className='registration-page-wrap'>
                     <div className='registration-page-container'>
+                        {/* Registration form header */}
                         <h2>Create a free account</h2>
+                        {/* Registration form */}
                         <form onSubmit={handleRegistration}>
+                            {/* Company Information section */}
                             <p>Company Information:</p>
+                            {/* Input field for Company Name */}
                             <div className='input-container'>
                                 <input type="text" placeholder='Company Name' value={companyName} onChange={(e) => setCompanyName(e.target.value)} />
                             </div>
+                            {/* Display error message for Company Name */}
                             <div className='error-message'>
                                 {companyNameError && <p>{companyNameError}</p>}
                             </div>
+                            {/* Input field for Website URL */}
                             <div className='input-container'>
                                 <input type="url" placeholder='Website URL: https://example.com' value={websiteURL} onChange={(e) => setWebsiteURL(e.target.value)} />
                             </div>
+                            {/* Display error message for Website URL */}
                             <div className='error-message'>
                                 {websiteURLError && <p>{websiteURLError}</p>}
                             </div>
+                            {/* Dropdown for selecting category */}
                             <div className='input-container'>
                                 <select value={category} onChange={(e) => setCategory(e.target.value)}>
                                     <option value="" disabled hidden defaultValue>Select a category</option>
+                                    {/* Map through categories to populate dropdown options */}
                                     {categories.map((cat) => (
                                         <option key={cat} value={cat}>
                                             {cat}
@@ -209,32 +220,42 @@ const RegistrationForm = () => {
                                     ))}
                                 </select>
                             </div>
+                            {/* Display error message for category selection */}
                             <div className='error-message'>
                                 {categoryError && <p>{categoryError}</p>}
                             </div>
+                            {/* Input field for Email */}
                             <div className='input-container'>
                                 <input type="email" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
                             </div>
+                            {/* Display error message for Email */}
                             <div className='error-message'>
                                 {emailError && <p>{emailError}</p>}
                             </div>
+                            {/* Password section */}
                             <p>Password:</p>
+                            {/* Input field for Password */}
                             <div className='input-container'>
                                 <input type="password" placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} />
                             </div>
+                            {/* Display error message for Password */}
                             <div className='error-message'>
                                 {passwordError && <p>{passwordError}</p>}
                             </div>
+                            {/* Input field for Confirm Password */}
                             <div className='input-container'>
                                 <input type="password" placeholder='Confirm Password' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
                             </div>
+                            {/* Display error message for Confirm Password */}
                             <div className='error-message'>
                                 {confirmPasswordError && <p>{confirmPasswordError}</p>}
                             </div>
+                            {/* Sign Up button */}
                             <div className='input-container'>
                                 <button type="submit">Sign Up</button>
                             </div>
                         </form>
+                        {/* Option to navigate to the login page */}
                         <div className='change-option'>
                             <p>You already have a CollaboGreen Account?</p>
                             <a href="/login">Log In here!</a>
@@ -243,6 +264,7 @@ const RegistrationForm = () => {
                 </div>
             </section>
 
+            {/* Email Confirmation Modal */}
             <Modal
                 isOpen={isEmailConfirmationModalOpen}
                 contentLabel="Email Confirmation Modal"
@@ -250,15 +272,21 @@ const RegistrationForm = () => {
                 id='pop-up'
             >
                 <div className='pop-up-container'>
+                    {/* Modal header */}
                     <h2>Check Your Email</h2>
+                    {/* Modal content */}
                     <p>An email has been sent to you for confirmation. Please verify your email to complete the registration.</p>
+                    {/* Modal buttons */}
                     <div className='buttons'>
+                        {/* Close button triggers closing modal and navigating to home */}
                         <button onClick={() => setEmailConfirmationModalOpen(false) & navigate('/')}>Close</button>
+                        {/* Resend Confirmation Email button */}
                         <button type="button" onClick={requestEmailVerification}>Resend Confirmation Email</button>
                     </div>
                 </div>
             </Modal>
 
+            {/* Footer component */}
             <Footer />
         </>
     );

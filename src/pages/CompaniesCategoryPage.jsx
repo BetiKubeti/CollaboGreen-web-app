@@ -1,3 +1,4 @@
+// Import necessary modules and components
 import React, { useState, useEffect } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth, firestore } from '../../firebase';
@@ -10,13 +11,16 @@ import Footer from '../components/Footer';
 
 import LogoExample from '../assets/Logo-Image-Example.jpg'
 
+// Define the main functional component for the Companies Category Page
 export default function CompaniesCategoryPage() {
+    // State hooks to manage user, companies, category, and filters
     const [user] = useAuthState(auth);
     const [companies, setCompanies] = useState([]);
     const { category } = useParams();
     const [activeRating, setActiveRating] = useState('All'); // State for active rating filter
     const [selectedLocation, setSelectedLocation] = useState('All'); // State for selected location
 
+    // State hooks for contact and location information
     const [contactLinkedIn, setContactLinkedIn] = useState('');
     const [contactFacebook, setContactFacebook] = useState('');
     const [contactInstagram, setContactInstagram] = useState('');
@@ -24,15 +28,18 @@ export default function CompaniesCategoryPage() {
     const [locationCountry, setLocationCountry] = useState('');
     const [locations, setLocations] = useState([]);
 
+    // Threshold for sticky header on scroll
     const scrollThreshold = 117;
 
+    // Log the category being searched for
     console.log('Searching for:', category);
 
-    
+    // Function to fetch unique locations from Firestore
     const fetchUniqueLocations = async () => {
         const locationsSet = new Set();
         const querySnapshot = await getDocs(collection(firestore, 'companies'));
 
+        // Iterate through documents to extract unique location countries
         querySnapshot.forEach((doc) => {
             const data = doc.data();
             const locationCountry = data.locationCountry;
@@ -42,22 +49,21 @@ export default function CompaniesCategoryPage() {
             }
         });
 
-        // If you need it as an array
+        // Convert set to array and update the locations state
         const locationsArray = Array.from(locationsSet);
-
-        setLocations(locationsArray); // Update the locations state
+        setLocations(locationsArray);
     };
 
+    // Effect hook to fetch unique locations on component mount
     useEffect(() => {
-        // Call the function to get the unique location values
         fetchUniqueLocations();
     }, []);
 
-
+    // Effect hook to fetch companies based on category, rating, and location filters
     useEffect(() => {
         const fetchCompanies = async () => {
             try {
-                // Create a Firestore query
+                // Create a Firestore query based on selected filters
                 let q;
                 if (selectedLocation === 'All') {
                     q = query(collection(firestore, 'companies'));
@@ -65,15 +71,15 @@ export default function CompaniesCategoryPage() {
                     q = query(collection(firestore, 'companies'), where('locationCountry', '==', selectedLocation));
                 }
 
+                // Execute the query and update the companies state
                 const querySnapshot = await getDocs(q);
-
                 const companyData = [];
                 querySnapshot.forEach((doc) => {
                     const data = doc.data();
                     const hasCategory = data.category === category || data.companyName === category || data.locationCountry === category;
                     const hasSubcategory = data.subcategories && data.subcategories.includes(category);
 
-                    // Check if the company matches the category or has the subcategory
+                    // Check if the company matches the category or has the subcategory, and if the rating filter is satisfied
                     if ((hasCategory || hasSubcategory) && (activeRating === 'All' || data.rating === parseInt(activeRating))) {
                         companyData.push(data);
                     }
@@ -85,7 +91,7 @@ export default function CompaniesCategoryPage() {
             }
         };
 
-
+        // Fetch companies only if category or location filters are applied
         if (category !== '' || selectedLocation !== 'All') {
             fetchCompanies();
         }
@@ -96,29 +102,29 @@ export default function CompaniesCategoryPage() {
         setActiveRating(rating);
     };
 
+    // Function to generate category header based on the selected category
     function getCategoryHeader(category) {
         if (category) {
-            // Check if 'category' matches a company name and return the appropriate header
-            // Replace 'companyName' with the field that contains the company name in your data
+            // Check if 'category' matches a company name or location, return appropriate header
             const isCompany = companies.some(company => company.companyName === category);
             const isLocation = companies.some(company => company.locationCountry === category);
+
             if (isCompany) {
                 return `Companies matching the name "${category}"`;
-            }
-            if (isLocation) {
+            } else if (isLocation) {
                 return `Companies matching the location "${category}"`;
-            }
-            else{
+            } else {
                 return `Best in the ${category} category!`;
             }
         }
     }
 
-
+    // Effect hook to handle the sticky header on scroll
     useEffect(() => {
         const filtersContainer = document.querySelector('.filters-container');
         const initialTopOffset = filtersContainer.offsetTop;
 
+        // Scroll event listener to add or remove 'sticky' class based on scroll position
         const handleScroll = () => {
             const scrollY = window.scrollY;
 
@@ -132,6 +138,7 @@ export default function CompaniesCategoryPage() {
             const elementsToStopAt = document.querySelectorAll('.element-to-stop-at');
             let closestElement = null;
 
+            // Iterate through elements to find the closest one to the filters container
             elementsToStopAt.forEach((element) => {
                 if (element.offsetTop > filtersContainer.offsetTop && element.offsetTop <= scrollY + filtersContainer.offsetHeight + 80) {
                     if (!closestElement || element.offsetTop < closestElement.offsetTop) {
@@ -140,29 +147,33 @@ export default function CompaniesCategoryPage() {
                 }
             });
 
-            // Calculate the new top offset for the filters-container based on the closest element
+            // Calculate the new top offset for the filters container based on the closest element
             const newTopOffset = closestElement ? closestElement.offsetTop - filtersContainer.offsetHeight - 30 : scrollThreshold;
 
-            // Update the top offset
+            // Update the top offset of the filters container
             filtersContainer.style.top = `${newTopOffset}px`;
         };
 
+        // Add scroll event listener on component mount
         window.addEventListener('scroll', handleScroll);
 
+        // Remove scroll event listener on component unmount
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
 
-
     return (
         <>
+            {/* Header section for discovering companies */}
             <section className='discover-companies-header'>
                 <div className='discover-companies-header-container'>
                     <div className='title'>
+                        {/* Display the category header if available */}
                         <h2>{category && getCategoryHeader(category)}</h2>
                     </div>
                     <div className='description'>
+                        {/* Description of the page */}
                         <p>
                             Compare the best companies.
                             Sort them by rating and location.
@@ -171,11 +182,15 @@ export default function CompaniesCategoryPage() {
                     </div>
                 </div>
             </section>
- 
+
+            {/* Section containing the list of companies */}
             <section className='company-lists'>
                 
+                {/* Outer container for filters */}
                 <div className='filters-outer-container'>
                     <div className={`filters-container ${selectedLocation ? 'with-location' : ''}`}>
+                        
+                        {/* Rating filter section */}
                         <div className='filter-by-rating filter'>
                             <h3>Rating</h3>
                             <div className='rating-filter'>
@@ -197,6 +212,8 @@ export default function CompaniesCategoryPage() {
                                 ))}
                             </div>
                         </div>
+
+                        {/* Location filter section */}
                         <div className='filter-by-location filter'>
                             <h3>Location by Country</h3>
                             <div className='locations-filter'>
@@ -212,12 +229,15 @@ export default function CompaniesCategoryPage() {
                         </div>
                     </div>
                 </div>
-
+                
+                {/* Container for the list of companies */}
                 <div className='company-list-container'>
                     <div className='title'>
+                        {/* Display the total number of companies */}
                         <h2>Companies ({companies.length})</h2>
                     </div>
                     <div className='company-by-category-container'>
+                        {/* Check if there are companies to display and if there is map through companies and display each company card*/}
                         {companies.length === 0 ? (
                             <div className='no-matches'>
                                 <p>No matches found for {category}</p>
@@ -262,7 +282,7 @@ export default function CompaniesCategoryPage() {
                                                     <strong>Type of company:</strong>
                                                     {company.category && company.subcategories
                                                         ? `${company.category}, ${company.subcategories.join(', ')}`
-                                                        : company.category
+                                                        : company.category || company.subcategories
                                                     }
                                                 </p>
                                             </div>
@@ -309,6 +329,7 @@ export default function CompaniesCategoryPage() {
                 </div>
             </section>
 
+            {/* Display different content based on user authentication status */}
             {user && <div></div>}
             {!user && <CompanyRegisterQuestion />}
 

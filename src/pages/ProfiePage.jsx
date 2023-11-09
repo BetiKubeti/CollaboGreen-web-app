@@ -88,7 +88,7 @@ export default function ProfiePage() {
 
     const openModalSidebar = () => {
         setIsModalOpenAboutCompanySidebar(true);
-        setUpdatedContactEmail(contactEmail); // Initialize the input with the current "aboutCompany" value
+        setUpdatedContactEmail(contactEmail); // Initialize the input with the current "contactEmail" value
         setUpdatedContactPhone(contactPhone);
         setUpdatedContactLinkedIn(contactLinkedIn);
         setUpdatedContactFacebook(contactFacebook);
@@ -191,12 +191,17 @@ export default function ProfiePage() {
 
     return (
         <>
+            {/* Section containing the profile page */}
             <section className='profile-page-container'>
+                {/* Sidebar section containing company information */}
                 <div className='profile-sidebar'>
                     <div className='profile-sidebar-container'>
+                        {/* Button to update information, triggering modal */}
                         <div className='update-information'>
                             <button onClick={openModalSidebar}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="currentColor" d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953l1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44l1.263-1.263a.25.25 0 0 0 0-.354Z" /></svg></button>
                         </div>
+
+                        {/* Header section of the sidebar */}
                         <div className='sidebar-header'>
                             <div className='profile-picture'>
                                 <img src={LogoExample} alt="profile logo image" />
@@ -205,11 +210,15 @@ export default function ProfiePage() {
                                 <h2>{companyName}</h2>
                             </div>
                         </div>
+
+                        {/* Content section of the sidebar */}
                         <div className='sidebar-content'>
+                            {/* Company sub-categories in the sidebar */}
                             <div className='company-sub-categories-sidebar'>
                                 <p><strong>We do:</strong></p>
                                 <p>{subcategories.join(', ')}</p>
                             </div>
+                            {/* Contact information section in the sidebar */}
                             <div className='add-contact-information-sidebar'>
                                 <p><strong>Contact Info:</strong></p>
                                 <div className='contacts-list'>
@@ -244,7 +253,8 @@ export default function ProfiePage() {
                                 </div>
 
                             </div>
-
+                            
+                            {/* Company location in the sidebar */}
                             <div className='company-location-sidebar'>
                                 <p><strong>Location:</strong> <br /></p>
                                 <p>
@@ -254,11 +264,14 @@ export default function ProfiePage() {
                                     }
                                 </p>
                             </div>
-
+                            
+                            {/* Company website in the sidebar */}
                             <div className='company-website-sidebar'>
                                 <p><strong>Visit Website:</strong> <br /></p>
                                 <a href={websiteURL} target='_blank'>{websiteURL}</a>
                             </div>
+
+                            {/* Company rating in the sidebar */}
                             <div className='company-rating-sidebar'>
                                 <p><strong>Your Trust Score:</strong> 4.12</p>
                                 <div className='star-rating'>
@@ -273,10 +286,12 @@ export default function ProfiePage() {
                     </div>
                 </div>
 
+                {/* Main company data */}                   
                 <div className='profile-page-main-data-of-company'>
                     <div className='profile-page-main-data-of-company-container'>
 
                         <div className='main-data-about-company'>
+                            {/* About Company */}
                             <div className='about-company-title'>
                                 <h2>About {companyName}</h2>
                                 <div className='update-information'>
@@ -294,7 +309,7 @@ export default function ProfiePage() {
 
             </section>
 
-            {/* Modal */}
+            {/* Modal component for editing the About Company main data*/}
             <Modal
                 isOpen={isModalOpenAboutCompany}
                 className="custom-modal"
@@ -314,34 +329,45 @@ export default function ProfiePage() {
                 </div>
             </Modal>
 
+            {/* Modal component for editing the About Company sidebar */}
             <Modal
                 isOpen={isModalOpenAboutCompanySidebar}
                 className="custom-modal"
                 contentLabel="Edit About Company Modal"
                 id='pop-up-change-sidebar'
             >
+                {/* Container for the content of the modal */}
                 <div className='pop-up-container'>
+                    {/* Title of the modal */}
                     <h2>Edit Sidebar</h2>
+                    {/* Container for input fields within the modal */}
                     <div className='input-fields-container'>
+                        {/* Label for selecting subcategories */}
                         <p>Select Subcategories:</p>
+                        {/* Container for displaying and selecting subcategories */}
                         <div className='subcategory-check-container'>
+                            {/* Conditional rendering based on the company's category */}
                             {companyData && (() => {
                                 switch (companyData.category) {
+                                    // Case for 'Software & Technology' category
                                     case 'Software & Technology':
+                                        // Map through subcategories and create checkbox for each
                                         return ['Software Development', 'Cybersecurity Solutions', 'Cloud Computing', 'Mobile App Development', 'Web Development', 'Tech Support and Maintenance', 'Data Analytics and BI'].map(subcategory => (
-
+                                            // Individual subcategory checkbox
                                             <div key={subcategory} className={`subcategory-check ${selectedSubcategories.includes(subcategory) ? 'div-checked' : ''}`}>
+                                                {/* Checkbox input */}
                                                 <input
                                                     type="checkbox"
                                                     id={`subcategory_checkbox_${subcategory}`}
                                                     checked={selectedSubcategories.includes(subcategory)}
+                                                    // Handle checkbox change event
                                                     onChange={() => handleSubcategorySelection(subcategory)}
                                                 />
+                                                {/* Label for the checkbox */}
                                                 <label htmlFor={`subcategory_checkbox_${subcategory}`}>
                                                     {subcategory}
                                                 </label>
                                             </div>
-
                                         ));
                                     case 'Environmental & Sustainability':
                                         return ['Investment Banking', 'Wealth Management', 'Insurance Services', 'Payment Processing', 'Asset Management', 'Credit Unions', 'Tax and Accounting Services'].map(subcategory => (
@@ -571,54 +597,67 @@ export default function ProfiePage() {
                                         return null;
                                 }
                             })()}
+                        {/* Form for updating contact and location information */}
                         </div>
-                        <p>Change your contact Email:</p>
-                        <input
-                            value={updatedContactEmail}
-                            onChange={(e) => setUpdatedContactEmail(e.target.value)}
-                            placeholder='Add your contact email'
-                        />
-                        <p>Add a Phone:</p>
-                        <input
-                            value={updatedContactPhone}
-                            onChange={(e) => setUpdatedContactPhone(e.target.value)}
-                            placeholder='Add your contact phone'
-                        />
-                        <p>Add LinkedIn URL:</p>
-                        <input
-                            value={updatedContactLinkedIn}
-                            onChange={(e) => setUpdatedContactLinkedIn(e.target.value)}
-                            placeholder='Add a link to your LinkedIn profile page'
-                        />
-                        <p>Add Facebook URL:</p>
-                        <input
-                            value={updatedContactFacebook}
-                            onChange={(e) => setUpdatedContactFacebook(e.target.value)}
-                            placeholder='Add a link to your Facebook profile page'
-                        />
-                        <p>Add Instagram URL:</p>
-                        <input
-                            value={updatedContactInstagram}
-                            onChange={(e) => setUpdatedContactInstagram(e.target.value)}
-                            placeholder='Add a link to your Instagram profile page'
-                        />
-                        <p>Add a City:</p>
-                        <input
-                            value={updatedLocationCity}
-                            onChange={(e) => setUpdatedLocationCity(e.target.value)}
-                            placeholder='Add a city location'
-                        />
-                        <p>Add a Country:</p>
-                        <input
-                            value={updatedLocationCountry}
-                            onChange={(e) => setUpdatedLocationCountry(e.target.value)}
-                            placeholder='Add a country'
-                        />
-                    </div>
-                    <div className='buttons'>
-                        <button onClick={saveAboutCompanySidebar}>Save</button>
-                        <button onClick={closeModal}>Cancel</button>
-                    </div>
+                            {/* Input field for updating contact email */}
+                            <p>Change your contact Email:</p>
+                            <input
+                                value={updatedContactEmail}
+                                onChange={(e) => setUpdatedContactEmail(e.target.value)}
+                                placeholder='Add your contact email'
+                            />
+                            {/* Input field for updating contact phone */}
+                            <p>Add a Phone:</p>
+                            <input
+                                value={updatedContactPhone}
+                                onChange={(e) => setUpdatedContactPhone(e.target.value)}
+                                placeholder='Add your contact phone'
+                            />
+                            {/* Input field for updating LinkedIn URL */}
+                            <p>Add LinkedIn URL:</p>
+                            <input
+                                value={updatedContactLinkedIn}
+                                onChange={(e) => setUpdatedContactLinkedIn(e.target.value)}
+                                placeholder='Add a link to your LinkedIn profile page'
+                            />
+                            {/* Input field for updating Facebook URL */}
+                            <p>Add Facebook URL:</p>
+                            <input
+                                value={updatedContactFacebook}
+                                onChange={(e) => setUpdatedContactFacebook(e.target.value)}
+                                placeholder='Add a link to your Facebook profile page'
+                            />
+                            {/* Input field for updating Instagram URL */}
+                            <p>Add Instagram URL:</p>
+                            <input
+                                value={updatedContactInstagram}
+                                onChange={(e) => setUpdatedContactInstagram(e.target.value)}
+                                placeholder='Add a link to your Instagram profile page'
+                            />
+                            {/* Input field for updating city location */}
+                            <p>Add a City:</p>
+                            <input
+                                value={updatedLocationCity}
+                                onChange={(e) => setUpdatedLocationCity(e.target.value)}
+                                placeholder='Add a city location'
+                            />
+                            {/* Input field for updating country */}
+                            <p>Add a Country:</p>
+                            <input
+                                value={updatedLocationCountry}
+                                onChange={(e) => setUpdatedLocationCountry(e.target.value)}
+                                placeholder='Add a country'
+                            />
+                        </div>
+
+                        {/* Buttons for saving or canceling the changes */}
+                        <div className='buttons'>
+                            {/* Save button triggers the saveAboutCompanySidebar function */}
+                            <button onClick={saveAboutCompanySidebar}>Save</button>
+                            {/* Cancel button triggers the closeModal function */}
+                            <button onClick={closeModal}>Cancel</button>
+                        </div>
+
                 </div>
             </Modal>
 

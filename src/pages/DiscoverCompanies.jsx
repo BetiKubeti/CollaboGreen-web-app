@@ -16,29 +16,39 @@ export default function DiscoverCompanies() {
 
     return (
         <>
+            {/* Header section for discovering companies */}
             <section className='discover-companies-header'>
                 <div className='discover-companies-header-container'>
+                    {/* Title section */}
                     <div className='title'>
                         <h2>What are you searching for?</h2>
                     </div>
+                    {/* Search bar container */}
                     <div className='search-bar-container'>
                         <SearchBar />
                     </div>
                 </div>
             </section>
 
+            {/* Section for displaying categories to explore */}
             <section className='category-lists'>
+                {/* Title for the category section */}
                 <div className='title'>
                     <h2>Select categories and explore companies</h2>
                 </div>
 
+                {/* Container for category lists */}
                 <div className='category-lists-container'>
-
+                    {/* Individual category card */}
                     <div className='category-list-card'>
+                        {/* Container for the category title and icon */}
                         <div className='title-container'>
+                            {/* Icon for the main category */}
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M232 168h-8V72a24 24 0 0 0-24-24H56a24 24 0 0 0-24 24v96h-8a8 8 0 0 0-8 8v16a24 24 0 0 0 24 24h176a24 24 0 0 0 24-24v-16a8 8 0 0 0-8-8ZM48 72a8 8 0 0 1 8-8h144a8 8 0 0 1 8 8v96H48Zm176 120a8 8 0 0 1-8 8H40a8 8 0 0 1-8-8v-8h192ZM152 88a8 8 0 0 1-8 8h-32a8 8 0 0 1 0-16h32a8 8 0 0 1 8 8Z" /></svg>
+                            {/* Title of the main category */}
                             <h3>Software & Technology</h3>
                         </div>
+                        {/* Sub-categories under the main category */}
                         <div className='sub-categories'>
                             <Link to='/companies-category/Software Development'>Software Development</Link>
                             <Link to='/companies-category/Cybersecurity Solutions'>Cybersecurity Solutions</Link>

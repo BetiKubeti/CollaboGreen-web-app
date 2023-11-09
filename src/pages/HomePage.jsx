@@ -51,17 +51,25 @@ export default function HomePage() {
                 </div>
             </section>
 
+            {/* Section for displaying categories on the homepage*/}
             <section className='homepage-categories' id='homepage-categories'>
+                {/* Container for homepage categories */}
                 <div className='homepage-categories-container'>
+                    {/* Title for the homepage categories section */}
                     <div className='title'>
                         <h2>Select categories and explore companies</h2>
                     </div>
+                    {/* Container for individual category cards */}
                     <div className='categories-card-container'>
+                        {/* Link to navigate to the Software & Technology category */}
                         <Link to="/companies-category/Software & Technology">
+                            {/* Individual category card for Software & Technology */}
                             <div className='categories-card'>
+                                {/* Image representing the Software & Technology category */}
                                 <div className='categories-card-image'>
-                                    <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 256 256"><path fill="currentColor" d="M232 168h-8V72a24 24 0 0 0-24-24H56a24 24 0 0 0-24 24v96h-8a8 8 0 0 0-8 8v16a24 24 0 0 0 24 24h176a24 24 0 0 0 24-24v-16a8 8 0 0 0-8-8ZM48 72a8 8 0 0 1 8-8h144a8 8 0 0 1 8 8v96H48Zm176 120a8 8 0 0 1-8 8H40a8 8 0 0 1-8-8v-8h192ZM152 88a8 8 0 0 1-8 8h-32a8 8 0 0 1 0-16h32a8 8 0 0 1 8 8Z" /></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M232 168h-8V72a24 24 0 0 0-24-24H56a24 24 0 0 0-24 24v96h-8a8 8 0 0 0-8 8v16a24 24 0 0 0 24 24h176a24 24 0 0 0 24-24v-16a8 8 0 0 0-8-8ZM48 72a8 8 0 0 1 8-8h144a8 8 0 0 1 8 8v96H48Zm176 120a8 8 0 0 1-8 8H40a8 8 0 0 1-8-8v-8h192ZM152 88a8 8 0 0 1-8 8h-32a8 8 0 0 1 0-16h32a8 8 0 0 1 8 8Z" /></svg>
                                 </div>
+                                {/* Text description of the Software & Technology category */}
                                 <p>Software & Technology</p>
                             </div>
                         </Link>
@@ -205,29 +213,43 @@ export default function HomePage() {
                 <CompanyRegisterQuestion />
             )}
 
+            {/* Section for displaying fresh reviews */}
             <section className='fresh-reviews'>
+                {/* Container for fresh reviews */}
                 <div className='fresh-reviews-container'>
+                    {/* Title for the fresh reviews section */}
                     <div className='title'>
                         <h2>Fresh Reviews</h2>
                     </div>
+                    {/* Container for individual review cards */}
                     <div className='review-card-container'>
-
+                        {/* Individual review card */}
                         <div className='review-card'>
+                            {/* Header of the review card, including company image and rating */}
                             <div className='review-card-header'>
+                                {/* Image of the reviewed company (e.g., McDonald's logo) */}
                                 <div className='review-card-image'>
                                     <img src={McDonalds_Logo} alt="McDonalds logo" />
                                 </div>
+                                {/* Star rating for the review */}
                                 <div className='review-card-rating'>
+                                    {/* Five green stars representing the rating */}
                                     <svg xmlns="http://www.w3.org/2000/svg" className='green-star' width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m5.825 22l1.625-7.025L2 10.25l7.2-.625L12 3l2.8 6.625l7.2.625l-5.45 4.725L18.175 22L12 18.275L5.825 22Z" /></svg>
                                     <svg xmlns="http://www.w3.org/2000/svg" className='green-star' width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m5.825 22l1.625-7.025L2 10.25l7.2-.625L12 3l2.8 6.625l7.2.625l-5.45 4.725L18.175 22L12 18.275L5.825 22Z" /></svg>
                                     <svg xmlns="http://www.w3.org/2000/svg" className='green-star' width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m5.825 22l1.625-7.025L2 10.25l7.2-.625L12 3l2.8 6.625l7.2.625l-5.45 4.725L18.175 22L12 18.275L5.825 22Z" /></svg>
                                     <svg xmlns="http://www.w3.org/2000/svg" className='green-star' width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m5.825 22l1.625-7.025L2 10.25l7.2-.625L12 3l2.8 6.625l7.2.625l-5.45 4.725L18.175 22L12 18.275L5.825 22Z" /></svg>
                                     <svg xmlns="http://www.w3.org/2000/svg" className='green-star' width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m5.825 22l1.625-7.025L2 10.25l7.2-.625L12 3l2.8 6.625l7.2.625l-5.45 4.725L18.175 22L12 18.275L5.825 22Z" /></svg>
+                                    {/* Additional stars can be added for a more detailed rating */}
                                 </div>
                             </div>
-                            <div className='review-card-title'><h3>McDonalds <span>reviewed</span> Wolt</h3></div>
+                            {/* Title of the review card, indicating the reviewed company and the reviewing platform */}
+                            <div className='review-card-title'>
+                                <h3>McDonalds <span>reviewed</span> Wolt</h3>
+                            </div>
+                            {/* Comment section containing the detailed review */}
                             <div className='review-comment'>
                                 <p>
+                                    {/* Detailed review comment provided by the user */}
                                     Our partnership with Wolt has greatly improved our food delivery experience.
                                     Their platform streamlines the process, ensuring our employees have access to a wide variety of options.
                                     Wolt's reliability and extensive restaurant network have been a significant asset to our corporate dining services.

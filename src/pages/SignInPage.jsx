@@ -55,37 +55,48 @@ const SignInForm = () => {
     };
 
     return (
-        <><section className='signin-page'>
-            <div className='signin-page-wrap'>
-                <div className='registration-page-container'>
-                    <h2>Sign In</h2>
-                    <form onSubmit={handleSignIn}>
-                        <div className='input-container'>
-                            <input type="email" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
+        <>
+            {/* Sign In page section */}
+            <section className='signin-page'>
+                <div className='signin-page-wrap'>
+                    {/* Sign In form container */}
+                    <div className='registration-page-container'>
+                        {/* Sign In form header */}
+                        <h2>Sign In</h2>
+                        {/* Sign In form */}
+                        <form onSubmit={handleSignIn}>
+                            {/* Input field for Email */}
+                            <div className='input-container'>
+                                <input type="email" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
+                            </div>
+                            {/* Display error message for Email */}
+                            <div className='error-message'>
+                                {emailError && <p>{emailError}</p>}
+                            </div>
+                            {/* Input field for Password */}
+                            <div className='input-container'>
+                                <input type="password" placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} />
+                            </div>
+                            {/* Display error message for Password */}
+                            <div className='error-message'>
+                                {passwordError && <p>{passwordError}</p>}
+                            </div>
+                            {/* Sign In button */}
+                            <div className='input-container'>
+                                <button type="submit">Sign In</button>
+                            </div>
+                        </form>
+                        {/* Option to navigate to the Sign Up page */}
+                        <div className='change-option'>
+                            <p>You don't have a CollaboGreen Account?</p>
+                            <a href="/signup">Sign Up here!</a>
                         </div>
-                        <div className='error-message'>
-                            {emailError && <p>{emailError}</p>}
-                        </div>
-                        <div className='input-container'>
-                            <input type="password" placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} />
-                        </div>
-                        <div className='error-message'>
-                            {passwordError && <p>{passwordError}</p>}
-                        </div>
-                        <div className='input-container'>
-                            <button type="submit">Sign In</button>
-                        </div>
-                    </form>
-                    <div className='change-option'>
-                        <p>You don't have a CollaboGreen Account?</p>
-                        <a href="/signup">Sign Up here!</a>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
+            {/* Footer component */}
             <Footer />
-
         </>
     );
 };
