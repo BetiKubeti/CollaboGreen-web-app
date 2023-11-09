@@ -1524,14 +1524,18 @@ nav .contents a:nth-child(2):hover {
     margin: 20px 0;
 }
 
+#pop-up-change-sidebar .pop-up-container .input-fields-container .subcategory-check.div-checked {
+    background-color: #3AAC9F;
+}
+
 #pop-up-change-sidebar .pop-up-container .input-fields-container .subcategory-check input{
     display: none;
 }
 
 #pop-up-change-sidebar .pop-up-container .input-fields-container .subcategory-check-container{
     height: fit-content;
-    display: inline-block;
     overflow: hidden;
+    margin: 10px 0;
 }
 
 
@@ -1544,6 +1548,8 @@ nav .contents a:nth-child(2):hover {
     width: fit-content;
     height: fit-content;
     margin: 5px;
+    display: inline-block;
+    transition: .2s ease-in-out;
 }
 
 #pop-up-change-sidebar .pop-up-container .input-fields-container .subcategory-check label{

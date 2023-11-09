@@ -327,33 +327,246 @@ export default function ProfiePage() {
                         <div className='subcategory-check-container'>
                             {companyData && (() => {
                                 switch (companyData.category) {
-                                    case 'Automotive & Transportation':
-                                        return ['Car Dealership', 'Transportation Services', 'Automotive Manufacturers'].map(subcategory => (
-                                            <div key={subcategory} className='subcategory-check'>
+                                    case 'Software & Technology':
+                                        return ['Software Development', 'Cybersecurity Solutions', 'Cloud Computing', 'Mobile App Development', 'Web Development', 'Tech Support and Maintenance', 'Data Analytics and BI'].map(subcategory => (
+
+                                            <div key={subcategory} className={`subcategory-check ${selectedSubcategories.includes(subcategory) ? 'div-checked' : ''}`}>
                                                 <input
                                                     type="checkbox"
-                                                    id='subcategory_checkbox'
+                                                    id={`subcategory_checkbox_${subcategory}`}
                                                     checked={selectedSubcategories.includes(subcategory)}
                                                     onChange={() => handleSubcategorySelection(subcategory)}
                                                 />
-                                                <label htmlFor="subcategory_checkbox">{subcategory}</label>
+                                                <label htmlFor={`subcategory_checkbox_${subcategory}`}>
+                                                    {subcategory}
+                                                </label>
                                             </div>
+
                                         ));
-                                    case 'Professional Services':
-                                        return ['HR and Recruitment', 'Management Consulting'].map(subcategory => (
+                                    case 'Environmental & Sustainability':
+                                        return ['Investment Banking', 'Wealth Management', 'Insurance Services', 'Payment Processing', 'Asset Management', 'Credit Unions', 'Tax and Accounting Services'].map(subcategory => (
                                             
-                                                <div key={subcategory} className='subcategory-check'>
+                                            <div key={subcategory} className={`subcategory-check ${selectedSubcategories.includes(subcategory) ? 'div-checked' : ''}`}>
                                                     <input
                                                         type="checkbox"
-                                                        id='subcategory_checkbox'
+                                                        id={`subcategory_checkbox_${subcategory}`}
                                                         checked={selectedSubcategories.includes(subcategory)}
                                                         onChange={() => handleSubcategorySelection(subcategory)}
                                                     />
-                                                    <label htmlFor="subcategory_checkbox">{subcategory}</label>
+                                                <label htmlFor={`subcategory_checkbox_${subcategory}`}>
+                                                    {subcategory}
+                                                </label>
                                                 </div>
                                             
                                         ));
-                                    // Add more cases as needed...
+                                    case 'Education and Training':
+                                        return ['Dental Clinics', 'Pharmaceutical Manufacturing', 'Telehealth Services', 'Medical Imaging Centers', 'Biotechnology Research', 'Healthcare Equipment Suppliers', 'Rehabilitation Centers'].map(subcategory => (
+
+                                            <div key={subcategory} className={`subcategory-check ${selectedSubcategories.includes(subcategory) ? 'div-checked' : ''}`}>
+                                                <input
+                                                    type="checkbox"
+                                                    id={`subcategory_checkbox_${subcategory}`}
+                                                    checked={selectedSubcategories.includes(subcategory)}
+                                                    onChange={() => handleSubcategorySelection(subcategory)}
+                                                />
+                                                <label htmlFor={`subcategory_checkbox_${subcategory}`}>
+                                                    {subcategory}
+                                                </label>
+                                            </div>
+
+                                        ));
+                                    case 'Home and Garden':
+                                        return ['Furniture Retailers', 'Gardening Supplies', 'Interior Design Services', 'Home Improvement Stores', 'Kitchen and Bath Fixtures', 'Outdoor Living', 'Home Security Services'].map(subcategory => (
+
+                                            <div key={subcategory} className={`subcategory-check ${selectedSubcategories.includes(subcategory) ? 'div-checked' : ''}`}>
+                                                <input
+                                                    type="checkbox"
+                                                    id={`subcategory_checkbox_${subcategory}`}
+                                                    checked={selectedSubcategories.includes(subcategory)}
+                                                    onChange={() => handleSubcategorySelection(subcategory)}
+                                                />
+                                                <label htmlFor={`subcategory_checkbox_${subcategory}`}>
+                                                    {subcategory}
+                                                </label>
+                                            </div>
+
+                                        ));
+                                    case 'Legal Services':
+                                        return ['Law Firms', 'Litigation Services', 'Corporate Legal', 'Intellectual Property', 'Family Law', 'Immigration Law', 'Criminal Defense'].map(subcategory => (
+
+                                            <div key={subcategory} className={`subcategory-check ${selectedSubcategories.includes(subcategory) ? 'div-checked' : ''}`}>
+                                                <input
+                                                    type="checkbox"
+                                                    id={`subcategory_checkbox_${subcategory}`}
+                                                    checked={selectedSubcategories.includes(subcategory)}
+                                                    onChange={() => handleSubcategorySelection(subcategory)}
+                                                />
+                                                <label htmlFor={`subcategory_checkbox_${subcategory}`}>
+                                                    {subcategory}
+                                                </label>
+                                            </div>
+
+                                        ));
+                                    case 'Professional Services':
+                                        return ['HR and Recruitment', 'Management Consulting', 'Financial Advisory', 'Marketing Consulting', 'IT Consulting', 'Environmental Consulting', 'Executive Search'].map(subcategory => (
+
+                                            <div key={subcategory} className={`subcategory-check ${selectedSubcategories.includes(subcategory) ? 'div-checked' : ''}`}>
+                                                <input
+                                                    type="checkbox"
+                                                    id={`subcategory_checkbox_${subcategory}`}
+                                                    checked={selectedSubcategories.includes(subcategory)}
+                                                    onChange={() => handleSubcategorySelection(subcategory)}
+                                                />
+                                                <label htmlFor={`subcategory_checkbox_${subcategory}`}>
+                                                    {subcategory}
+                                                </label>
+                                            </div>
+
+                                        ));
+                                    case 'Marketing & Advertising':
+                                        return ['Digital Marketing', 'Advertising Agencies', 'Social Media Marketing', 'Content Marketing', 'Public Relations', 'Branding and Design', 'Market Research'].map(subcategory => (
+
+                                            <div key={subcategory} className={`subcategory-check ${selectedSubcategories.includes(subcategory) ? 'div-checked' : ''}`}>
+                                                <input
+                                                    type="checkbox"
+                                                    id={`subcategory_checkbox_${subcategory}`}
+                                                    checked={selectedSubcategories.includes(subcategory)}
+                                                    onChange={() => handleSubcategorySelection(subcategory)}
+                                                />
+                                                <label htmlFor={`subcategory_checkbox_${subcategory}`}>
+                                                    {subcategory}
+                                                </label>
+                                            </div>
+
+                                        ));
+                                    case 'Financial Services':
+                                        return ['Investment Banking', 'Wealth Management', 'Insurance Services', 'Payment Processing', 'Asset Management', 'Credit Unions', 'Tax and Accounting Services'].map(subcategory => (
+
+                                            <div key={subcategory} className={`subcategory-check ${selectedSubcategories.includes(subcategory) ? 'div-checked' : ''}`}>
+                                                <input
+                                                    type="checkbox"
+                                                    id={`subcategory_checkbox_${subcategory}`}
+                                                    checked={selectedSubcategories.includes(subcategory)}
+                                                    onChange={() => handleSubcategorySelection(subcategory)}
+                                                />
+                                                <label htmlFor={`subcategory_checkbox_${subcategory}`}>
+                                                    {subcategory}
+                                                </label>
+                                            </div>
+
+                                        ));
+                                    case 'Healthcare & Medical Services':
+                                        return ['Hospitals and Clinics', 'Pharmaceutical Companies', 'Telehealth Services', 'Medical Imaging Centers', 'Biotechnology Research', 'Healthcare Equipment Suppliers', 'Mental Health Services'].map(subcategory => (
+
+                                            <div key={subcategory} className={`subcategory-check ${selectedSubcategories.includes(subcategory) ? 'div-checked' : ''}`}>
+                                                <input
+                                                    type="checkbox"
+                                                    id={`subcategory_checkbox_${subcategory}`}
+                                                    checked={selectedSubcategories.includes(subcategory)}
+                                                    onChange={() => handleSubcategorySelection(subcategory)}
+                                                />
+                                                <label htmlFor={`subcategory_checkbox_${subcategory}`}>
+                                                    {subcategory}
+                                                </label>
+                                            </div>
+
+                                        ));
+                                    case 'Retail & E-commerce':
+                                        return ['Fashion and Apparel', 'Electronics and Gadgets', 'Home Decor', 'Pet Supplies', 'Sporting Goods', 'Luxury Brands', 'Bookstores and Publishing'].map(subcategory => (
+
+                                            <div key={subcategory} className={`subcategory-check ${selectedSubcategories.includes(subcategory) ? 'div-checked' : ''}`}>
+                                                <input
+                                                    type="checkbox"
+                                                    id={`subcategory_checkbox_${subcategory}`}
+                                                    checked={selectedSubcategories.includes(subcategory)}
+                                                    onChange={() => handleSubcategorySelection(subcategory)}
+                                                />
+                                                <label htmlFor={`subcategory_checkbox_${subcategory}`}>
+                                                    {subcategory}
+                                                </label>
+                                            </div>
+
+                                        ));
+                                    case 'Automotive & Transportation':
+                                        return ['Car Dealerships', 'Transportation Services', 'Automotive Manufacturers', 'Auto Repair and Maintenance', 'Fleet Management', 'Logistics and Supply Chain', 'Electric Vehicle (EV) Companies'].map(subcategory => (
+
+                                            <div key={subcategory} className={`subcategory-check ${selectedSubcategories.includes(subcategory) ? 'div-checked' : ''}`}>
+                                                <input
+                                                    type="checkbox"
+                                                    id={`subcategory_checkbox_${subcategory}`}
+                                                    checked={selectedSubcategories.includes(subcategory)}
+                                                    onChange={() => handleSubcategorySelection(subcategory)}
+                                                />
+                                                <label htmlFor={`subcategory_checkbox_${subcategory}`}>
+                                                    {subcategory}
+                                                </label>
+                                            </div>
+
+                                        ));
+                                    case 'Entertainment and Media':
+                                        return ['Film and Television Production', 'Music and Recording Industry', 'Video Game Development', 'Streaming Services', 'Publishing and Printing', 'Public Relations and Media Relations', 'Event Management and Promotion'].map(subcategory => (
+
+                                            <div key={subcategory} className={`subcategory-check ${selectedSubcategories.includes(subcategory) ? 'div-checked' : ''}`}>
+                                                <input
+                                                    type="checkbox"
+                                                    id={`subcategory_checkbox_${subcategory}`}
+                                                    checked={selectedSubcategories.includes(subcategory)}
+                                                    onChange={() => handleSubcategorySelection(subcategory)}
+                                                />
+                                                <label htmlFor={`subcategory_checkbox_${subcategory}`}>
+                                                    {subcategory}
+                                                </label>
+                                            </div>
+
+                                        ));
+                                    case 'Hospitality and Travel':
+                                        return ['Hotels and Accommodations', 'Airlines and Aviation', 'Travel Agencies', 'Tour Operators', 'Cruise Lines', 'Restaurants and Dining', 'Tourism Services'].map(subcategory => (
+
+                                            <div key={subcategory} className={`subcategory-check ${selectedSubcategories.includes(subcategory) ? 'div-checked' : ''}`}>
+                                                <input
+                                                    type="checkbox"
+                                                    id={`subcategory_checkbox_${subcategory}`}
+                                                    checked={selectedSubcategories.includes(subcategory)}
+                                                    onChange={() => handleSubcategorySelection(subcategory)}
+                                                />
+                                                <label htmlFor={`subcategory_checkbox_${subcategory}`}>
+                                                    {subcategory}
+                                                </label>
+                                            </div>
+
+                                        ));
+                                    case 'Fitness and Wellness':
+                                        return ['Gyms and Fitness Centers', 'Yoga Studios', 'Wellness Spas', 'Personal Trainers', 'Nutrition and Diet Services', 'Sports and Recreation', 'Mental Health and Wellness Services'].map(subcategory => (
+
+                                            <div key={subcategory} className={`subcategory-check ${selectedSubcategories.includes(subcategory) ? 'div-checked' : ''}`}>
+                                                <input
+                                                    type="checkbox"
+                                                    id={`subcategory_checkbox_${subcategory}`}
+                                                    checked={selectedSubcategories.includes(subcategory)}
+                                                    onChange={() => handleSubcategorySelection(subcategory)}
+                                                />
+                                                <label htmlFor={`subcategory_checkbox_${subcategory}`}>
+                                                    {subcategory}
+                                                </label>
+                                            </div>
+
+                                        ));
+                                    case 'Manufacturing & Industrial':
+                                        return ['Automotive Manufacturing', 'Aerospace and Defense', 'Textile and Apparel Production', 'Metals and Alloys', 'Chemical Manufacturing', 'Electronic Component Manufacturing', 'Machinery and Equipment Production'].map(subcategory => (
+
+                                            <div key={subcategory} className={`subcategory-check ${selectedSubcategories.includes(subcategory) ? 'div-checked' : ''}`}>
+                                                <input
+                                                    type="checkbox"
+                                                    id={`subcategory_checkbox_${subcategory}`}
+                                                    checked={selectedSubcategories.includes(subcategory)}
+                                                    onChange={() => handleSubcategorySelection(subcategory)}
+                                                />
+                                                <label htmlFor={`subcategory_checkbox_${subcategory}`}>
+                                                    {subcategory}
+                                                </label>
+                                            </div>
+
+                                        ));
                                     default:
                                         return null;
                                 }
