@@ -3,19 +3,25 @@ import { firestore } from '../../firebase';
 import { collection, getDocs } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 
+// SearchBar component
 export default function SearchBar() {
+    // State variables for search term, company results, category results, location results, and suggestion visibility
     const [searchTerm, setSearchTerm] = useState('');
     const [companyResults, setCompanyResults] = useState([]);
     const [categoryResults, setCategoryResults] = useState([]);
     const [locationResults, setLocationResults] = useState([]);
     const [showSuggestions, setShowSuggestions] = useState(false);
+
+    // Hook for navigation
     const navigate = useNavigate();
 
+    // Function to handle clicks on search results
     const handleResultClick = (result) => {
         setSearchTerm(result);
         setShowSuggestions(false);
     };
 
+    // useEffect hook for fetching and updating search results based on the search term
     useEffect(() => {
         if (searchTerm) {
             const query = searchTerm.toLowerCase();
@@ -23,6 +29,7 @@ export default function SearchBar() {
             const categories = new Set();
             const locations = new Set();
 
+            // Fetch companies from Firestore and filter based on the search term
             getDocs(collection(firestore, 'companies'))
                 .then((querySnapshot) => {
                     querySnapshot.forEach((doc) => {
@@ -40,6 +47,7 @@ export default function SearchBar() {
                         }
                     });
 
+                    // Update state with filtered results and show suggestions
                     setCompanyResults(companies);
                     setCategoryResults(Array.from(categories));
                     setLocationResults(Array.from(locations));
@@ -49,6 +57,7 @@ export default function SearchBar() {
                     console.error('Error fetching companies:', error);
                 });
         } else {
+            // Reset state and hide suggestions when search term is empty
             setCompanyResults([]);
             setCategoryResults([]);
             setLocationResults([]);
@@ -56,12 +65,16 @@ export default function SearchBar() {
         }
     }, [searchTerm]);
 
+    // Function to handle the search button click
     const handleSearch = () => {
+        // Navigate to the search results page with the selected search term
         navigate(`/companies-category/${searchTerm}`);
     };
 
+    // Render the SearchBar component
     return (
         <div className="search-bar-container">
+            {/* Search form with input and button */}
             <form className='search-bar' action="">
                 <input
                     type="text"
@@ -71,6 +84,7 @@ export default function SearchBar() {
                     className={showSuggestions ? 'active' : ''}
                 />
                 <button onClick={handleSearch}>
+                    {/* Search icon SVG */}
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                         <g id="feSearch0" fill="none" fill-rule="evenodd" stroke="none" stroke-width="1">
                             <g id="feSearch1" fill="currentColor">
@@ -83,12 +97,14 @@ export default function SearchBar() {
                     </svg>
                 </button>
             </form>
+            {/* Display search results */}
             {searchTerm && (
                 <ul className="search-results">
                     {companyResults.length > 0 || categoryResults.length > 0 || locationResults.length > 0 ? (
                         <>
                             {companyResults.length > 0 && (
                                 <div>
+                                    {/* Display company results */}
                                     <strong>Companies</strong>
                                     {companyResults.map((company, index) => (
                                         <li key={index} onClick={() => handleResultClick(company)}>
@@ -99,6 +115,7 @@ export default function SearchBar() {
                             )}
                             {categoryResults.length > 0 && (
                                 <div>
+                                    {/* Display category results */}
                                     <strong>Categories</strong>
                                     {categoryResults.map((category, index) => (
                                         <li key={index} onClick={() => handleResultClick(category)}>
@@ -109,6 +126,7 @@ export default function SearchBar() {
                             )}
                             {locationResults.length > 0 && (
                                 <div>
+                                    {/* Display location results */}
                                     <strong>Locations</strong>
                                     {locationResults.map((location, index) => (
                                         <li key={index} onClick={() => handleResultClick(location)}>
@@ -119,13 +137,11 @@ export default function SearchBar() {
                             )}
                         </>
                     ) : (
-                        <div className="no-matches"></div>
+                        // Displayed when there are no matching results
+                        <div className="no-matches">hello</div>
                     )}
                 </ul>
             )}
         </div>
     );
 }
-
-
-
