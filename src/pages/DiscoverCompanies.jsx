@@ -41,12 +41,12 @@ export default function DiscoverCompanies() {
                         </div>
                         <div className='sub-categories'>
                             <Link to='/companies-category/Software Development'>Software Development</Link>
-                            <Link to='/'>Cybersecurity Solutions</Link>
-                            <Link to='/'>Cloud Computing</Link>
-                            <Link to='/'>Mobile App Development</Link>
-                            <Link to='/'>Web Development</Link>
-                            <Link to='/'>Tech Support and Maintenance</Link>
-                            <Link to='/'>Data Analytics and BI</Link>
+                            <Link to='/companies-category/Cybersecurity Solutions'>Cybersecurity Solutions</Link>
+                            <Link to='/companies-category/Cloud Computing'>Cloud Computing</Link>
+                            <Link to='/companies-category/Mobile App Development'>Mobile App Development</Link>
+                            <Link to='/companies-category/Web Development'>Web Development</Link>
+                            <Link to='/companies-category/Tech Support and Maintenance'>Tech Support and Maintenance</Link>
+                            <Link to='/companies-category/Data Analytics and BI'>Data Analytics and BI</Link>
                         </div>
                     </div>
 
@@ -56,13 +56,13 @@ export default function DiscoverCompanies() {
                             <h3>Environmental & Sustainability</h3>
                         </div>
                         <div className='sub-categories'>
-                            <Link to='/'>Investment Banking</Link>
-                            <Link to='/'>Wealth Management</Link>
-                            <Link to='/'>Insurance Services</Link>
-                            <Link to='/'>Payment Processing</Link>
-                            <Link to='/'>Asset Management</Link>
-                            <Link to='/'>Credit Unions</Link>
-                            <Link to='/'>Tax and Accounting Services</Link>
+                            <Link to='/companies-category/Investment Banking'>Investment Banking</Link>
+                            <Link to='/companies-category/Wealth Management'>Wealth Management</Link>
+                            <Link to='/companies-category/Insurance Services'>Insurance Services</Link>
+                            <Link to='/companies-category/Payment Processing'>Payment Processing</Link>
+                            <Link to='/companies-category/Asset Management'>Asset Management</Link>
+                            <Link to='/companies-category/Credit Unions'>Credit Unions</Link>
+                            <Link to='/companies-category/Tax and Accounting Services'>Tax and Accounting Services</Link>
                         </div>
                     </div>
 
@@ -72,13 +72,13 @@ export default function DiscoverCompanies() {
                             <h3>Education and Training </h3>
                         </div>
                         <div className='sub-categories'>
-                            <Link to='/'>Dental Clinics</Link>
-                            <Link to='/'>Pharmaceutical Manufacturing</Link>
-                            <Link to='/'>Telehealth Services</Link>
-                            <Link to='/'>Medical Imaging Centers </Link>
-                            <Link to='/'>Biotechnology Research</Link>
-                            <Link to='/'>Healthcare Equipment Suppliers</Link>
-                            <Link to='/'>Rehabilitation Centers</Link>
+                            <Link to='/companies-category/Dental Clinics'>Dental Clinics</Link>
+                            <Link to='/companies-category/Pharmaceutical Manufacturing'>Pharmaceutical Manufacturing</Link>
+                            <Link to='/companies-category/Telehealth Services'>Telehealth Services</Link>
+                            <Link to='/companies-category/Medical Imaging Centers'>Medical Imaging Centers</Link>
+                            <Link to='/companies-category/Biotechnology Research'>Biotechnology Research</Link>
+                            <Link to='/companies-category/Healthcare Equipment Suppliers'>Healthcare Equipment Suppliers</Link>
+                            <Link to='/companies-category/Rehabilitation Centers'>Rehabilitation Centers</Link>
                         </div>
                     </div>
 
@@ -88,13 +88,13 @@ export default function DiscoverCompanies() {
                             <h3>Home and Garden</h3>
                         </div>
                         <div className='sub-categories'>
-                            <Link to='/'>Furniture Retailers</Link>
-                            <Link to='/'>Gardening Supplies</Link>
-                            <Link to='/'>Interior Design Services</Link>
-                            <Link to='/'>Home Improvement Stores</Link>
-                            <Link to='/'>Kitchen and Bath Fixtures</Link>
-                            <Link to='/'>Outdoor Living</Link>
-                            <Link to='/'>Home Security Services</Link>
+                            <Link to='/companies-category/Furniture Retailers'>Furniture Retailers</Link>
+                            <Link to='/companies-category/Gardening Supplies'>Gardening Supplies</Link>
+                            <Link to='/companies-category/Interior Design Services'>Interior Design Services</Link>
+                            <Link to='/companies-category/Home Improvement Stores'>Home Improvement Stores</Link>
+                            <Link to='/companies-category/Kitchen and Bath Fixtures'>Kitchen and Bath Fixtures</Link>
+                            <Link to='/companies-category/Outdoor Living'>Outdoor Living</Link>
+                            <Link to='/companies-category/Home Security Services'>Home Security Services</Link>
                         </div>
                     </div>
 
@@ -104,13 +104,13 @@ export default function DiscoverCompanies() {
                             <h3>Legal Services</h3>
                         </div>
                         <div className='sub-categories'>
-                            <Link to='/'>Law Firms</Link>
-                            <Link to='/'>Litigation Services</Link>
-                            <Link to='/'>Corporate Legal</Link>
-                            <Link to='/'>Intellectual Property</Link>
-                            <Link to='/'>Family Law</Link>
-                            <Link to='/'>Immigration Law</Link>
-                            <Link to='/'>Criminal Defense</Link>
+                            <Link to='/companies-category/Law Firms'>Law Firms</Link>
+                            <Link to='/companies-category/Litigation Services'>Litigation Services</Link>
+                            <Link to='/companies-category/Corporate Legal'>Corporate Legal</Link>
+                            <Link to='/companies-category/Intellectual Property'>Intellectual Property</Link>
+                            <Link to='/companies-category/Family Law'>Family Law</Link>
+                            <Link to='/companies-category/Immigration Law'>Immigration Law</Link>
+                            <Link to='/companies-category/Criminal Defense'>Criminal Defense</Link>
                         </div>
                     </div>
 
@@ -120,13 +120,13 @@ export default function DiscoverCompanies() {
                             <h3>Professional Services</h3>
                         </div>
                         <div className='sub-categories'>
-                            <Link to='/'>HR and Recruitment</Link>
-                            <Link to='/'>Management Consulting</Link>
-                            <Link to='/'>Financial Advisory</Link>
-                            <Link to='/'>Marketing Consulting</Link>
-                            <Link to='/'>IT Consulting</Link>
-                            <Link to='/'>Environmental Consulting</Link>
-                            <Link to='/'>Executive Search</Link>
+                            <Link to='/companies-category/HR and Recruitment'>HR and Recruitment</Link>
+                            <Link to='/companies-category/Management Consulting'>Management Consulting</Link>
+                            <Link to='/companies-category/Financial Advisory'>Financial Advisory</Link>
+                            <Link to='/companies-category/Marketing Consulting'>Marketing Consulting</Link>
+                            <Link to='/companies-category/IT Consulting'>IT Consulting</Link>
+                            <Link to='/companies-category/Environmental Consulting'>Environmental Consulting</Link>
+                            <Link to='/companies-category/Executive Search'>Executive Search</Link>
                         </div>
                     </div>
 
@@ -136,13 +136,13 @@ export default function DiscoverCompanies() {
                             <h3>Marketing & Advertising</h3>
                         </div>
                         <div className='sub-categories'>
-                            <Link to='/'>Digital Marketing</Link>
-                            <Link to='/'>Advertising Agencies</Link>
-                            <Link to='/'>Social Media Marketing</Link>
-                            <Link to='/'>Content Marketing</Link>
-                            <Link to='/'>Public Relations</Link>
-                            <Link to='/'>Branding and Design</Link>
-                            <Link to='/'>Market Research</Link>
+                            <Link to='/companies-category/Digital Marketing'>Digital Marketing</Link>
+                            <Link to='/companies-category/Advertising Agencies'>Advertising Agencies</Link>
+                            <Link to='/companies-category/Social Media Marketing'>Social Media Marketing</Link>
+                            <Link to='/companies-category/Content Marketing'>Content Marketing</Link>
+                            <Link to='/companies-category/Public Relations'>Public Relations</Link>
+                            <Link to='/companies-category/Branding and Design'>Branding and Design</Link>
+                            <Link to='/companies-category/Market Research'>Market Research</Link>
                         </div>
                     </div>
 
@@ -152,13 +152,13 @@ export default function DiscoverCompanies() {
                             <h3>Financial Services</h3>
                         </div>
                         <div className='sub-categories'>
-                            <Link to='/'>Investment Banking</Link>
-                            <Link to='/'>Wealth Management</Link>
-                            <Link to='/'>Insurance Services</Link>
-                            <Link to='/'>Payment Processing</Link>
-                            <Link to='/'>Asset Management</Link>
-                            <Link to='/'>Credit Unions</Link>
-                            <Link to='/'>Tax and Accounting Services</Link>
+                            <Link to='/companies-category/Investment Banking'>Investment Banking</Link>
+                            <Link to='/companies-category/Wealth Management'>Wealth Management</Link>
+                            <Link to='/companies-category/Insurance Services'>Insurance Services</Link>
+                            <Link to='/companies-category/Payment Processing'>Payment Processing</Link>
+                            <Link to='/companies-category/Asset Management'>Asset Management</Link>
+                            <Link to='/companies-category/Credit Unions'>Credit Unions</Link>
+                            <Link to='/companies-category/Tax and Accounting Services'>Tax and Accounting Services</Link>
                         </div>
                     </div>
 
@@ -168,13 +168,13 @@ export default function DiscoverCompanies() {
                             <h3>Healthcare & Medical Services</h3>
                         </div>
                         <div className='sub-categories'>
-                            <Link to='/'>Hospitals and Clinics</Link>
-                            <Link to='/'>Pharmaceutical Companies</Link>
-                            <Link to='/'>Telehealth Services</Link>
-                            <Link to='/'>Medical Imaging Centers</Link>
-                            <Link to='/'>Biotechnology Research</Link>
-                            <Link to='/'>Healthcare Equipment Suppliers</Link>
-                            <Link to='/'>Mental Health Services</Link>
+                            <Link to='/companies-category/Hospitals and Clinics'>Hospitals and Clinics</Link>
+                            <Link to='/companies-category/Pharmaceutical Companies'>Pharmaceutical Companies</Link>
+                            <Link to='/companies-category/Telehealth Services'>Telehealth Services</Link>
+                            <Link to='/companies-category/Medical Imaging Centers'>Medical Imaging Centers</Link>
+                            <Link to='/companies-category/Biotechnology Research'>Biotechnology Research</Link>
+                            <Link to='/companies-category/Healthcare Equipment Suppliers'>Healthcare Equipment Suppliers</Link>
+                            <Link to='/companies-category/Mental Health Services'>Mental Health Services</Link>
                         </div>
                     </div>
 
@@ -184,13 +184,13 @@ export default function DiscoverCompanies() {
                             <h3>Retail & E-commerce</h3>
                         </div>
                         <div className='sub-categories'>
-                            <Link to='/'>Fashion and Apparel</Link>
-                            <Link to='/'>Electronics and Gadgets</Link>
-                            <Link to='/'>Home Decor</Link>
-                            <Link to='/'>Pet Supplies</Link>
-                            <Link to='/'>Sporting Goods</Link>
-                            <Link to='/'>Luxury Brands</Link>
-                            <Link to='/'>Bookstores and Publishing</Link>
+                            <Link to='/companies-category/Fashion and Apparel'>Fashion and Apparel</Link>
+                            <Link to='/companies-category/Electronics and Gadgets'>Electronics and Gadgets</Link>
+                            <Link to='/companies-category/Home Decor'>Home Decor</Link>
+                            <Link to='/companies-category/Pet Supplies'>Pet Supplies</Link>
+                            <Link to='/companies-category/Sporting Goods'>Sporting Goods</Link>
+                            <Link to='/companies-category/Luxury Brands'>Luxury Brands</Link>
+                            <Link to='/companies-category/Bookstores and Publishing'>Bookstores and Publishing</Link>
                         </div>
                     </div>
 
@@ -216,13 +216,13 @@ export default function DiscoverCompanies() {
                             <h3>Entertainment and Media</h3>
                         </div>
                         <div className='sub-categories'>
-                            <Link to='/'>Film and Television Production</Link>
-                            <Link to='/'>Music and Recording Industry</Link>
-                            <Link to='/'>Video Game Development</Link>
-                            <Link to='/'>Streaming Services</Link>
-                            <Link to='/'>Publishing and Printing</Link>
-                            <Link to='/'>Public Relations and Media Relations</Link>
-                            <Link to='/'>Event Management and Promotion</Link>
+                            <Link to='/companies-category/Film and Television Production'>Film and Television Production</Link>
+                            <Link to='/companies-category/Music and Recording Industry'>Music and Recording Industry</Link>
+                            <Link to='/companies-category/Video Game Development'>Video Game Development</Link>
+                            <Link to='/companies-category/Streaming Services'>Streaming Services</Link>
+                            <Link to='/companies-category/Publishing and Printing'>Publishing and Printing</Link>
+                            <Link to='/companies-category/Public Relations and Media Relations'>Public Relations and Media Relations</Link>
+                            <Link to='/companies-category/Event Management and Promotion'>Event Management and Promotion</Link>
                         </div>
                     </div>
 
@@ -232,13 +232,13 @@ export default function DiscoverCompanies() {
                             <h3>Hospitality and Travel </h3>
                         </div>
                         <div className='sub-categories'>
-                            <Link to='/'>Hotels and Accommodations</Link>
-                            <Link to='/'>Airlines and Aviation</Link>
-                            <Link to='/'>Travel Agencies</Link>
-                            <Link to='/'>Tour Operators</Link>
-                            <Link to='/'>Cruise Lines</Link>
-                            <Link to='/'>Restaurants and Dining</Link>
-                            <Link to='/'>Tourism Services</Link>
+                            <Link to='/companies-category/Hotels and Accommodations'>Hotels and Accommodations</Link>
+                            <Link to='/companies-category/Airlines and Aviation'>Airlines and Aviation</Link>
+                            <Link to='/companies-category/Travel Agencies'>Travel Agencies</Link>
+                            <Link to='/companies-category/Tour Operators'>Tour Operators</Link>
+                            <Link to='/companies-category/Cruise Lines'>Cruise Lines</Link>
+                            <Link to='/companies-category/Restaurants and Dining'>Restaurants and Dining</Link>
+                            <Link to='/companies-category/Tourism Services'>Tourism Services</Link>
                         </div>
                     </div>
 
@@ -248,13 +248,13 @@ export default function DiscoverCompanies() {
                             <h3>Fitness and Wellness</h3>
                         </div>
                         <div className='sub-categories'>
-                            <Link to='/'>Gyms and Fitness Centers</Link>
-                            <Link to='/'>Yoga Studios</Link>
-                            <Link to='/'>Wellness Spas</Link>
-                            <Link to='/'>Personal Trainers</Link>
-                            <Link to='/'>Nutrition and Diet Services</Link>
-                            <Link to='/'>Sports and Recreation</Link>
-                            <Link to='/'>Mental Health and Wellness Services</Link>
+                            <Link to='/companies-category/Gyms and Fitness Centers'>Gyms and Fitness Centers</Link>
+                            <Link to='/companies-category/Yoga Studios'>Yoga Studios</Link>
+                            <Link to='/companies-category/Wellness Spas'>Wellness Spas</Link>
+                            <Link to='/companies-category/Personal Trainers'>Personal Trainers</Link>
+                            <Link to='/companies-category/Nutrition and Diet Services'>Nutrition and Diet Services</Link>
+                            <Link to='/companies-category/Sports and Recreation'>Sports and Recreation</Link>
+                            <Link to='/companies-category/Mental Health and Wellness Services'>Mental Health and Wellness Services</Link>
                         </div>
                     </div>
 
@@ -264,13 +264,13 @@ export default function DiscoverCompanies() {
                             <h3>Manufacturing & Industrial</h3>
                         </div>
                         <div className='sub-categories'>
-                            <Link to='/'>Automotive Manufacturing</Link>
-                            <Link to='/'>Aerospace and Defense</Link>
-                            <Link to='/'>Textile and Apparel Production</Link>
-                            <Link to='/'>Metals and Alloys</Link>
-                            <Link to='/'>Chemical Manufacturing</Link>
-                            <Link to='/'>Electronic Component Manufacturing</Link>
-                            <Link to='/'>Machinery and Equipment Production</Link>
+                            <Link to='/companies-category/Automotive Manufacturing'>Automotive Manufacturing</Link>
+                            <Link to='/companies-category/Aerospace and Defense'>Aerospace and Defense</Link>
+                            <Link to='/companies-category/Textile and Apparel Production'>Textile and Apparel Production</Link>
+                            <Link to='/companies-category/Metals and Alloys'>Metals and Alloys</Link>
+                            <Link to='/companies-category/Chemical Manufacturing'>Chemical Manufacturing</Link>
+                            <Link to='/companies-category/Electronic Component Manufacturing'>Electronic Component Manufacturing</Link>
+                            <Link to='/companies-category/Machinery and Equipment Production'>Machinery and Equipment Production</Link>
                         </div>
                     </div>
 
