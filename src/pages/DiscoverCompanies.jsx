@@ -40,7 +40,7 @@ export default function DiscoverCompanies() {
                             <h3>Software & Technology</h3>
                         </div>
                         <div className='sub-categories'>
-                            <Link to='/'>Software Development</Link>
+                            <Link to='/companies-category/Software Development'>Software Development</Link>
                             <Link to='/'>Cybersecurity Solutions</Link>
                             <Link to='/'>Cloud Computing</Link>
                             <Link to='/'>Mobile App Development</Link>
@@ -200,13 +200,13 @@ export default function DiscoverCompanies() {
                             <h3>Automotive & Transportation</h3>
                         </div>
                         <div className='sub-categories'>
-                            <Link to='/'>Car Dealerships</Link>
-                            <Link to='/'>Transportation Services</Link>
-                            <Link to='/'>Automotive Manufacturers</Link>
-                            <Link to='/'>Auto Repair and Maintenance</Link>
-                            <Link to='/'>Fleet Management</Link>
-                            <Link to='/'>Logistics and Supply Chain</Link>
-                            <Link to='/'>Electric Vehicle (EV) Companies</Link>
+                            <Link to='/companies-category/Car Dealership'>Car Dealership</Link>
+                            <Link to='/companies-category/Transportation Services'>Transportation Services</Link>
+                            <Link to='/companies-category/Automotive Manufacturers'>Automotive Manufacturers</Link>
+                            <Link to='/companies-category/Auto Repair and Maintenance'>Auto Repair and Maintenance</Link>
+                            <Link to='/companies-category/Fleet Management'>Fleet Management</Link>
+                            <Link to='/companies-category/Logistics and Supply Chain'>Logistics and Supply Chain</Link>
+                            <Link to='/companies-category/Electric Vehicle (EV) Companies'>Electric Vehicle (EV) Companies</Link>
                         </div>
                     </div>
 

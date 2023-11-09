@@ -31,6 +31,7 @@ function App() {
           <Route path="/enterprofile" element={<SignUpLogInPage />} />
           <Route path="/discover-companies" element={<DiscoverCompanies />} />
           <Route path="/companies-category/:category" element={<CompaniesCategoryPage />} />
+          <Route path="/companies-category/:category/:subcategories" element={<CompaniesCategoryPage />} />
           <Route path="/profile" element={<ProfilePage />} />
         </Routes>
       </main>

@@ -70,10 +70,11 @@ export default function CompaniesCategoryPage() {
                 const companyData = [];
                 querySnapshot.forEach((doc) => {
                     const data = doc.data();
-                    if (
-                        (data.category === category || data.companyName === category || data.locationCountry === category) && // Category or company name matches
-                        (activeRating === 'All' || data.rating === parseInt(activeRating)) // Rating matches
-                    ) {
+                    const hasCategory = data.category === category || data.companyName === category || data.locationCountry === category;
+                    const hasSubcategory = data.subcategories && data.subcategories.includes(category);
+
+                    // Check if the company matches the category or has the subcategory
+                    if ((hasCategory || hasSubcategory) && (activeRating === 'All' || data.rating === parseInt(activeRating))) {
                         companyData.push(data);
                     }
                 });
@@ -83,6 +84,7 @@ export default function CompaniesCategoryPage() {
                 console.error('Error fetching data:', error);
             }
         };
+
 
         if (category !== '' || selectedLocation !== 'All') {
             fetchCompanies();

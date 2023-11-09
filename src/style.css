@@ -1040,6 +1040,11 @@ nav .contents a:nth-child(2):hover {
     font-size: 19px;
     padding: 5px 0;
     margin: 0 10px;
+    transition: .5s ease-out;
+}
+
+.category-list-card .sub-categories a:hover{
+    background-color: #b6af8b;
 }
 
 .category-list-card .sub-categories a:not(:last-child) {
