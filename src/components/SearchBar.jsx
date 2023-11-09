@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { firestore } from '../../firebase';
 import { collection, getDocs } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
@@ -9,15 +8,13 @@ export default function SearchBar() {
     const [companyResults, setCompanyResults] = useState([]);
     const [categoryResults, setCategoryResults] = useState([]);
     const [locationResults, setLocationResults] = useState([]);
-    const [showSuggestions, setShowSuggestions] = useState(false); // State to control visibility of suggestions
-    const navigate = useNavigate(); // Add useNavigate hook
+    const [showSuggestions, setShowSuggestions] = useState(false);
+    const navigate = useNavigate();
 
     const handleResultClick = (result) => {
         setSearchTerm(result);
-        setShowSuggestions(false); // Hide suggestions when a result is clicked
+        setShowSuggestions(false);
     };
-
-    
 
     useEffect(() => {
         if (searchTerm) {
@@ -26,20 +23,18 @@ export default function SearchBar() {
             const categories = new Set();
             const locations = new Set();
 
-            // Use the 'firestore' instance from your 'firebase.js' file
             getDocs(collection(firestore, 'companies'))
                 .then((querySnapshot) => {
                     querySnapshot.forEach((doc) => {
                         const data = doc.data();
-                        if (data && data.companyName && data.category && data.locationCountry) {
-                            // Check if the company name or category matches the query
+                        if (data && data.companyName && data.category) {
                             if (data.companyName.toLowerCase().includes(query)) {
                                 companies.push(data.companyName);
                             }
                             if (data.category.toLowerCase().includes(query)) {
                                 categories.add(data.category);
                             }
-                            if (data.locationCountry.toLowerCase().includes(query)) {
+                            if (data.locationCountry && data.locationCountry.toLowerCase().includes(query)) {
                                 locations.add(data.locationCountry);
                             }
                         }
@@ -48,22 +43,20 @@ export default function SearchBar() {
                     setCompanyResults(companies);
                     setCategoryResults(Array.from(categories));
                     setLocationResults(Array.from(locations));
-                    setShowSuggestions(true); // Show suggestions when there are search results
+                    setShowSuggestions(true);
                 })
                 .catch((error) => {
                     console.error('Error fetching companies:', error);
                 });
         } else {
-            setCompanyResults([]); // Clear the company recommendations when the search term is empty
-            setCategoryResults([]); // Clear the category recommendations when the search term is empty
+            setCompanyResults([]);
+            setCategoryResults([]);
             setLocationResults([]);
-            setShowSuggestions(false); // Hide suggestions when there are no search results
+            setShowSuggestions(false);
         }
     }, [searchTerm]);
 
     const handleSearch = () => {
-        console.log('Searching for:', searchTerm);
-
         navigate(`/companies-category/${searchTerm}`);
     };
 
@@ -133,3 +126,6 @@ export default function SearchBar() {
         </div>
     );
 }
+
+
+

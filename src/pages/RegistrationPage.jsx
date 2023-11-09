@@ -21,8 +21,8 @@ import Footer from '../components/Footer';
 const categories = [
     "Software & Technology",
     "Environmental & Sustainability",
-    "Education and Training",
-    "Home and Garden",
+    "Education & Training",
+    "Home & Garden",
     "Legal Services",
     "Professional Services",
     "Marketing & Advertising",
@@ -32,7 +32,7 @@ const categories = [
     "Automotive & Transportation",
     "Entertainment and Media",
     "Hospitality and Travel",
-    "Fitness and Wellness",
+    "Fitness & Wellness",
     "Manufacturing & Industrial"
 ];
 
