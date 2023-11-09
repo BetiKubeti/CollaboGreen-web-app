@@ -62,7 +62,7 @@ const SignInForm = () => {
                     {/* Sign In form container */}
                     <div className='registration-page-container'>
                         {/* Sign In form header */}
-                        <h2>Sign In</h2>
+                        <h2>Log In to CollaboGreen</h2>
                         {/* Sign In form */}
                         <form onSubmit={handleSignIn}>
                             {/* Input field for Email */}

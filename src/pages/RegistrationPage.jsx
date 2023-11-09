@@ -187,7 +187,7 @@ const RegistrationForm = () => {
                 <div className='registration-page-wrap'>
                     <div className='registration-page-container'>
                         {/* Registration form header */}
-                        <h2>Create a free account</h2>
+                        <h2>Sign Up to CollaboGreen</h2>
                         {/* Registration form */}
                         <form onSubmit={handleRegistration}>
                             {/* Company Information section */}
