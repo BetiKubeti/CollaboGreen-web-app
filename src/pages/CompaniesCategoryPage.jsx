@@ -256,7 +256,13 @@ export default function CompaniesCategoryPage() {
                                                 </p>
                                             </div>
                                             <div className='company-type'>
-                                                <p><strong>Type of company:</strong> {company.category}</p>
+                                                <p>
+                                                    <strong>Type of company:</strong>
+                                                    {company.category && company.subcategories
+                                                        ? `${company.category}, ${company.subcategories.join(', ')}`
+                                                        : company.category
+                                                    }
+                                                </p>
                                             </div>
                                         </div>
                                     </div>

@@ -51,6 +51,7 @@ const RegistrationForm = () => {
     const [contactInstagram, setContactInstagram] = useState('');
     const [locationCity, setLocationCity] = useState('');
     const [locationCountry, setLocationCountry] = useState('');
+    const [subcategories, setSubcategories] = useState([]);
 
     const [companyNameError, setCompanyNameError] = useState('');
     const [websiteURLError, setWebsiteURLError] = useState('');
@@ -136,6 +137,7 @@ const RegistrationForm = () => {
             contactInstagram,
             locationCity,
             locationCountry,
+            subcategories,
             registrationDate: serverTimestamp(),
         };
 
